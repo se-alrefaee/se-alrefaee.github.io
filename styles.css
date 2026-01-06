@@ -1,0 +1,177 @@
+:root {
+  --bg: #020617;
+  --card: rgba(255, 255, 255, 0.05);
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #38bdf8;
+  --border: rgba(255, 255, 255, 0.1);
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background: linear-gradient(rgba(56, 189, 248, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.03) 1px, transparent 1px),
+    radial-gradient(circle at top, #111827, #020617);
+  background-size: 48px 48px, 48px 48px, cover;
+  color: var(--text);
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 4.5rem 1.5rem;
+}
+
+/* HERO */
+.hero {
+  margin-bottom: 7rem;
+}
+
+.hero-name {
+  font-size: clamp(2.6rem, 6vw, 3.4rem);
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.hero-role {
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+}
+
+.hero-desc {
+  max-width: 720px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.hero-links a {
+  margin-right: 1.6rem;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.hero-links a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* SECTIONS */
+.section {
+  margin-top: 7rem;
+}
+
+.section-title {
+  font-size: 1.9rem;
+  margin-bottom: 2.8rem;
+}
+
+/* PROJECTS */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.2rem;
+}
+
+.project-card {
+  background: var(--card);
+  padding: 2.2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.project-card.featured {
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.4);
+}
+
+.tech {
+  color: var(--accent);
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+}
+
+/* COMPETITIONS */
+.competition-list {
+  display: grid;
+  gap: 2.6rem;
+}
+
+.competition-item {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.flag {
+  font-size: 1.8rem;
+}
+
+/* TIMELINE */
+.timeline {
+  border-left: 2px solid var(--border);
+  padding-left: 2rem;
+}
+
+.timeline-item {
+  margin-bottom: 3.2rem;
+  position: relative;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -9px;
+  top: 0.4rem;
+  width: 14px;
+  height: 14px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+/* TEXT */
+p {
+  line-height: 1.65;
+  margin-top: 0.4rem;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 7rem;
+  color: var(--muted);
+}
+
+/* SCROLL REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: all 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* CURSOR PROGRESS */
+#cursor-progress {
+  position: fixed;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  pointer-events: none;
+  border: 2px solid var(--accent);
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
