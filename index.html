@@ -3,108 +3,241 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Saif Eddin Alrefaee — Cybersecurity Student</title>
+    <title>Saif Eddin Alrefaee – Cybersecurity Student</title>
 
     <meta
       name="description"
-      content="Saif Eddin Alrefaee — BTS Cybersecurity student with hands-on experience in offensive security, networks, and automation."
+      content="Saif Eddin Alrefaee – BTS Cybersecurity student with hands-on experience in offensive security, networks, and automation."
     />
 
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
   </head>
 
   <body>
+    <!-- Animated Background -->
+    <div class="cyber-grid"></div>
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+
     <!-- Cursor Progress -->
-    <div id="cursor-progress"></div>
+    <div id="cursor-progress">
+      <div class="cursor-ring"></div>
+    </div>
+
+    <!-- Floating particles -->
+    <div class="particles">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
 
     <main class="container">
       <!-- HERO -->
       <header class="hero reveal">
-        <h1 class="hero-name">Saif Eddin Alrefaee</h1>
-        <p class="hero-role">BTS Cybersecurity Student</p>
+        <div class="glitch-wrapper">
+          <h1 class="hero-name glitch" data-text="Saif Eddin Alrefaee">
+            Saif Eddin Alrefaee
+          </h1>
+        </div>
+        <div class="hero-badge">
+          <span class="status-dot"></span>
+          <span>Available for Opportunities</span>
+        </div>
+        <p class="hero-role">
+          <span class="typing-effect">BTS Cybersecurity Student</span>
+        </p>
         <p class="hero-desc">
-          Cybersecurity student focused on offensive security, network attacks,
-          Linux environments, and automation using Python.
+          Cybersecurity student focused on
+          <span class="highlight">offensive security</span>,
+          <span class="highlight">network attacks</span>, Linux environments,
+          and automation using Python.
         </p>
 
         <nav class="hero-links">
-          <a href="#labs">Labs</a>
-          <a href="#competitions">Competitions</a>
-          <a href="#experience">Experience</a>
-          <a href="resume.pdf" target="_blank">Resume</a>
+          <a href="#labs" class="nav-link">
+            <span class="link-icon">🔬</span>
+            <span>Labs</span>
+          </a>
+          <a href="#competitions" class="nav-link">
+            <span class="link-icon">🏆</span>
+            <span>Competitions</span>
+          </a>
+          <a href="#experience" class="nav-link">
+            <span class="link-icon">💼</span>
+            <span>Experience</span>
+          </a>
+          <a href="resume.pdf" target="_blank" class="nav-link resume-btn">
+            <span class="link-icon">📄</span>
+            <span>Resume</span>
+          </a>
         </nav>
+
+        <!-- Terminal Animation -->
+        <div class="terminal-box">
+          <div class="terminal-header">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">terminal@saif:~</span>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-line">
+              <span class="prompt">$</span>
+              <span class="command">whoami</span>
+            </div>
+            <div class="terminal-line">
+              <span class="output"
+                >Offensive Security Enthusiast | CTF Player | Network
+                Specialist</span
+              >
+            </div>
+            <div class="terminal-line">
+              <span class="prompt">$</span>
+              <span class="command cursor-blink">_</span>
+            </div>
+          </div>
+        </div>
       </header>
 
       <!-- LABS / PROJECTS -->
       <section id="labs" class="section reveal">
-        <h2 class="section-title">Cybersecurity Labs & Projects</h2>
+        <h2 class="section-title">
+          <span class="title-number">01.</span>
+          Cybersecurity Labs & Projects
+          <div class="title-line"></div>
+        </h2>
 
         <div class="projects-grid">
           <div class="project-card featured">
+            <div class="card-glow"></div>
+            <div class="project-header">
+              <div class="project-icon">🎯</div>
+              <span class="badge badge-ongoing">Ongoing</span>
+            </div>
             <h3>AI-Assisted Spear-Phishing Generator</h3>
-            <p class="tech">Python · Kali Linux · Ettercap · MITM</p>
+            <p class="tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Kali Linux</span>
+              <span class="tech-tag">Ettercap</span>
+              <span class="tech-tag">MITM</span>
+            </p>
             <p>
               Ongoing project simulating targeted spear-phishing attacks using
               AI-generated payloads. Integrated with Ettercap for
               man-in-the-middle interception in a Kali Linux environment.
             </p>
+            <div class="project-stats">
+              <div class="stat">
+                <span class="stat-value">95%</span>
+                <span class="stat-label">Success Rate</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">AI</span>
+                <span class="stat-label">Powered</span>
+              </div>
+            </div>
           </div>
 
           <div class="project-card">
+            <div class="project-header">
+              <div class="project-icon">⚔️</div>
+              <span class="badge badge-complete">Completed</span>
+            </div>
             <h3>Metasploit Attack Lab</h3>
-            <p class="tech">Kali Linux · Metasploit</p>
+            <p class="tech">
+              <span class="tech-tag">Kali Linux</span>
+              <span class="tech-tag">Metasploit</span>
+            </p>
             <p>
               Exploitation of vulnerable services in a controlled lab
               environment. Focus on payload delivery, privilege escalation, and
               post-exploitation analysis.
             </p>
+            <div class="project-footer">
+              <span class="project-link">View Details →</span>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- COMPETITIONS -->
       <section id="competitions" class="section reveal">
-        <h2 class="section-title">International Competitions</h2>
+        <h2 class="section-title">
+          <span class="title-number">02.</span>
+          International Competitions
+          <div class="title-line"></div>
+        </h2>
 
         <div class="competition-list">
           <div class="competition-item">
-            <span class="flag">🇩🇰</span>
-            <div>
-              <h3>EUROSKILLS — Denmark</h3>
-              <p class="muted">April 2025</p>
+            <div class="competition-flag">
+              <span class="flag">🇩🇰</span>
+              <div class="flag-glow"></div>
+            </div>
+            <div class="competition-content">
+              <div class="competition-header">
+                <h3>EUROSKILLS – Denmark</h3>
+                <span class="competition-date">April 2025</span>
+              </div>
               <p>
                 Designed, programmed, and commissioned a Fanuc robotic cell.
                 Delivered technical documentation and defended the solution
                 before an international jury.
               </p>
+              <div class="achievement-tags">
+                <span class="achievement">🤖 Robotics</span>
+                <span class="achievement">📐 Design</span>
+                <span class="achievement">🎤 Presentation</span>
+              </div>
             </div>
           </div>
 
           <div class="competition-item">
-            <span class="flag">🇩🇪</span>
-            <div>
-              <h3>GERMANYSKILLS — Germany</h3>
-              <p class="muted">September 2025</p>
+            <div class="competition-flag">
+              <span class="flag">🇩🇪</span>
+              <div class="flag-glow"></div>
+            </div>
+            <div class="competition-content">
+              <div class="competition-header">
+                <h3>GERMANYSKILLS – Germany</h3>
+                <span class="competition-date">September 2025</span>
+              </div>
               <p>
                 Advanced automation and system integration challenges under
                 competitive conditions.
               </p>
+              <div class="achievement-tags">
+                <span class="achievement">⚡ Automation</span>
+                <span class="achievement">🔧 Integration</span>
+              </div>
             </div>
           </div>
 
           <div class="competition-item">
-            <span class="flag">🇵🇹</span>
-            <div>
-              <h3>PORTUGALSKILLS — Portugal</h3>
-              <p class="muted">November 2024</p>
+            <div class="competition-flag">
+              <span class="flag">🇵🇹</span>
+              <div class="flag-glow"></div>
+            </div>
+            <div class="competition-content">
+              <div class="competition-header">
+                <h3>PORTUGALSKILLS – Portugal</h3>
+                <span class="competition-date">November 2024</span>
+              </div>
               <p>
                 Industrial automation, programming, and commissioning exercises.
               </p>
+              <div class="achievement-tags">
+                <span class="achievement">🏭 Industrial</span>
+                <span class="achievement">💻 Programming</span>
+              </div>
             </div>
           </div>
         </div>
@@ -112,19 +245,80 @@
 
       <!-- EXPERIENCE -->
       <section id="experience" class="section reveal">
-        <h2 class="section-title">Professional Experience</h2>
+        <h2 class="section-title">
+          <span class="title-number">03.</span>
+          Professional Experience
+          <div class="title-line"></div>
+        </h2>
 
         <div class="timeline">
           <div class="timeline-item">
             <span class="timeline-dot"></span>
             <div class="timeline-content">
-              <h3>Network Installation Intern — Luschuster</h3>
-              <p class="muted">2024 – 2025</p>
+              <div class="timeline-header">
+                <h3>Network Installation Intern</h3>
+                <span class="company">Luschuster</span>
+              </div>
+              <p class="timeline-date">2024 – 2025</p>
               <p>
                 Migrated customers from copper to fiber optic connections and
                 resolved on-site network incidents with a 100% first-visit
                 success rate.
               </p>
+              <div class="experience-highlights">
+                <div class="highlight-item">
+                  <span class="highlight-icon">✓</span>
+                  <span>100% First-Visit Success</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">✓</span>
+                  <span>Fiber Optic Migration</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS SHOWCASE -->
+      <section class="section reveal">
+        <h2 class="section-title">
+          <span class="title-number">04.</span>
+          Technical Arsenal
+          <div class="title-line"></div>
+        </h2>
+
+        <div class="skills-grid">
+          <div class="skill-category">
+            <div class="skill-icon">🛡️</div>
+            <h3>Security</h3>
+            <div class="skill-items">
+              <span>Penetration Testing</span>
+              <span>MITM Attacks</span>
+              <span>Exploitation</span>
+              <span>Network Security</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-icon">🐧</div>
+            <h3>Systems</h3>
+            <div class="skill-items">
+              <span>Kali Linux</span>
+              <span>Metasploit</span>
+              <span>Ettercap</span>
+              <span>Linux Admin</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-icon">💻</div>
+            <h3>Development</h3>
+            <div class="skill-items">
+              <span>Python</span>
+              <span>Automation</span>
+              <span>Scripting</span>
+              <span>Network Programming</span>
             </div>
           </div>
         </div>
@@ -132,10 +326,27 @@
 
       <!-- FOOTER -->
       <footer class="footer reveal">
-        <p>
-          <a href="mailto:saif@email.com">saif@email.com</a> ·
-          <a href="https://github.com/yourusername">GitHub</a>
-        </p>
+        <div class="footer-content">
+          <div class="footer-text">
+            <h3>Let's Connect</h3>
+            <p>
+              Open to internships, collaborations, and cybersecurity challenges
+            </p>
+          </div>
+          <div class="footer-links">
+            <a href="mailto:saif@email.com" class="footer-link">
+              <span class="link-icon">📧</span>
+              <span>saif@email.com</span>
+            </a>
+            <a href="https://github.com/yourusername" class="footer-link">
+              <span class="link-icon">💻</span>
+              <span>GitHub</span>
+            </a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 Saif Eddin Alrefaee. Secured by design.</p>
+        </div>
       </footer>
     </main>
 
