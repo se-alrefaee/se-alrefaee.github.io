@@ -1,302 +1,320 @@
-// Scroll reveal animation
-const reveals = document.querySelectorAll(".reveal");
-
-const observerOptions = {
-  threshold: 0.15,
-  rootMargin: "0px 0px -100px 0px",
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, index) => {
-    if (entry.isIntersecting) {
-      setTimeout(() => {
-        entry.target.classList.add("visible");
-      }, index * 100);
-    }
-  });
-}, observerOptions);
-
-reveals.forEach((el) => observer.observe(el));
-
-// Enhanced cursor progress with smooth following
-const cursor = document.getElementById("cursor-progress");
-let mouseX = 0;
-let mouseY = 0;
-let cursorX = 0;
-let cursorY = 0;
-
-document.addEventListener("mousemove", (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-});
-
-function animateCursor() {
-  const speed = 0.15;
-  cursorX += (mouseX - cursorX) * speed;
-  cursorY += (mouseY - cursorY) * speed;
-
-  cursor.style.left = cursorX + "px";
-  cursor.style.top = cursorY + "px";
-
-  requestAnimationFrame(animateCursor);
-}
-
-animateCursor();
-
-// Scroll progress effect on cursor
-window.addEventListener("scroll", () => {
-  const scrollTop = window.scrollY;
-  const docHeight = document.body.scrollHeight - window.innerHeight;
-  const progress = Math.min(scrollTop / docHeight, 1);
-
-  const scale = 0.8 + progress * 0.8;
-  cursor.style.transform = `translate(-50%, -50%) scale(${scale})`;
-});
-
-// Interactive hover effects for project cards
-const projectCards = document.querySelectorAll(".project-card");
-
-projectCards.forEach((card) => {
-  card.addEventListener("mousemove", (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-
-    const rotateX = (y - centerY) / 20;
-    const rotateY = (centerX - x) / 20;
-
-    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
-  });
-
-  card.addEventListener("mouseleave", () => {
-    card.style.transform =
-      "perspective(1000px) rotateX(0) rotateY(0) translateY(0)";
-  });
-});
-
-// Smooth scroll for navigation links
+// Smooth scroll for navigation
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute("href"));
+
     if (target) {
       target.scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
+
+      // Update active state
+      document.querySelectorAll(".nav-item").forEach((item) => {
+        item.classList.remove("active");
+      });
+      this.classList.add("active");
     }
   });
 });
 
-// Parallax effect for gradient orbs
-window.addEventListener("scroll", () => {
-  const scrolled = window.scrollY;
-  const orbs = document.querySelectorAll(".gradient-orb");
+// Update active nav item on scroll
+const sections = document.querySelectorAll("section[id]");
+const navItems = document.querySelectorAll('.nav-item[href^="#"]');
 
-  orbs.forEach((orb, index) => {
-    const speed = (index + 1) * 0.5;
-    orb.style.transform = `translateY(${scrolled * speed}px)`;
+const observerOptions = {
+  threshold: 0.3,
+  rootMargin: "-20% 0px -70% 0px",
+};
+
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute("id");
+
+      navItems.forEach((item) => {
+        item.classList.remove("active");
+        if (item.getAttribute("href") === `#${id}`) {
+          item.classList.add("active");
+        }
+      });
+    }
   });
+}, observerOptions);
+
+sections.forEach((section) => {
+  sectionObserver.observe(section);
 });
 
-// Add interactive glow effect to cards on hover
-const cards = document.querySelectorAll(
-  ".project-card, .competition-item, .timeline-content, .skill-category"
-);
+// Animate metrics bars on scroll
+const metricsCard = document.querySelector(".metrics-card");
 
-cards.forEach((card) => {
-  card.addEventListener("mouseenter", function () {
-    this.style.boxShadow = "0 20px 60px rgba(0, 255, 136, 0.3)";
-  });
-
-  card.addEventListener("mouseleave", function () {
-    this.style.boxShadow = "";
-  });
-});
-
-// Terminal typing effect
-const terminalCommand = document.querySelector(
-  ".terminal-line:nth-child(1) .command"
-);
-if (terminalCommand) {
-  const text = terminalCommand.textContent;
-  terminalCommand.textContent = "";
-  let i = 0;
-
-  setTimeout(() => {
-    const typeInterval = setInterval(() => {
-      if (i < text.length) {
-        terminalCommand.textContent += text.charAt(i);
-        i++;
-      } else {
-        clearInterval(typeInterval);
-        // Show output after typing completes
-        setTimeout(() => {
-          const output = document.querySelector(".terminal-line:nth-child(2)");
-          if (output) {
-            output.style.opacity = "0";
-            output.style.display = "block";
+if (metricsCard) {
+  const metricsObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const bars = entry.target.querySelectorAll(".metric-fill");
+          bars.forEach((bar, index) => {
             setTimeout(() => {
-              output.style.transition = "opacity 0.5s ease";
-              output.style.opacity = "1";
-            }, 50);
-          }
-        }, 500);
-      }
-    }, 100);
-  }, 1500);
+              bar.style.width = bar.style.width || "0%";
+            }, index * 100);
+          });
+
+          const chartBars = entry.target.querySelectorAll(".bar");
+          chartBars.forEach((bar, index) => {
+            setTimeout(() => {
+              bar.style.opacity = "0";
+              bar.style.transform = "scaleY(0)";
+              setTimeout(() => {
+                bar.style.transition = "all 0.6s ease";
+                bar.style.opacity = "0.8";
+                bar.style.transform = "scaleY(1)";
+                bar.style.transformOrigin = "bottom";
+              }, 50);
+            }, index * 100);
+          });
+
+          metricsObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  metricsObserver.observe(metricsCard);
 }
 
-// Add ripple effect on button clicks
-const buttons = document.querySelectorAll(".nav-link, .footer-link");
+// Animate stats counter
+const animateValue = (element, start, end, duration) => {
+  let startTimestamp = null;
+  const step = (timestamp) => {
+    if (!startTimestamp) startTimestamp = timestamp;
+    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
 
-buttons.forEach((button) => {
-  button.addEventListener("click", function (e) {
-    const ripple = document.createElement("span");
-    const rect = this.getBoundingClientRect();
-    const size = Math.max(rect.width, rect.height);
-    const x = e.clientX - rect.left - size / 2;
-    const y = e.clientY - rect.top - size / 2;
+    const current = Math.floor(progress * (end - start) + start);
+    element.textContent = current + (element.dataset.suffix || "");
 
-    ripple.style.width = ripple.style.height = size + "px";
-    ripple.style.left = x + "px";
-    ripple.style.top = y + "px";
-    ripple.classList.add("ripple-effect");
-
-    this.appendChild(ripple);
-
-    setTimeout(() => {
-      ripple.remove();
-    }, 600);
-  });
-});
-
-// Add CSS for ripple effect
-const style = document.createElement("style");
-style.textContent = `
-  .ripple-effect {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(0, 255, 136, 0.5);
-    transform: scale(0);
-    animation: ripple 0.6s ease-out;
-    pointer-events: none;
-  }
-  
-  @keyframes ripple {
-    to {
-      transform: scale(2);
-      opacity: 0;
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
     }
-  }
-`;
-document.head.appendChild(style);
+  };
+  window.requestAnimationFrame(step);
+};
 
-// Animate skill items on scroll
-const skillItems = document.querySelectorAll(".skill-items span");
-
-const skillObserver = new IntersectionObserver(
+const statsObserver = new IntersectionObserver(
   (entries) => {
-    entries.forEach((entry, index) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.style.opacity = "1";
-          entry.target.style.transform = "translateX(0)";
-        }, index * 50);
+        const statValues = entry.target.querySelectorAll(".stat-value");
+        statValues.forEach((stat) => {
+          const text = stat.textContent;
+          const match = text.match(/(\d+)/);
+          if (match) {
+            const value = parseInt(match[1]);
+            stat.dataset.suffix = text.replace(/\d+/, "");
+            stat.textContent = "0" + stat.dataset.suffix;
+            animateValue(stat, 0, value, 1500);
+          }
+        });
+
+        const metricValues = entry.target.querySelectorAll(".metric-value");
+        metricValues.forEach((metric) => {
+          const text = metric.textContent;
+          const match = text.match(/(\d+)/);
+          if (match) {
+            const value = parseInt(match[1]);
+            metric.dataset.suffix = text.replace(/\d+/, "");
+            metric.textContent = "0" + metric.dataset.suffix;
+            setTimeout(() => {
+              animateValue(metric, 0, value, 1200);
+            }, 300);
+          }
+        });
+
+        statsObserver.unobserve(entry.target);
       }
     });
   },
   { threshold: 0.5 }
 );
 
-skillItems.forEach((item) => {
-  item.style.opacity = "0";
-  item.style.transform = "translateX(-20px)";
-  item.style.transition = "all 0.5s ease";
-  skillObserver.observe(item);
+document.querySelectorAll(".hero-stats, .metrics-card").forEach((element) => {
+  statsObserver.observe(element);
 });
 
-// Add floating animation to project icons
-const projectIcons = document.querySelectorAll(".project-icon");
+// Add hover effect to project cards
+const projectCards = document.querySelectorAll(".project-card");
 
-projectIcons.forEach((icon) => {
-  icon.style.animation = "float 3s ease-in-out infinite";
-});
-
-// Add hover effect for competition flags
-const flags = document.querySelectorAll(".flag");
-
-flags.forEach((flag) => {
-  flag.addEventListener("mouseenter", function () {
-    this.style.transform = "scale(1.2) rotate(10deg)";
-    this.style.transition = "transform 0.3s ease";
-  });
-
-  flag.addEventListener("mouseleave", function () {
-    this.style.transform = "scale(1) rotate(0deg)";
+projectCards.forEach((card) => {
+  card.addEventListener("mouseenter", function () {
+    this.style.transition = "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)";
   });
 });
 
-// Animate timeline dots on scroll
-const timelineDots = document.querySelectorAll(".timeline-dot");
+// Animate timeline items
+const timelineItems = document.querySelectorAll(".timeline-item");
 
-const dotObserver = new IntersectionObserver(
+const timelineObserver = new IntersectionObserver(
   (entries) => {
-    entries.forEach((entry) => {
+    entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
-        entry.target.style.animation = "pulse 2s ease-in-out infinite";
+        setTimeout(() => {
+          entry.target.style.opacity = "0";
+          entry.target.style.transform = "translateX(-20px)";
+          entry.target.style.transition = "all 0.6s ease";
+
+          requestAnimationFrame(() => {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateX(0)";
+          });
+        }, index * 150);
+
+        timelineObserver.unobserve(entry.target);
       }
     });
   },
-  { threshold: 0.8 }
+  { threshold: 0.2 }
 );
 
-timelineDots.forEach((dot) => {
-  dotObserver.observe(dot);
+timelineItems.forEach((item) => {
+  timelineObserver.observe(item);
 });
 
-// Add smooth reveal for sections
-const sections = document.querySelectorAll(".section");
+// Parallax effect for hero section
+let ticking = false;
 
-sections.forEach((section, index) => {
-  section.style.animationDelay = `${index * 0.2}s`;
+window.addEventListener("scroll", () => {
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      const scrolled = window.scrollY;
+      const heroVisual = document.querySelector(".hero-visual");
+
+      if (heroVisual && scrolled < window.innerHeight) {
+        heroVisual.style.transform = `translateY(${scrolled * 0.3}px)`;
+        heroVisual.style.opacity = `${1 - scrolled / window.innerHeight}`;
+      }
+
+      ticking = false;
+    });
+
+    ticking = true;
+  }
 });
 
-// Performance optimization: Reduce animations on low-end devices
+// Add ripple effect to clickable elements
+const addRipple = (e) => {
+  const button = e.currentTarget;
+  const ripple = document.createElement("span");
+  const rect = button.getBoundingClientRect();
+  const size = Math.max(rect.width, rect.height);
+  const x = e.clientX - rect.left - size / 2;
+  const y = e.clientY - rect.top - size / 2;
+
+  ripple.style.width = ripple.style.height = size + "px";
+  ripple.style.left = x + "px";
+  ripple.style.top = y + "px";
+  ripple.classList.add("ripple");
+
+  button.appendChild(ripple);
+
+  setTimeout(() => ripple.remove(), 600);
+};
+
+// Add ripple CSS
+const style = document.createElement("style");
+style.textContent = `
+  .ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(139, 92, 246, 0.3);
+    transform: scale(0);
+    animation: rippleEffect 0.6s ease-out;
+    pointer-events: none;
+  }
+  
+  @keyframes rippleEffect {
+    to {
+      transform: scale(2.5);
+      opacity: 0;
+    }
+  }
+  
+  .nav-item,
+  .contact-card,
+  .project-card {
+    position: relative;
+    overflow: hidden;
+  }
+`;
+document.head.appendChild(style);
+
+document.querySelectorAll(".nav-item, .contact-card").forEach((element) => {
+  element.addEventListener("click", addRipple);
+});
+
+// Fade in sections on scroll
+const fadeElements = document.querySelectorAll(
+  ".section, .project-card, .experience-card"
+);
+
+const fadeObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = "0";
+        entry.target.style.transform = "translateY(30px)";
+
+        requestAnimationFrame(() => {
+          entry.target.style.transition =
+            "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)";
+          entry.target.style.opacity = "1";
+          entry.target.style.transform = "translateY(0)";
+        });
+
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.1 }
+);
+
+fadeElements.forEach((element) => {
+  fadeObserver.observe(element);
+});
+
+// Animate tech tags on hover
+document.querySelectorAll(".tech-tag, .tag").forEach((tag) => {
+  tag.addEventListener("mouseenter", function () {
+    this.style.transform = "translateY(-2px)";
+    this.style.transition = "all 0.2s ease";
+  });
+
+  tag.addEventListener("mouseleave", function () {
+    this.style.transform = "translateY(0)";
+  });
+});
+
+// Log a welcome message
+console.log(
+  "%c👋 Welcome to Saif's Portfolio",
+  "color: #8B5CF6; font-size: 20px; font-weight: bold;"
+);
+console.log(
+  "%c🔐 Cybersecurity Specialist",
+  "color: #6B7280; font-size: 14px;"
+);
+
+// Prevent animations on page load
+window.addEventListener("load", () => {
+  document.body.classList.add("loaded");
+});
+
+// Handle reduced motion preference
 if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   document.querySelectorAll("*").forEach((el) => {
     el.style.animation = "none";
     el.style.transition = "none";
   });
 }
-
-// Add intersection observer for performance
-const performanceObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.style.willChange = "transform, opacity";
-    } else {
-      entry.target.style.willChange = "auto";
-    }
-  });
-});
-
-document.querySelectorAll(".reveal").forEach((el) => {
-  performanceObserver.observe(el);
-});
-
-console.log(
-  "%c🔐 Welcome to Saif's Portfolio",
-  "color: #00ff88; font-size: 20px; font-weight: bold;"
-);
-console.log(
-  "%c🛡️ Cybersecurity · Offensive Security · Network Analysis",
-  "color: #00d4ff; font-size: 14px;"
-);
-console.log(
-  "%c💻 Built with passion for security",
-  "color: #94a3b8; font-size: 12px;"
-);
