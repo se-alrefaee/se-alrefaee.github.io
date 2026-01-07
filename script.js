@@ -38,40 +38,7 @@ const sectionObserver = new IntersectionObserver(entries => {
 
 sections.forEach(section => sectionObserver.observe(section));
 
-// Animate metrics bars on scroll
-const metricsCard = document.querySelector('.metrics-card');
-if (metricsCard) {
-  const metricsObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const bars = entry.target.querySelectorAll('.metric-fill');
-        bars.forEach((bar, index) => {
-          const width = bar.style.width;
-          bar.style.width = '0';
-          setTimeout(() => {
-            bar.style.width = width;
-          }, 100 + index * 100);
-        });
-
-        const chartBars = entry.target.querySelectorAll('.bar');
-        chartBars.forEach((bar, index) => {
-          const originalHeight = bar.style.height;
-          bar.style.height = '0';
-          setTimeout(() => {
-            bar.style.transition = 'height 0.6s ease';
-            bar.style.height = originalHeight;
-          }, index * 100);
-        });
-
-        metricsObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  metricsObserver.observe(metricsCard);
-}
-
-// Animate stats counter
+// Animate stats counter - FIXED
 function animateValue(element, start, end, duration) {
   let startTimestamp = null;
   const suffix = element.dataset.suffix || '';
@@ -92,27 +59,13 @@ const statsObserver = new IntersectionObserver(entries => {
     if (entry.isIntersecting) {
       const statValues = entry.target.querySelectorAll('.stat-value');
       statValues.forEach((stat, index) => {
-        const text = stat.textContent;
-        const match = text.match(/(\d+)/);
-        if (match) {
-          const value = parseInt(match[1], 10);
-          stat.textContent = '0';
+        const text = stat.textContent.replace(/\D/g, '');
+        if (text) {
+          const value = parseInt(text, 10);
+          stat.textContent = '0' + (stat.dataset.suffix || '');
           setTimeout(() => {
             animateValue(stat, 0, value, 1500);
           }, index * 200);
-        }
-      });
-
-      const metricValues = entry.target.querySelectorAll('.metric-value');
-      metricValues.forEach((metric, index) => {
-        const text = metric.textContent;
-        const match = text.match(/(\d+)/);
-        if (match) {
-          const value = parseInt(match[1], 10);
-          metric.textContent = '0';
-          setTimeout(() => {
-            animateValue(metric, 0, value, 1200);
-          }, 300 + index * 200);
         }
       });
 
@@ -121,7 +74,28 @@ const statsObserver = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.5 });
 
-document.querySelectorAll('.hero-stats, .metrics-card').forEach(element => statsObserver.observe(element));
+document.querySelectorAll('.hero-stats').forEach(element => statsObserver.observe(element));
+
+// Scroll Reveal Animation
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
+
+document.querySelectorAll('.reveal').forEach(element => {
+  revealObserver.observe(element);
+});
+
+// Stagger reveal for multiple elements
+const staggeredElements = document.querySelectorAll('.project-card.reveal, .timeline-item.reveal, .contact-card.reveal');
+let staggerDelay = 0;
+staggeredElements.forEach((el, index) => {
+  el.style.transitionDelay = (index * 0.1) + 's';
+});
 
 // Add hover effect to project cards
 const projectCards = document.querySelectorAll('.project-card');
@@ -164,7 +138,7 @@ if (!isMobile) {
         if (heroVisual) {
           const ratio = scrolled / window.innerHeight;
           heroVisual.style.transform = `translateY(${ratio * 30}px)`;
-          heroVisual.style.opacity = String(1 - ratio);
+          heroVisual.style.opacity = String(Math.max(0, 1 - ratio));
         }
         ticking = false;
       });
@@ -172,6 +146,32 @@ if (!isMobile) {
     }
   });
 }
+
+// Cursor tracking - FIXED FOR SPEED
+const cursor = document.querySelector('.cursor-progress');
+let mouseX = 0;
+let mouseY = 0;
+let cursorX = 0;
+let cursorY = 0;
+
+document.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+function animateCursor() {
+  // Lerp for smooth follow (0.15 = speed, higher = faster)
+  cursorX += (mouseX - cursorX) * 0.15;
+  cursorY += (mouseY - cursorY) * 0.15;
+  
+  if (cursor) {
+    cursor.style.transform = `translate(${cursorX}px, ${cursorY}px) translate(-50%, -50%)`;
+  }
+  
+  requestAnimationFrame(animateCursor);
+}
+
+animateCursor();
 
 // Ripple effect for clickable elements
 const addRipple = (e) => {
@@ -230,14 +230,6 @@ document.querySelectorAll('.tech-tag, .tag').forEach(tag => {
     this.style.transform = 'translateY(0)';
   });
 });
-
-// Custom cursor
-const cursor = document.querySelector('.cursor-progress');
-if (cursor) {
-  window.addEventListener('mousemove', (e) => {
-    cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
-  });
-}
 
 // Welcome message
 console.log('%c Welcome to Saif\'s Portfolio ', 'color: #8B5CF6; font-size: 20px; font-weight: bold;');
