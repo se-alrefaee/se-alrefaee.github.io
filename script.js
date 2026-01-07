@@ -42,14 +42,13 @@ const sectionObserver = new IntersectionObserver((entries) => {
 
 sections.forEach((section) => sectionObserver.observe(section));
 
-// Animate metrics bars on scroll (kept, but metrics-card now hosts TryHackMe iframe)
+// Animate metrics bars on scroll
 const metricsCard = document.querySelector(".metrics-card");
 if (metricsCard) {
   const metricsObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // If you later re-add metric bars, animation will still work
           const bars = entry.target.querySelectorAll(".metric-fill");
           bars.forEach((bar, index) => {
             const width = bar.style.width;
