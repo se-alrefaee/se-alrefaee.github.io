@@ -804,6 +804,11 @@ body {
   stroke: currentColor;
   color: var(--accent);
   flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover .project-icon svg {
+  color: rgba(0, 255, 136, 0.6);
 }
 
 .project-status {
@@ -852,12 +857,14 @@ body {
   border-radius: 6px;
   font-size: 0.85rem;
   border: 1px solid var(--border);
+  text-align: justify;
 }
 
 .project-card p {
   line-height: 1.7;
   color: var(--muted);
   margin-top: 1rem;
+  text-align: justify;
 }
 
 .project-metrics {
@@ -964,6 +971,7 @@ body {
   line-height: 1.7;
   color: var(--muted);
   margin-top: 0.5rem;
+  text-align: justify;
 }
 
 .experience-highlights {
@@ -1073,59 +1081,6 @@ body {
   border-top: 1px solid var(--border);
 }
 
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.footer-text h3 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.footer-text p {
-  color: var(--muted);
-}
-
-.footer-links {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.footer-link {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.8rem 1.5rem;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  color: var(--text);
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.footer-link svg {
-  width: 20px;
-  height: 20px;
-  stroke: currentColor;
-  flex-shrink: 0;
-}
-
-.footer-link:hover {
-  border-color: var(--accent);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0, 255, 136, 0.2);
-}
-
 .footer-bottom {
   text-align: center;
   color: var(--muted);
@@ -1143,7 +1098,6 @@ body {
   left: 0;
   transform: translate(-50%, -50%);
   z-index: 9999;
-  transition: transform 0.2s ease;
 }
 
 .cursor-ring {
@@ -1247,24 +1201,6 @@ body {
   }
 
   .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .footer-links {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .footer-link {
-    justify-content: center;
-  }
-
-  .skills-grid {
     grid-template-columns: 1fr;
   }
 
