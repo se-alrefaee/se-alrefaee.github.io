@@ -58,21 +58,21 @@ if (metricsCard) {
           const bars = entry.target.querySelectorAll(".metric-fill");
           bars.forEach((bar, index) => {
             setTimeout(() => {
-              bar.style.width = bar.style.width || "0%";
+              const width = bar.style.width;
+              bar.style.width = "0%";
+              setTimeout(() => {
+                bar.style.width = width;
+              }, 100);
             }, index * 100);
           });
 
           const chartBars = entry.target.querySelectorAll(".bar");
           chartBars.forEach((bar, index) => {
+            const originalHeight = bar.style.height;
+            bar.style.height = "0%";
             setTimeout(() => {
-              bar.style.opacity = "0";
-              bar.style.transform = "scaleY(0)";
-              setTimeout(() => {
-                bar.style.transition = "all 0.6s ease";
-                bar.style.opacity = "0.8";
-                bar.style.transform = "scaleY(1)";
-                bar.style.transformOrigin = "bottom";
-              }, 50);
+              bar.style.transition = "height 0.6s ease";
+              bar.style.height = originalHeight;
             }, index * 100);
           });
 
@@ -182,26 +182,29 @@ timelineItems.forEach((item) => {
   timelineObserver.observe(item);
 });
 
-// Parallax effect for hero section
-let ticking = false;
+// Parallax effect for hero section (disabled on mobile)
+const isMobile = window.innerWidth <= 768;
 
-window.addEventListener("scroll", () => {
-  if (!ticking) {
-    window.requestAnimationFrame(() => {
-      const scrolled = window.scrollY;
-      const heroVisual = document.querySelector(".hero-visual");
+if (!isMobile) {
+  let ticking = false;
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const scrolled = window.scrollY;
+        const heroVisual = document.querySelector(".hero-visual");
 
-      if (heroVisual && scrolled < window.innerHeight) {
-        heroVisual.style.transform = `translateY(${scrolled * 0.3}px)`;
-        heroVisual.style.opacity = `${1 - scrolled / window.innerHeight}`;
-      }
+        if (heroVisual && scrolled < window.innerHeight) {
+          heroVisual.style.transform = `translateY(${scrolled * 0.3}px)`;
+          heroVisual.style.opacity = `${1 - scrolled / window.innerHeight}`;
+        }
 
-      ticking = false;
-    });
+        ticking = false;
+      });
 
-    ticking = true;
-  }
-});
+      ticking = true;
+    }
+  });
+}
 
 // Add ripple effect to clickable elements
 const addRipple = (e) => {
@@ -254,36 +257,6 @@ document.querySelectorAll(".nav-item, .contact-card").forEach((element) => {
   element.addEventListener("click", addRipple);
 });
 
-// Fade in sections on scroll
-const fadeElements = document.querySelectorAll(
-  ".section, .project-card, .experience-card"
-);
-
-const fadeObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = "0";
-        entry.target.style.transform = "translateY(30px)";
-
-        requestAnimationFrame(() => {
-          entry.target.style.transition =
-            "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)";
-          entry.target.style.opacity = "1";
-          entry.target.style.transform = "translateY(0)";
-        });
-
-        fadeObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.1 }
-);
-
-fadeElements.forEach((element) => {
-  fadeObserver.observe(element);
-});
-
 // Animate tech tags on hover
 document.querySelectorAll(".tech-tag, .tag").forEach((tag) => {
   tag.addEventListener("mouseenter", function () {
@@ -305,11 +278,6 @@ console.log(
   "%c🔐 Cybersecurity Specialist",
   "color: #6B7280; font-size: 14px;"
 );
-
-// Prevent animations on page load
-window.addEventListener("load", () => {
-  document.body.classList.add("loaded");
-});
 
 // Handle reduced motion preference
 if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
