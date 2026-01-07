@@ -26,6 +26,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
@@ -35,6 +36,13 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
+  font-size: 16px;
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 /* Sidebar Navigation */
@@ -89,11 +97,14 @@ body {
   border-radius: var(--radius-md);
   position: relative;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .nav-item svg {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+  flex-shrink: 0;
 }
 
 .nav-item:hover,
@@ -423,20 +434,23 @@ body {
 }
 
 .project-icon {
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
   background: var(--bg-secondary);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.5rem;
+  flex-shrink: 0;
 }
 
 .project-icon svg {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   color: var(--accent-purple);
+  stroke-width: 2;
+  flex-shrink: 0;
 }
 
 .project-title {
@@ -604,8 +618,8 @@ body {
 }
 
 .exp-icon {
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
   background: var(--bg-secondary);
   border-radius: var(--radius-md);
   display: flex;
@@ -615,9 +629,11 @@ body {
 }
 
 .exp-icon svg {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   color: var(--accent-purple);
+  stroke-width: 2;
+  flex-shrink: 0;
 }
 
 .exp-title {
@@ -657,10 +673,11 @@ body {
 }
 
 .highlight svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   color: var(--accent-green);
   flex-shrink: 0;
+  stroke-width: 2;
 }
 
 /* Contact Grid */
@@ -688,20 +705,23 @@ body {
 }
 
 .contact-icon {
-  width: 64px;
-  height: 64px;
+  width: 56px;
+  height: 56px;
   background: var(--bg-secondary);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 1.5rem;
+  flex-shrink: 0;
 }
 
 .contact-icon svg {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   color: var(--accent-purple);
+  stroke-width: 2;
+  flex-shrink: 0;
 }
 
 .contact-card h3 {
