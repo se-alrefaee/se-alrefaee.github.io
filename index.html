@@ -1,480 +1,561 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
-  <meta name="theme-color" content="#8B5CF6">
-  <title>Saif Eddin Alrefaee | Cybersecurity Student</title>
-  <meta name="description" content="Saif Eddin Alrefaee, BTS Cybersecurity student with hands-on experience in offensive security, networks, and automation.">
-
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saif Eddin Alrefaee | Red Team Operator & Penetration Tester</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- Animated Background -->
-  <div class="cyber-grid"></div>
-  <div class="gradient-orb orb-1"></div>
-  <div class="gradient-orb orb-2"></div>
-  <div class="gradient-orb orb-3"></div>
-  <div class="particles">
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-  </div>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
 
-  <!-- Sidebar Navigation -->
-  <nav class="sidebar">
-    <div class="sidebar-header">
-      <div class="logo">SA</div>
-      <div class="nav-items">
-        <a href="#hero" class="nav-item active" data-tooltip="Home">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-          </svg>
-        </a>
-        <a href="#labs" class="nav-item" data-tooltip="Labs">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-            <polyline points="14 2 14 8 20 8" />
-          </svg>
-        </a>
-        <a href="#competitions" class="nav-item" data-tooltip="Competitions">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="8" r="7" />
-            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
-          </svg>
-        </a>
-        <a href="#experience" class="nav-item" data-tooltip="Experience">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-          </svg>
-        </a>
-        <a href="#contact" class="nav-item" data-tooltip="Contact">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-            <polyline points="22,6 12,13 2,6" />
-          </svg>
-        </a>
-      </div>
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="matrix-rain" id="matrix"></div>
+        <div class="grid-background"></div>
+        <div class="floating-orbs">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+        </div>
     </div>
 
-    <div class="sidebar-footer">
-      <a href="resume.pdf" class="nav-item" data-tooltip="Resume" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-          <polyline points="7 10 12 15 17 10" />
-          <line x1="12" y1="15" x2="12" y2="3" />
-        </svg>
-      </a>
-    </div>
-  </nav>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">SAIF EDDIN</span>
+                <span class="logo-accent">ALREFAEE</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">HOME</a></li>
+                <li><a href="#about" class="nav-link">ABOUT</a></li>
+                <li><a href="#projects" class="nav-link">PROJECTS</a></li>
+                <li><a href="#skills" class="nav-link">SKILLS</a></li>
+                <li><a href="#contact" class="nav-link">CONTACT</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-  <!-- Main Content -->
-  <main class="main-content">
     <!-- Hero Section -->
-    <section id="hero" class="hero section reveal">
-      <div class="container">
-        <div class="hero-grid">
-          <div class="hero-left">
-            <div class="hero-badge">
-              <span class="status-dot"></span>
-              <span>Available for opportunities</span>
-            </div>
-
-            <div class="glitch-wrapper">
-              <h1 class="hero-name glitch" data-text="Saif Eddin Alrefaee">
-                Saif Eddin Alrefaee
-              </h1>
-            </div>
-
-            <p class="hero-role typing-effect">BTS Cybersecurity Student</p>
-
-            <p class="hero-desc">
-              Specializing in offensive security, network exploitation, and automation. Experienced in penetration testing, MITM attacks, and Linux system administration.
-            </p>
-
-            <div class="hero-links">
-              <a href="#labs" class="nav-link">
-                <span class="link-icon">▶</span>
-                <span>View Labs & Projects</span>
-              </a>
-              <a href="resume.pdf" class="nav-link resume-btn" target="_blank" rel="noopener noreferrer">
-                <span class="link-icon">📄</span>
-                <span>Download Resume</span>
-              </a>
-            </div>
-
-            <div class="hero-stats">
-              <div class="stat-item">
-                <div class="stat-value" data-suffix="+">5</div>
-                <div class="stat-label">Labs & Projects</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-value" data-suffix="+">3</div>
-                <div class="stat-label">Competitions</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-value" data-suffix="+">5</div>
-                <div class="stat-label">Years Studying</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero-right">
-            <!-- TryHackMe badge card -->
-            <div class="metrics-card tryhackme-card reveal">
-              <div class="card-header">
-                <h3>TryHackMe Profile</h3>
-                <div class="card-actions">
-                  <span class="dot"></span>
-                  <span class="dot"></span>
-                  <span class="dot"></span>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-left">
+                <div class="profile-image-container">
+                    <div class="image-frame">
+                        <img src="profile-photo.jpg" alt="Saif Eddin Alrefaee" class="profile-photo">
+                    </div>
+                    <div class="image-glow"></div>
                 </div>
-              </div>
-              <div class="card-body tryhackme-embed">
-                <iframe
-                  src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=5173026"
-                  style="border:none; width:100%; height:auto;"
-                  loading="lazy"
-                  title="TryHackMe Public Badge">
-                </iframe>
-              </div>
             </div>
-          </div>
+
+            <div class="hero-right">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="title-word">RED</span>
+                        <span class="title-word">TEAM</span>
+                        <span class="title-word">OPERATOR</span>
+                    </h1>
+                    <p class="hero-subtitle">Penetration Tester | Network Security Specialist | Python Developer</p>
+                    
+                    <p class="hero-description">
+                        Elite cybersecurity professional specializing in offensive security operations. 
+                        BTS Cybersecurity student with advanced hands-on penetration testing expertise. 
+                        Master of exploitation, OSINT, and social engineering through AI-driven automation.
+                    </p>
+
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Active Projects</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Success Rate</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-primary">
+                            <span>HIRE ME</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="resume.pdf" class="btn btn-secondary" download>
+                            <i class="fas fa-download"></i>
+                            <span>RESUME</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- Terminal Box -->
-        <div class="terminal-box reveal">
-          <div class="terminal-header">
-            <span class="terminal-dot red"></span>
-            <span class="terminal-dot yellow"></span>
-            <span class="terminal-dot green"></span>
-            <span class="terminal-title">saif@portfolio:~</span>
-          </div>
-          <div class="terminal-body">
-            <div class="terminal-line">
-              <span class="prompt">$</span>
-              <span class="command">whoami</span>
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
             </div>
-            <div class="terminal-line">
-              <span class="output">Cybersecurity student focused on offensive security and automation.</span>
+            <div class="arrow">
+                <span></span>
+                <span></span>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
-    <!-- Labs Section -->
-    <section id="labs" class="section reveal">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Cybersecurity Labs &amp; Projects</h2>
-          <p class="section-subtitle">Hands-on security research and development</p>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-highlight">ABOUT</span> ME
+            </h2>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Strategic Operator. Precision Executer. Security Innovator.</h3>
+                    
+                    <p>
+                        I am an INTJ—strategic, analytical, and obsessively focused on excellence. 
+                        My confidence isn't arrogance; it's the result of relentless execution and 
+                        proven results. Every attack I've conducted has succeeded. Every vulnerability 
+                        I've found has been documented. Every defense I've bypassed has been exploited.
+                    </p>
+
+                    <p>
+                        Currently pursuing a BTS in Cybersecurity while developing cutting-edge 
+                        red team tools. I specialize in offensive security operations: penetration 
+                        testing, social engineering, network attacks, and exploit development. 
+                        My AI-driven spear phishing generator represents the future of targeted attacks.
+                    </p>
+
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Offensive Security Specialist</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-code"></i>
+                            <span>Python Automation Expert</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-network-wired"></i>
+                            <span>Network Attack Operator</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-brain"></i>
+                            <span>OSINT Intelligence Gatherer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-cards">
+                    <div class="about-card cert-card">
+                        <div class="card-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h4>CERTIFICATIONS</h4>
+                        <p>Microsoft Office Specialist (Word Expert, PowerPoint Associate) | BTS Cybersecurity | OSCP+ Prep</p>
+                    </div>
+
+                    <div class="about-card exp-card">
+                        <div class="card-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h4>EXPERIENCE</h4>
+                        <p>Network Installation | Maintenance Operations | Technical Programming | Lab Operations</p>
+                    </div>
+
+                    <div class="about-card lang-card">
+                        <div class="card-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h4>LANGUAGES</h4>
+                        <p>English (B2) | French (B2) | Arabic (Native) | Luxembourgish (A2)</p>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="projects-grid">
-          <!-- Project 1: AI-Assisted Spear-Phishing Generator -->
-          <div class="project-card featured reveal">
-            <div class="card-glow"></div>
-            <div class="project-header">
-              <div class="project-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                </svg>
-              </div>
-              <div class="project-status">
-                <span class="status-badge-sm ongoing">Ongoing</span>
-              </div>
-            </div>
-            <h3 class="project-title">AI-Assisted Spear-Phishing Generator</h3>
-            <p class="project-description">
-              Advanced project simulating targeted spear-phishing campaigns using AI-generated payloads. Focused on Python automation, prompt engineering, and safe red-team style scenarios.
-            </p>
-            <div class="tech-stack">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">AI</span>
-              <span class="tech-tag">Automation</span>
-            </div>
-            <div class="project-metrics">
-              <div class="mini-metric">
-                <span class="mini-value">95</span>
-                <span class="mini-label">Success</span>
-              </div>
-              <div class="mini-metric">
-                <span class="mini-value">AI</span>
-                <span class="mini-label">Powered</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Lab 2: Ettercap MITM Lab -->
-          <div class="project-card reveal">
-            <div class="card-glow"></div>
-            <div class="project-header">
-              <div class="project-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                </svg>
-              </div>
-              <div class="project-status">
-                <span class="status-badge-sm complete">Completed</span>
-              </div>
-            </div>
-            <h3 class="project-title">Ettercap MITM Lab</h3>
-            <p class="project-description">
-              Man-in-the-middle attack lab using Kali Linux and Ettercap. Focus on ARP poisoning, traffic interception, and analysis of captured credentials in a controlled environment.
-            </p>
-            <div class="tech-stack">
-              <span class="tech-tag">Kali Linux</span>
-              <span class="tech-tag">Ettercap</span>
-              <span class="tech-tag">MITM</span>
-            </div>
-          </div>
-
-          <!-- Lab 3: Metasploit Attack Lab -->
-          <div class="project-card reveal">
-            <div class="card-glow"></div>
-            <div class="project-header">
-              <div class="project-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                </svg>
-              </div>
-              <div class="project-status">
-                <span class="status-badge-sm complete">Completed</span>
-              </div>
-            </div>
-            <h3 class="project-title">Metasploit Attack Lab</h3>
-            <p class="project-description">
-              Exploitation of vulnerable services in a controlled lab environment using Kali Linux. Focus on payload delivery, privilege escalation, and post-exploitation analysis.
-            </p>
-            <div class="tech-stack">
-              <span class="tech-tag">Kali Linux</span>
-              <span class="tech-tag">Metasploit</span>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- Competitions Section -->
-    <section id="competitions" class="section reveal">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">International Competitions</h2>
-          <p class="section-subtitle">Global achievements and recognition</p>
+    <!-- Featured Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-highlight">FEATURED</span> PROJECTS
+            </h2>
+
+            <div class="projects-grid">
+                <!-- Project 1: AI Spear Phishing -->
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="project-spear-phishing.jpg" alt="AI Spear Phishing Generator" class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-badge">FEATURED</div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Python • AI • Social Engineering</span>
+                        <h3 class="project-title">AI Spear Phishing Generator</h3>
+                        <p class="project-description">
+                            Targeted email generation using AI and LinkedIn OSINT. Demonstrates advanced social engineering capabilities.
+                        </p>
+                        <div class="project-footer">
+                            <a href="project-spear-phishing.html" class="project-link">
+                                VIEW PROJECT
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: MITM Attack -->
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="project-mitm.jpg" alt="MITM Attack Lab" class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-badge">NETWORK</div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Kali Linux • Ettercap • Network</span>
+                        <h3 class="project-title">Man-in-the-Middle Attack Lab</h3>
+                        <p class="project-description">
+                            ARP poisoning and network interception using Ettercap on Linux. Full traffic manipulation demonstration.
+                        </p>
+                        <div class="project-footer">
+                            <a href="project-mitm.html" class="project-link">
+                                VIEW PROJECT
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Metasploit Lab -->
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="project-metasploit.jpg" alt="Metasploit Lab" class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-badge">EXPLOITATION</div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Metasploit • Exploitation • Post-Exploit</span>
+                        <h3 class="project-title">Metasploit Payload & Post-Exploitation</h3>
+                        <p class="project-description">
+                            Malicious payload generation and device compromise through Metasploit. Complete attack chain documented.
+                        </p>
+                        <div class="project-footer">
+                            <a href="project-metasploit.html" class="project-link">
+                                VIEW PROJECT
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Encryption Lab -->
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="project-encryption.jpg" alt="Encryption Lab" class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-badge">CRYPTO</div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Python • Cryptography • Security</span>
+                        <h3 class="project-title">Encryption Analysis Lab</h3>
+                        <p class="project-description">
+                            Comprehensive cryptography study: symmetric (AES), asymmetric (RSA), and hybrid encryption implementation.
+                        </p>
+                        <div class="project-footer">
+                            <a href="project-encryption.html" class="project-link">
+                                VIEW PROJECT
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Hashing Lab -->
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="project-hashing.jpg" alt="Hashing Lab" class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-badge">ANALYSIS</div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Python • Hashing • MD5 • SHA256</span>
+                        <h3 class="project-title">Hashing & Hash Analysis Lab</h3>
+                        <p class="project-description">
+                            Deep analysis of cryptographic hash functions including MD5 vulnerabilities, SHA256 strength, and collision analysis.
+                        </p>
+                        <div class="project-footer">
+                            <a href="project-hashing.html" class="project-link">
+                                VIEW PROJECT
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="timeline">
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <span class="flag">🇩🇰</span>
-                <span class="date">April 2025</span>
-              </div>
-              <h3 class="timeline-title">EuroSkills Denmark</h3>
-              <p class="timeline-description">
-                Designed, programmed, and commissioned a Fanuc robotic cell. Delivered technical documentation and defended the solution before an international jury.
-              </p>
-              <div class="tags">
-                <span class="tag">Robotics</span>
-                <span class="tag">Design</span>
-                <span class="tag">Presentation</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <span class="flag">🇩🇪</span>
-                <span class="date">September 2025</span>
-              </div>
-              <h3 class="timeline-title">GermanySkills Germany</h3>
-              <p class="timeline-description">
-                Advanced automation and system integration challenges under competitive conditions.
-              </p>
-              <div class="tags">
-                <span class="tag">Automation</span>
-                <span class="tag">Integration</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <span class="flag">🇵🇹</span>
-                <span class="date">November 2024</span>
-              </div>
-              <h3 class="timeline-title">PortugalSkills Portugal</h3>
-              <p class="timeline-description">
-                Industrial automation, programming, and commissioning exercises.
-              </p>
-              <div class="tags">
-                <span class="tag">Industrial</span>
-                <span class="tag">Programming</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section reveal">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Professional Experience</h2>
-          <p class="section-subtitle">Real-world application of technical skills</p>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-highlight">TECHNICAL</span> ARSENAL
+            </h2>
+
+            <div class="skills-grid">
+                <!-- Offensive Security -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-crosshairs"></i>
+                        <h3>OFFENSIVE SECURITY</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span class="skill-badge">Penetration Testing</span>
+                        <span class="skill-badge">Social Engineering</span>
+                        <span class="skill-badge">Payload Generation</span>
+                        <span class="skill-badge">Post-Exploitation</span>
+                        <span class="skill-badge">MITM Attacks</span>
+                        <span class="skill-badge">Password Cracking</span>
+                        <span class="skill-badge">Lateral Movement</span>
+                        <span class="skill-badge">Privilege Escalation</span>
+                    </div>
+                </div>
+
+                <!-- Tools & Frameworks -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-tools"></i>
+                        <h3>TOOLS & FRAMEWORKS</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span class="skill-badge">Kali Linux</span>
+                        <span class="skill-badge">Metasploit</span>
+                        <span class="skill-badge">Burp Suite</span>
+                        <span class="skill-badge">Wireshark</span>
+                        <span class="skill-badge">Ettercap</span>
+                        <span class="skill-badge">Hashcat</span>
+                        <span class="skill-badge">John the Ripper</span>
+                        <span class="skill-badge">msfvenom</span>
+                        <span class="skill-badge">Nmap</span>
+                        <span class="skill-badge">SQLmap</span>
+                    </div>
+                </div>
+
+                <!-- Operating Systems -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-laptop"></i>
+                        <h3>OPERATING SYSTEMS</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span class="skill-badge">Kali Linux</span>
+                        <span class="skill-badge">Ubuntu</span>
+                        <span class="skill-badge">Windows 10/11</span>
+                        <span class="skill-badge">Windows Server</span>
+                        <span class="skill-badge">VirtualBox</span>
+                        <span class="skill-badge">Proxmox</span>
+                    </div>
+                </div>
+
+                <!-- Programming -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-code"></i>
+                        <h3>PROGRAMMING LANGUAGES</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">Bash/Shell</span>
+                        <span class="skill-badge">PowerShell</span>
+                        <span class="skill-badge">HTML/CSS</span>
+                        <span class="skill-badge">JavaScript</span>
+                    </div>
+                </div>
+
+                <!-- Cryptography -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-lock"></i>
+                        <h3>CRYPTOGRAPHY</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span class="skill-badge">Symmetric Encryption</span>
+                        <span class="skill-badge">Asymmetric Encryption</span>
+                        <span class="skill-badge">Hybrid Encryption</span>
+                        <span class="skill-badge">Hash Functions</span>
+                        <span class="skill-badge">RSA/AES</span>
+                        <span class="skill-badge">Digital Signatures</span>
+                    </div>
+                </div>
+
+                <!-- Professional -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>PROFESSIONAL</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span class="skill-badge">Microsoft Office 365</span>
+                        <span class="skill-badge">Technical Documentation</span>
+                        <span class="skill-badge">Lab Setup & Management</span>
+                        <span class="skill-badge">Report Generation</span>
+                        <span class="skill-badge">Network Administration</span>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="timeline">
-          <!-- LA PROVENÇALE -->
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <span class="company">LA PROVENÇALE</span>
-                <span class="timeline-date">20.01.2025 – 14.02.2025</span>
-              </div>
-              <h3 class="timeline-title">Maintenance Intern</h3>
-              <p class="timeline-description">
-                Assisted a team of technicians in preventive and corrective maintenance on critical production equipment.
-              </p>
-              <div class="experience-highlights">
-                <div class="highlight-item">
-                  <span class="highlight-icon">✔</span>
-                  <span>Assisted a team of 3 technicians in maintenance of critical equipment.</span>
-                </div>
-                <div class="highlight-item">
-                  <span class="highlight-icon">✔</span>
-                  <span>Inspected up to 5 automated packaging lines per day to anticipate breakdowns.</span>
-                </div>
-              </div>
-            </div>
-          </div>
+    <!-- Certifications & Education Section -->
+    <section class="certifications">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-highlight">CREDENTIALS</span> & EDUCATION
+            </h2>
 
-          <!-- AZTEK -->
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <span class="company">AZTEK</span>
-                <span class="timeline-date">17.07.2023 – 11.08.2023</span>
-              </div>
-              <h3 class="timeline-title">Cashless Systems Programming Intern</h3>
-              <p class="timeline-description">
-                Contributed to large-scale deployment of cashless access and payment systems.
-              </p>
-              <div class="experience-highlights">
-                <div class="highlight-item">
-                  <span class="highlight-icon">✔</span>
-                  <span>Programmed and assembled more than 1,000 cashless reader devices.</span>
+            <div class="credentials-grid">
+                <div class="credential-card education">
+                    <div class="credential-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>BTS CYBERSECURITY</h3>
+                    <p class="credential-institution">Lycée Guillaume Kroll, Luxembourg</p>
+                    <p class="credential-period">09.2025 – 07.2027 (Current)</p>
+                    <p class="credential-description">Advanced penetration testing, network security, cryptography, and ethical hacking</p>
                 </div>
-                <div class="highlight-item">
-                  <span class="highlight-icon">✔</span>
-                  <span>Programmed over 2,000 tags for cashless systems.</span>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <!-- Luschuster -->
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <span class="company">Luschuster</span>
-                <span class="timeline-date">2024 – 2025</span>
-              </div>
-              <h3 class="timeline-title">Network Installation Intern</h3>
-              <p class="timeline-description">
-                Migrated customers from copper to fiber optic connections and resolved on-site network incidents with a 100% first-visit success rate.
-              </p>
-              <div class="experience-highlights">
-                <div class="highlight-item">
-                  <span class="highlight-icon">✔</span>
-                  <span>100% first-visit success on incident resolution.</span>
+                <div class="credential-card education">
+                    <div class="credential-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>SMART TECHNOLOGIES DIPLOMA</h3>
+                    <p class="credential-institution">Lycée Guillaume Kroll, Luxembourg</p>
+                    <p class="credential-period">09.2021 – 07.2025 (Completed)</p>
+                    <p class="credential-description">Industrial automation, network infrastructure, technical programming</p>
                 </div>
-                <div class="highlight-item">
-                  <span class="highlight-icon">✔</span>
-                  <span>Hands-on work with fiber optic infrastructure.</span>
+
+                <div class="credential-card certification">
+                    <div class="credential-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>MICROSOFT OFFICE SPECIALIST</h3>
+                    <p class="credential-institution">Microsoft 365 Apps</p>
+                    <p class="credential-skills">Word Expert • PowerPoint Associate • Word Associate</p>
+                    <p class="credential-description">Advanced documentation and presentation capabilities</p>
                 </div>
-              </div>
+
+                <div class="credential-card certification">
+                    <div class="credential-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>OSCP+ IN PROGRESS</h3>
+                    <p class="credential-institution">Offensive Security</p>
+                    <p class="credential-period">2026 – 2027</p>
+                    <p class="credential-description">Advanced penetration testing and exploitation techniques</p>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section reveal">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Let's Connect</h2>
-          <p class="section-subtitle">Open to internships, collaborations, and challenges</p>
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-highlight">LET'S</span> CONNECT
+            </h2>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Seeking New Opportunities</h3>
+                    <p>Available for internships, penetration testing contracts, and security roles.</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>EMAIL</h4>
+                                <a href="mailto:s.e.alrefaee@gmail.com">s.e.alrefaee@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>PHONE</h4>
+                                <a href="tel:+352691190825">+352 691 190 825</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>LOCATION</h4>
+                                <p>Esch-sur-Alzette, Luxembourg</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://linkedin.com" class="social-link" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com" class="social-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://twitter.com" class="social-link" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="YOUR NAME" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="YOUR EMAIL" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="SUBJECT" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="YOUR MESSAGE" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <span>SEND MESSAGE</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
         </div>
-
-        <div class="contact-grid">
-          <a href="mailto:s.e.alrefaee@gmail.com" class="contact-card reveal">
-            <div class="contact-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                <polyline points="22,6 12,13 2,6" />
-              </svg>
-            </div>
-            <h3>Email</h3>
-            <p>s.e.alrefaee@gmail.com</p>
-          </a>
-
-          <a href="https://github.com/se-alrefaee" class="contact-card reveal" target="_blank" rel="noopener noreferrer">
-            <div class="contact-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-              </svg>
-            </div>
-            <h3>GitHub</h3>
-            <p>se-alrefaee</p>
-          </a>
-
-          <a href="https://www.linkedin.com/in/saif-eddin-a-97b234336/" class="contact-card reveal" target="_blank" rel="noopener noreferrer">
-            <div class="contact-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                <rect x="2" y="9" width="4" height="12" />
-                <circle cx="4" cy="4" r="2" />
-              </svg>
-            </div>
-            <h3>LinkedIn</h3>
-            <p>Saif Eddin</p>
-          </a>
-        </div>
-      </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer reveal">
-      <div class="container">
-        <div class="footer-bottom">
-          <p>© 2026 Saif Eddin Alrefaee. All rights reserved.</p>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Saif Eddin Alrefaee. Red Team Operator. All rights reserved.</p>
+            <p class="footer-tagline">Exploit. Execute. Dominate.</p>
         </div>
-      </div>
     </footer>
-  </main>
 
-  <div class="cursor-progress">
-    <div class="cursor-ring"></div>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
-
