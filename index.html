@@ -3,122 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SE Al-Refaee | Red Team Cybersecurity Specialist</title>
+    <title>RED TEAM - Offensive Security Specialist</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-ring"></div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
-                <i class="fas fa-skull-crossbones"></i>
-                <span>RED TEAM</span>
-            </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <div class="nav-brand">⬤ RED TEAM</div>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="container hero-container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        <span class="word">OFFENSIVE</span>
-                        <span class="word">SECURITY</span>
-                        <span class="word">SPECIALIST</span>
-                    </h1>
-                    <p class="hero-subtitle">Red Team Operator | Penetration Tester | Ethical Hacker</p>
-                    <p class="hero-description">
-                        Specialized in advanced penetration testing, red team operations, and ethical hacking. 
-                        BTS Cybersecurity student with hands-on experience in MITM attacks, network exploitation, and security labs.
-                    </p>
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <span class="stat-number">5+</span>
-                            <span class="stat-label">Projects</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-label">Committed</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">3+</span>
-                            <span class="stat-label">Years Exp</span>
-                        </div>
-                    </div>
-                    <div class="hero-buttons">
-                        <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
-                            <i class="fas fa-envelope"></i> Hire Me
-                        </button>
-                        <a href="resume.pdf" class="btn btn-secondary" download>
-                            <i class="fas fa-download"></i> Resume
-                        </a>
-                    </div>
+        <div class="hero-grid"></div>
+        <div class="hero-background">
+            <div class="floating-orb orb-1"></div>
+            <div class="floating-orb orb-2"></div>
+            <div class="floating-orb orb-3"></div>
+        </div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">OFFENSIVE SECURITY<br><span class="highlight">SPECIALIST</span></h1>
+            <p class="hero-subtitle">Red Team Operator | Penetration Tester | Ethical Hacker</p>
+            <p class="hero-description">Specialized in advanced penetration testing, red team operations, and ethical hacking. BTS Cybersecurity student with hands-on experience in MITM attacks, network exploitation, and security labs.</p>
+            
+            <div class="hero-stats">
+                <div class="stat-box">
+                    <span class="stat-number">5+</span>
+                    <span class="stat-label">PROJECTS</span>
                 </div>
-                <div class="hero-image">
-                    <div class="image-wrapper">
-                        <img src="profile-photo.jpg" alt="SE Al-Refaee" class="profile-photo">
-                        <div class="image-glow"></div>
-                    </div>
+                <div class="stat-box">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">COMMITTED</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">3+</span>
+                    <span class="stat-label">YEARS EXP</span>
                 </div>
             </div>
-            <div class="scroll-indicator">
-                <i class="fas fa-chevron-down"></i>
+
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                    ✉ Hire Me
+                </button>
+                <button class="btn btn-secondary" onclick="window.open('resume.pdf', '_blank')">
+                    ⬇ Resume
+                </button>
+            </div>
+        </div>
+
+        <!-- Profile Picture Section -->
+        <div class="profile-section">
+            <div class="profile-picture-wrapper">
+                <img src="profile-photo.jpg" alt="Red Team Operator" class="profile-picture">
+                <div class="profile-glow"></div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-grid">
-                <div class="about-content">
-                    <p class="about-text">
-                        I'm a cybersecurity specialist focused on offensive security and red team operations. 
-                        Currently pursuing BTS in Cybersecurity in Luxembourg with hands-on experience in penetration testing, 
-                        ethical hacking, and security research.
-                    </p>
-                    <p class="about-text">
-                        My expertise includes MITM attacks, network exploitation, password cracking, malware analysis, 
-                        and advanced penetration testing techniques. I'm passionate about continuous learning and staying 
-                        ahead of the evolving threat landscape.
-                    </p>
-                    <p class="about-text">
-                        As an INTJ personality, I approach security challenges with strategic thinking and logical analysis, 
-                        always looking for edge cases and unconventional attack vectors.
-                    </p>
+        <div class="section-header">
+            <h2>ABOUT ME</h2>
+            <div class="header-line"></div>
+        </div>
+
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Who I Am</h3>
+                <p>I'm a dedicated cybersecurity professional focused on offensive security operations. My expertise spans across penetration testing, network reconnaissance, exploitation techniques, and security vulnerability assessment.</p>
+                
+                <h3>My Focus</h3>
+                <ul class="skill-list">
+                    <li>🎯 Advanced Penetration Testing</li>
+                    <li>🔓 Network Exploitation & MITM Attacks</li>
+                    <li>🔑 Password Cracking & Brute Force</li>
+                    <li>📊 Network Reconnaissance</li>
+                    <li>🛡️ Vulnerability Assessment</li>
+                    <li>💻 Linux & Windows Security</li>
+                </ul>
+            </div>
+
+            <div class="about-specs">
+                <div class="spec-box">
+                    <h4>SPECIALIZATION</h4>
+                    <p>Red Team Operations & Penetration Testing</p>
                 </div>
-                <div class="about-info">
-                    <div class="info-item">
-                        <span class="info-label">Location</span>
-                        <span class="info-value">Esch-sur-Alzette, Luxembourg</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Email</span>
-                        <span class="info-value">s.e.alrefaee@gmail.com</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Phone</span>
-                        <span class="info-value">+352 691 190 825</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Education</span>
-                        <span class="info-value">BTS Cybersecurity</span>
-                    </div>
+                <div class="spec-box">
+                    <h4>EDUCATION</h4>
+                    <p>BTS Cybersecurity</p>
+                </div>
+                <div class="spec-box">
+                    <h4>LOCATION</h4>
+                    <p>Luxembourg 🇱🇺</p>
+                </div>
+                <div class="spec-box">
+                    <h4>FOCUS</h4>
+                    <p>Ethical Hacking & Red Teaming</p>
                 </div>
             </div>
         </div>
@@ -126,300 +124,209 @@
 
     <!-- Projects Section -->
     <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <!-- Spear Phishing Project -->
-                <article class="project-card" data-project="spear-phishing">
-                    <div class="project-image">
-                        <img src="project-spear-phishing.jpg" alt="AI Spear Phishing Generator">
-                        <div class="image-overlay"></div>
-                        <span class="project-tag">Red Team</span>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">AI Spear Phishing Generator</h3>
-                        <p class="project-description">
-                            Advanced phishing campaign toolkit using AI to generate convincing social engineering attacks.
-                        </p>
-                        <a href="project-spear-phishing.html" class="project-link">
-                            View Project <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
+        <div class="section-header">
+            <h2>PROJECTS & LABS</h2>
+            <div class="header-line"></div>
+        </div>
 
-                <!-- MITM Project -->
-                <article class="project-card" data-project="mitm">
-                    <div class="project-image">
-                        <img src="project-mitm.jpg" alt="MITM Attack Lab">
-                        <div class="image-overlay"></div>
-                        <span class="project-tag">Network</span>
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-image-wrapper">
+                    <img src="project-mitm.jpg" alt="MITM Attack Lab" class="project-image">
+                    <div class="project-overlay"></div>
+                </div>
+                <div class="project-info">
+                    <h3>MITM Attack Lab</h3>
+                    <p>Advanced man-in-the-middle attack using Ettercap on secured networks</p>
+                    <div class="project-tags">
+                        <span class="tag">Ettercap</span>
+                        <span class="tag">Network</span>
+                        <span class="tag">Interception</span>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title">MITM Attack Lab</h3>
-                        <p class="project-description">
-                            Man-in-the-Middle attack demonstrations using Ettercap and ARP spoofing techniques.
-                        </p>
-                        <a href="project-mitm.html" class="project-link">
-                            View Project <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
+                    <a href="project-mitm.html" class="project-link">View Details →</a>
+                </div>
+            </div>
 
-                <!-- Metasploit Project -->
-                <article class="project-card" data-project="metasploit">
-                    <div class="project-image">
-                        <img src="project-metasploit.jpg" alt="Metasploit Framework Lab">
-                        <div class="image-overlay"></div>
-                        <span class="project-tag">Exploitation</span>
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-image-wrapper">
+                    <img src="project-spear-phishing.jpg" alt="Spear Phishing Campaign" class="project-image">
+                    <div class="project-overlay"></div>
+                </div>
+                <div class="project-info">
+                    <h3>Spear Phishing Campaign</h3>
+                    <p>Targeted social engineering assessment and email campaign analysis</p>
+                    <div class="project-tags">
+                        <span class="tag">Social Eng</span>
+                        <span class="tag">Email</span>
+                        <span class="tag">Awareness</span>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Metasploit Framework Lab</h3>
-                        <p class="project-description">
-                            Comprehensive penetration testing using Metasploit with payload generation and exploitation.
-                        </p>
-                        <a href="project-metasploit.html" class="project-link">
-                            View Project <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
+                    <a href="project-spear-phishing.html" class="project-link">View Details →</a>
+                </div>
+            </div>
 
-                <!-- Encryption Project -->
-                <article class="project-card" data-project="encryption">
-                    <div class="project-image">
-                        <img src="project-encryption.jpg" alt="Encryption Lab">
-                        <div class="image-overlay"></div>
-                        <span class="project-tag">Cryptography</span>
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-image-wrapper">
+                    <img src="project-metasploit.jpg" alt="Metasploit Exploitation" class="project-image">
+                    <div class="project-overlay"></div>
+                </div>
+                <div class="project-info">
+                    <h3>Metasploit Exploitation</h3>
+                    <p>Advanced exploitation framework usage and payload development</p>
+                    <div class="project-tags">
+                        <span class="tag">Metasploit</span>
+                        <span class="tag">Exploits</span>
+                        <span class="tag">Payload</span>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Encryption & Decryption Lab</h3>
-                        <p class="project-description">
-                            Advanced cryptography concepts including symmetric and asymmetric encryption techniques.
-                        </p>
-                        <a href="project-encryption.html" class="project-link">
-                            View Project <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
+                    <a href="project-metasploit.html" class="project-link">View Details →</a>
+                </div>
+            </div>
 
-                <!-- Hashing Project -->
-                <article class="project-card" data-project="hashing">
-                    <div class="project-image">
-                        <img src="project-hashing.jpg" alt="Hashing Lab">
-                        <div class="image-overlay"></div>
-                        <span class="project-tag">Security</span>
+            <!-- Project 4 -->
+            <div class="project-card">
+                <div class="project-image-wrapper">
+                    <img src="project-encryption.jpg" alt="Encryption & Cryptography" class="project-image">
+                    <div class="project-overlay"></div>
+                </div>
+                <div class="project-info">
+                    <h3>Encryption & Cryptography</h3>
+                    <p>AES, RSA, and advanced cryptographic algorithms implementation</p>
+                    <div class="project-tags">
+                        <span class="tag">Crypto</span>
+                        <span class="tag">AES</span>
+                        <span class="tag">RSA</span>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title">File Hashing Lab</h3>
-                        <p class="project-description">
-                            Hash verification, comparison, and integrity checking using various hashing algorithms.
-                        </p>
-                        <a href="project-hashing.html" class="project-link">
-                            View Project <i class="fas fa-arrow-right"></i>
-                        </a>
+                    <a href="project-encryption.html" class="project-link">View Details →</a>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-card">
+                <div class="project-image-wrapper">
+                    <img src="project-hashing.jpg" alt="File Hashing & Integrity" class="project-image">
+                    <div class="project-overlay"></div>
+                </div>
+                <div class="project-info">
+                    <h3>File Hashing & Integrity</h3>
+                    <p>MD5, SHA-256, and forensic file integrity verification techniques</p>
+                    <div class="project-tags">
+                        <span class="tag">Hashing</span>
+                        <span class="tag">Forensics</span>
+                        <span class="tag">Integrity</span>
                     </div>
-                </article>
+                    <a href="project-hashing.html" class="project-link">View Details →</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
     <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">Technical Arsenal</h2>
-            <div class="skills-grid">
-                <!-- Penetration Testing -->
-                <div class="skill-category">
-                    <h3 class="skill-title">
-                        <i class="fas fa-crosshairs"></i> Penetration Testing
-                    </h3>
-                    <div class="skill-badges">
-                        <span class="badge">Metasploit</span>
-                        <span class="badge">Burp Suite</span>
-                        <span class="badge">Nmap</span>
-                        <span class="badge">Wireshark</span>
-                    </div>
-                </div>
-
-                <!-- Network Security -->
-                <div class="skill-category">
-                    <h3 class="skill-title">
-                        <i class="fas fa-network-wired"></i> Network Security
-                    </h3>
-                    <div class="skill-badges">
-                        <span class="badge">MITM Attacks</span>
-                        <span class="badge">ARP Spoofing</span>
-                        <span class="badge">Packet Analysis</span>
-                        <span class="badge">Ettercap</span>
-                    </div>
-                </div>
-
-                <!-- Operating Systems -->
-                <div class="skill-category">
-                    <h3 class="skill-title">
-                        <i class="fas fa-laptop"></i> Operating Systems
-                    </h3>
-                    <div class="skill-badges">
-                        <span class="badge">Kali Linux</span>
-                        <span class="badge">Ubuntu</span>
-                        <span class="badge">Windows Server</span>
-                        <span class="badge">Proxmox</span>
-                    </div>
-                </div>
-
-                <!-- Cryptography -->
-                <div class="skill-category">
-                    <h3 class="skill-title">
-                        <i class="fas fa-lock"></i> Cryptography
-                    </h3>
-                    <div class="skill-badges">
-                        <span class="badge">Hashing</span>
-                        <span class="badge">Encryption</span>
-                        <span class="badge">SSL/TLS</span>
-                        <span class="badge">PKI</span>
-                    </div>
-                </div>
-
-                <!-- Programming -->
-                <div class="skill-category">
-                    <h3 class="skill-title">
-                        <i class="fas fa-code"></i> Programming
-                    </h3>
-                    <div class="skill-badges">
-                        <span class="badge">Python</span>
-                        <span class="badge">PowerShell</span>
-                        <span class="badge">Bash</span>
-                        <span class="badge">JavaScript</span>
-                    </div>
-                </div>
-
-                <!-- Tools & Platforms -->
-                <div class="skill-category">
-                    <h3 class="skill-title">
-                        <i class="fas fa-tools"></i> Tools & Platforms
-                    </h3>
-                    <div class="skill-badges">
-                        <span class="badge">Virtual Box</span>
-                        <span class="badge">GitHub</span>
-                        <span class="badge">TryHackMe</span>
-                        <span class="badge">HackTheBox</span>
-                    </div>
-                </div>
-            </div>
+        <div class="section-header">
+            <h2>TECHNICAL ARSENAL</h2>
+            <div class="header-line"></div>
         </div>
-    </section>
 
-    <!-- Certifications Section -->
-    <section class="certifications">
-        <div class="container">
-            <h2 class="section-title">Credentials & Badges</h2>
-            <div class="certifications-grid">
-                <div class="cert-item">
-                    <div class="cert-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <h3>BTS Cybersecurity</h3>
-                    <p>In Progress - Luxembourg</p>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>TryHackMe Active</h3>
-                    <p>Continuous Learning</p>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <h3>OSCP+ Path</h3>
-                    <p>Certification Preparation</p>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4>🎯 OFFENSIVE TOOLS</h4>
+                <div class="skill-items">
+                    <span class="skill-badge">Kali Linux</span>
+                    <span class="skill-badge">Metasploit</span>
+                    <span class="skill-badge">Burp Suite</span>
+                    <span class="skill-badge">Wireshark</span>
+                    <span class="skill-badge">Nmap</span>
+                    <span class="skill-badge">Ettercap</span>
+                    <span class="skill-badge">John the Ripper</span>
+                    <span class="skill-badge">THC-Hydra</span>
                 </div>
             </div>
-            <div class="tryhackme-badge">
-                <p class="badge-label">TryHackMe Profile Badge:</p>
-                <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=5173026" style='border:none; width:100%; height:120px;'></iframe>
+
+            <div class="skill-category">
+                <h4>🔧 SYSTEMS & NETWORKS</h4>
+                <div class="skill-items">
+                    <span class="skill-badge">Linux Admin</span>
+                    <span class="skill-badge">Network Security</span>
+                    <span class="skill-badge">TCP/IP</span>
+                    <span class="skill-badge">VPN Security</span>
+                    <span class="skill-badge">Firewall Config</span>
+                    <span class="skill-badge">Proxmox</span>
+                    <span class="skill-badge">Virtual Box</span>
+                    <span class="skill-badge">Windows Server</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h4>💻 PROGRAMMING</h4>
+                <div class="skill-items">
+                    <span class="skill-badge">Python</span>
+                    <span class="skill-badge">Bash</span>
+                    <span class="skill-badge">PowerShell</span>
+                    <span class="skill-badge">JavaScript</span>
+                    <span class="skill-badge">HTML/CSS</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h4>🛡️ SECURITY DOMAINS</h4>
+                <div class="skill-items">
+                    <span class="skill-badge">Pen Testing</span>
+                    <span class="skill-badge">Red Teaming</span>
+                    <span class="skill-badge">MITM Attacks</span>
+                    <span class="skill-badge">Password Cracking</span>
+                    <span class="skill-badge">Exploit Dev</span>
+                    <span class="skill-badge">Cryptography</span>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Location</h4>
-                            <p>Esch-sur-Alzette, Luxembourg</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p><a href="mailto:s.e.alrefaee@gmail.com">s.e.alrefaee@gmail.com</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Phone</h4>
-                            <p><a href="tel:+352691190825">+352 691 190 825</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-globe"></i>
-                        <div>
-                            <h4>Connect</h4>
-                            <div class="social-links">
-                                <a href="https://www.linkedin.com/in/se-alrefaee/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                                <a href="https://github.com/se-alrefaee" target="_blank" rel="noopener noreferrer" title="GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+        <div class="section-header">
+            <h2>GET IN TOUCH</h2>
+            <div class="header-line"></div>
+        </div>
+
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h3>Let's Work Together</h3>
+                <p>Interested in penetration testing, red team operations, or security consulting? Reach out!</p>
+                
+                <div class="contact-links">
+                    <a href="https://www.linkedin.com/in/se-alrefaee/" target="_blank" class="social-link">
+                        <span>LinkedIn</span> →
+                    </a>
+                    <a href="https://github.com/se-alrefaee" target="_blank" class="social-link">
+                        <span>GitHub</span> →
+                    </a>
+                    <a href="mailto:your-email@example.com" class="social-link">
+                        <span>Email</span> →
+                    </a>
                 </div>
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Subject" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Your Message" rows="6" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-full">
-                        <i class="fas fa-paper-plane"></i> Send Message
-                    </button>
-                </form>
             </div>
+
+            <form class="contact-form" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required class="form-input">
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required class="form-input">
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Your Message" rows="5" required class="form-input"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
         </div>
     </section>
 
-    <!-- Background Animations -->
-    <div class="matrix-rain"></div>
-    <div class="grid-background"></div>
-    <div class="floating-orbs">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-    </div>
-
-    <!-- Cursor -->
-    <div class="cursor-dot"></div>
-    <div class="cursor-ring"></div>
-
-    <!-- Notification -->
-    <div id="notification" class="notification"></div>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Red Team Operator. All rights reserved. | Exploit • Execute • Dominate</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
