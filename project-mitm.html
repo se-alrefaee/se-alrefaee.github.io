@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MITM Attack Lab - Saif Eddin Al Refaee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="floating-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div></div>
+    <div class="matrix-rain"></div><div class="grid-background"></div><div class="cyber-lines"></div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"><i class="fas fa-terminal"></i><span>SE_ALREFAEE</span></div>
+            <div class="hamburger"><span></span><span></span><span></span></div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Portfolio</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" style="padding: 120px 0 60px;">
+        <div class="container">
+            <div class="hero-content" style="max-width: 900px;">
+                <h1 class="hero-title">Man-in-the-Middle Attack Lab</h1>
+                <div class="hero-subtitle">ARP Poisoning & Network Traffic Redirection</div>
+                <p class="hero-description">Hands-on network security lab demonstrating ARP poisoning techniques, traffic interception with Ettercap, and detection analysis using Wireshark in a controlled virtual environment.</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 80px 0; position: relative; z-index: 10;">
+        <div class="container">
+            <div style="background: var(--color-secondary); padding: var(--space-32); border-radius: var(--radius-lg); border: 1px solid var(--color-border); margin-bottom: var(--space-32); box-shadow: var(--shadow-sm);">
+                <h2 style="color: var(--color-primary); font-size: var(--font-size-2xl); margin-bottom: var(--space-20); text-transform: uppercase;">Project Summary</h2>
+                <p style="color: var(--color-text-secondary); font-size: var(--font-size-lg); line-height: var(--line-height-normal); margin-bottom: var(--space-16);">
+                    This comprehensive lab exercise demonstrates MITM attack techniques in a controlled, isolated virtual environment. Using Ettercap and Wireshark, I conducted hands-on experiments on ARP poisoning, network traffic redirection, and detection of malicious activity. The project emphasizes the critical role of network monitoring and encryption in preventing such attacks.
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-20);">
+                    <div style="background: var(--color-surface); padding: var(--space-16); border-radius: var(--radius-base); border-left: 3px solid var(--color-primary);">
+                        <div style="color: var(--color-primary); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); text-transform: uppercase; margin-bottom: var(--space-8);">Attack Type</div>
+                        <div style="color: var(--color-text);">ARP Spoofing & Interception</div>
+                    </div>
+                    <div style="background: var(--color-surface); padding: var(--space-16); border-radius: var(--radius-base); border-left: 3px solid var(--color-primary);">
+                        <div style="color: var(--color-primary); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); text-transform: uppercase; margin-bottom: var(--space-8);">Tools Used</div>
+                        <div style="color: var(--color-text);">Ettercap, Wireshark, Kali Linux</div>
+                    </div>
+                    <div style="background: var(--color-surface); padding: var(--space-16); border-radius: var(--radius-base); border-left: 3px solid var(--color-primary);">
+                        <div style="color: var(--color-primary); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); text-transform: uppercase; margin-bottom: var(--space-8);">Lab Environment</div>
+                        <div style="color: var(--color-text);">Virtual Isolated Network</div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 style="color: var(--color-text); font-size: var(--font-size-2xl); margin-bottom: var(--space-20); text-transform: uppercase; margin-top: var(--space-32);">Attack Methodology</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-24); margin-bottom: var(--space-32);">
+                <div style="background: var(--color-surface); padding: var(--space-24); border-radius: var(--radius-lg); border: 1px solid var(--color-card-border); box-shadow: var(--shadow-sm);">
+                    <div style="display: flex; align-items: center; gap: var(--space-12); margin-bottom: var(--space-16);">
+                        <div style="width: 40px; height: 40px; background: var(--color-primary); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: var(--color-btn-primary-text); font-weight: var(--font-weight-bold);">1</div>
+                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); text-transform: uppercase;">Network Setup</h3>
+                    </div>
+                    <p style="color: var(--color-text-secondary); font-size: var(--font-size-base);">Created isolated virtual network with multiple machines. Configured target hosts and monitoring stations for safe experimentation.</p>
+                </div>
+
+                <div style="background: var(--color-surface); padding: var(--space-24); border-radius: var(--radius-lg); border: 1px solid var(--color-card-border); box-shadow: var(--shadow-sm);">
+                    <div style="display: flex; align-items: center; gap: var(--space-12); margin-bottom: var(--space-16);">
+                        <div style="width: 40px; height: 40px; background: var(--color-primary); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: var(--color-btn-primary-text); font-weight: var(--font-weight-bold);">2</div>
+                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); text-transform: uppercase;">ARP Poisoning</h3>
+                    </div>
+                    <p style="color: var(--color-text-secondary); font-size: var(--font-size-base);">Used Ettercap to execute ARP spoofing. Crafted malicious ARP packets creating IP/MAC address conflicts to redirect traffic.</p>
+                </div>
+
+                <div style="background: var(--color-surface); padding: var(--space-24); border-radius: var(--radius-lg); border: 1px solid var(--color-card-border); box-shadow: var(--shadow-sm);">
+                    <div style="display: flex; align-items: center; gap: var(--space-12); margin-bottom: var(--space-16);">
+                        <div style="width: 40px; height: 40px; background: var(--color-primary); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: var(--color-btn-primary-text); font-weight: var(--font-weight-bold);">3</div>
+                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); text-transform: uppercase;">Traffic Interception</h3>
+                    </div>
+                    <p style="color: var(--color-text-secondary); font-size: var(--font-size-base);">Intercepted network traffic between compromised hosts. Observed unencrypted data streams and protocol behaviors in real-time.</p>
+                </div>
+
+                <div style="background: var(--color-surface); padding: var(--space-24); border-radius: var(--radius-lg); border: 1px solid var(--color-card-border); box-shadow: var(--shadow-sm);">
+                    <div style="display: flex; align-items: center; gap: var(--space-12); margin-bottom: var(--space-16);">
+                        <div style="width: 40px; height: 40px; background: var(--color-primary); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: var(--color-btn-primary-text); font-weight: var(--font-weight-bold);">4</div>
+                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); text-transform: uppercase;">Detection Analysis</h3>
+                    </div>
+                    <p style="color: var(--color-text-secondary); font-size: var(--font-size-base);">Used Wireshark to identify attack signatures. Analyzed duplicate IP warnings and unusual ARP patterns revealing malicious activity.</p>
+                </div>
+            </div>
+
+            <h2 style="color: var(--color-text); font-size: var(--font-size-2xl); margin-bottom: var(--space-20); text-transform: uppercase; margin-top: var(--space-32);">Key Learning Outcomes</h2>
+            
+            <div style="background: var(--color-secondary); padding: var(--space-32); border-radius: var(--radius-lg); border: 1px solid var(--color-border); margin-bottom: var(--space-32);">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-24);">
+                    <div>
+                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); margin-bottom: var(--space-12); text-transform: uppercase; display: flex; align-items: center; gap: var(--space-10);"><i class="fas fa-network-wired"></i> ARP Protocol Vulnerabilities</h3>
+                        <p style="color: var(--color-text-secondary); font-size: var(--font-size-base); line-height: var(--line-height-normal);">Deep understanding of Address Resolution Protocol weaknesses. Learned how stateless ARP design enables spoofing attacks.</p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); margin-bottom: var(--space-12); text-transform: uppercase; display: flex; align-items: center; gap: var(--space-10);"><i class="fas fa-shield"></i> Encryption Importance</h3>
+                        <p style="color: var(--color-text-secondary); font-size: var(--font-size-base); line-height: var(--line-height-normal);">Reinforced critical value of encryption for protecting data in transit. Unencrypted protocols completely exposed to interception.</p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); margin-bottom: var(--space-12); text-transform: uppercase; display: flex; align-items: center; gap: var(--space-10);"><i class="fas fa-eye"></i> Network Monitoring</h3>
+                        <p style="color: var(--color-text-secondary); font-size: var(--font-size-base); line-height: var(--line-height-normal);">Monitoring is the first line of defense. Learned to detect MITM signatures through packet analysis and anomaly detection.</p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); margin-bottom: var(--space-12); text-transform: uppercase; display: flex; align-items: center; gap: var(--space-10);"><i class="fas fa-tools"></i> Packet Analysis</h3>
+                        <p style="color: var(--color-text-secondary); font-size: var(--font-size-base); line-height: var(--line-height-normal);">Advanced Wireshark skills for analyzing network traffic. Identifying malicious patterns, protocol abnormalities, and forensic evidence.</p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); margin-bottom: var(--space-12); text-transform: uppercase; display: flex; align-items: center; gap: var(--space-10);"><i class="fas fa-code"></i> Offensive Techniques</h3>
+                        <p style="color: var(--color-text-secondary); font-size: var(--font-size-base); line-height: var(--line-height-normal);">Understanding attacker methods strengthens defense strategies. Practical knowledge of how to execute and detect such attacks.</p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); margin-bottom: var(--space-12); text-transform: uppercase; display: flex; align-items: center; gap: var(--space-10);"><i class="fas fa-balance-scale"></i> Ethical Practice</h3>
+                        <p style="color: var(--color-text-secondary); font-size: var(--font-size-base); line-height: var(--line-height-normal);">Conducted all experiments in isolated environments. Emphasized ethical hacking principles and responsible security research.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: var(--space-32); text-align: center;">
+                <a href="index.html#projects" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Back to Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
