@@ -1,8 +1,3 @@
-/* ==========================================
-   RED TEAM CYBERSECURITY PORTFOLIO
-   Complete Stylesheet with Perplexity Design System
-   ========================================== */
-
 :root {
     /* Using design system semantic colors */
     --primary-color: #2180A1;
@@ -1110,3 +1105,4 @@ textarea.form-control {
         padding: var(--space-12) 0;
     }
 }
+
