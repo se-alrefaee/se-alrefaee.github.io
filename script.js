@@ -1,42 +1,9 @@
-// ============ CUSTOM CURSOR ============
-document.addEventListener('mousemove', (e) => {
-    const cursor = document.querySelector('.cursor');
-    const cursorRing = document.querySelector('.cursor-ring');
-
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-
-    cursorRing.style.left = (e.clientX - 16) + 'px';
-    cursorRing.style.top = (e.clientY - 16) + 'px';
-});
-
-// Cursor interactions
-document.addEventListener('mousedown', () => {
-    document.querySelector('.cursor').classList.add('active');
-    document.querySelector('.cursor-ring').classList.add('active');
-});
-
-document.addEventListener('mouseup', () => {
-    document.querySelector('.cursor').classList.remove('active');
-    document.querySelector('.cursor-ring').classList.remove('active');
-});
-
-// Interactive elements cursor change
-const interactiveElements = document.querySelectorAll('button, a, .project-card, .skill-badge, input, textarea');
-interactiveElements.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-        document.querySelector('.cursor').classList.add('active');
-        document.querySelector('.cursor-ring').classList.add('active');
-    });
-    el.addEventListener('mouseleave', () => {
-        document.querySelector('.cursor').classList.remove('active');
-        document.querySelector('.cursor-ring').classList.remove('active');
-    });
-});
-
 // ============ NAVIGATION ============
 const navLinks = document.querySelectorAll('.nav-link');
+const navMenu = document.querySelector('.nav-menu');
+const hamburger = document.querySelector('.hamburger');
 
+// Smooth scroll navigation
 window.addEventListener('scroll', () => {
     let current = '';
 
@@ -45,7 +12,7 @@ window.addEventListener('scroll', () => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
 
-        if (pageYOffset >= sectionTop - 200) {
+        if (window.pageYOffset >= sectionTop - 200) {
             current = section.getAttribute('id');
         }
     });
@@ -58,18 +25,15 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Hamburger Menu
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-
+// Mobile menu toggle
 if (hamburger) {
     hamburger.addEventListener('click', () => {
-        navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        navMenu.classList.toggle('active');
     });
 
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            navMenu.style.display = 'none';
+            navMenu.classList.remove('active');
         });
     });
 }
@@ -88,7 +52,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ============ FORM VALIDATION ============
+// ============ FORM SUBMISSION ============
 function handleFormSubmit(event) {
     event.preventDefault();
 
@@ -107,7 +71,6 @@ function handleFormSubmit(event) {
         return;
     }
 
-    // Here you would send the form data to your backend
     showNotification('Message sent successfully! 🎯', 'success');
     form.reset();
 }
@@ -126,139 +89,91 @@ function showNotification(message, type) {
         position: fixed;
         top: 20px;
         right: 20px;
-        padding: 15px 25px;
-        background: ${type === 'success' ? 'rgba(0, 255, 0, 0.2)' : 'rgba(255, 0, 0, 0.2)'};
-        border: 2px solid ${type === 'success' ? '#00ff00' : '#FF0000'};
-        color: ${type === 'success' ? '#00ff00' : '#FF0000'};
-        border-radius: 3px;
-        font-family: 'Courier New', monospace;
-        font-weight: bold;
+        padding: 16px 24px;
+        background: ${type === 'success' ? '#f5f5f5' : '#f5f5f5'};
+        border-left: 4px solid ${type === 'success' ? '#00aa00' : '#dc143c'};
+        color: ${type === 'success' ? '#00aa00' : '#dc143c'};
+        border-radius: 4px;
+        font-weight: 500;
         z-index: 10000;
-        animation: slideIn 0.3s ease;
-        box-shadow: 0 0 20px ${type === 'success' ? 'rgba(0, 255, 0, 0.3)' : 'rgba(255, 0, 0, 0.3)'};
+        animation: slideInRight 0.4s ease-out;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     `;
 
     document.body.appendChild(notification);
 
     setTimeout(() => {
-        notification.style.animation = 'slideOut 0.3s ease';
-        setTimeout(() => notification.remove(), 300);
+        notification.style.animation = 'slideOutRight 0.4s ease-out';
+        setTimeout(() => notification.remove(), 400);
     }, 3000);
 }
 
-// Add animation styles
+// ============ ANIMATIONS ============
 const style = document.createElement('style');
 style.textContent = `
-    @keyframes slideIn {
+    @keyframes slideInRight {
         from {
-            transform: translateX(400px);
             opacity: 0;
+            transform: translateX(100px);
         }
         to {
-            transform: translateX(0);
             opacity: 1;
+            transform: translateX(0);
         }
     }
 
-    @keyframes slideOut {
+    @keyframes slideOutRight {
         from {
-            transform: translateX(0);
             opacity: 1;
+            transform: translateX(0);
         }
         to {
-            transform: translateX(400px);
             opacity: 0;
+            transform: translateX(100px);
         }
     }
 `;
 document.head.appendChild(style);
 
-// ============ PARALLAX EFFECT (ADVANCED) ============
-let mouseX = 0;
-let mouseY = 0;
-
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX / window.innerWidth;
-    mouseY = e.clientY / window.innerHeight;
-
-    const orbs = document.querySelectorAll('.floating-orb');
-    orbs.forEach((orb, index) => {
-        const moveX = mouseX * (index + 1) * 20;
-        const moveY = mouseY * (index + 1) * 20;
-        orb.style.transform = `translate(${moveX}px, ${moveY}px)`;
-    });
-});
-
 // ============ SCROLL ANIMATIONS ============
 const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
+    rootMargin: '0px 0px -50px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-            entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+            entry.target.style.animation = `fadeInUp 0.6s ease-out ${index * 0.1}s both`;
             observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-document.querySelectorAll('.project-card, .skill-category, .spec-box').forEach(el => {
+// Observe cards and elements
+document.querySelectorAll('.project-card, .skill-category, .highlight-item, .contact-method').forEach((el, index) => {
     el.style.opacity = '0';
     observer.observe(el);
 });
 
-// ============ KEYBOARD ACCESSIBILITY ============
+// ============ PARALLAX EFFECT ============
+document.addEventListener('mousemove', (e) => {
+    const profileImg = document.querySelector('.profile-img');
+    if (profileImg && window.innerWidth > 768) {
+        const moveX = (e.clientX / window.innerWidth - 0.5) * 10;
+        const moveY = (e.clientY / window.innerHeight - 0.5) * 10;
+        profileImg.style.transform = `scale(1.02) translate(${moveX}px, ${moveY}px)`;
+    }
+});
+
+// ============ ACCESSIBILITY ============
 document.addEventListener('keydown', (e) => {
-    // ESC to close mobile menu
-    if (e.key === 'Escape') {
-        const navMenu = document.querySelector('.nav-menu');
-        if (navMenu) {
-            navMenu.style.display = 'none';
-        }
-    }
-
-    // TAB through interactive elements
-    if (e.key === 'Tab') {
-        const cursor = document.querySelector('.cursor');
-        const cursorRing = document.querySelector('.cursor-ring');
-        cursor.classList.add('active');
-        cursorRing.classList.add('active');
+    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
     }
 });
 
-document.addEventListener('keyup', (e) => {
-    if (e.key !== 'Tab') {
-        const cursor = document.querySelector('.cursor');
-        const cursorRing = document.querySelector('.cursor-ring');
-        cursor.classList.remove('active');
-        cursorRing.classList.remove('active');
-    }
-});
-
-// ============ PERFORMANCE OPTIMIZATION ============
-let ticking = false;
-
-function updateCursorPosition(e) {
-    const cursor = document.querySelector('.cursor');
-    const cursorRing = document.querySelector('.cursor-ring');
-
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-
-    cursorRing.style.left = (e.clientX - 16) + 'px';
-    cursorRing.style.top = (e.clientY - 16) + 'px';
-
-    ticking = false;
-}
-
-window.addEventListener('mousemove', (e) => {
-    if (!ticking) {
-        requestAnimationFrame(() => updateCursorPosition(e));
-        ticking = true;
-    }
-});
-
-console.log('%c🔴 RED TEAM OPERATOR ACTIVATED 🔴', 'color: #FF0000; font-size: 20px; text-shadow: 0 0 10px #FF0000; font-weight: bold;');
-console.log('%cExploit • Execute • Dominate', 'color: #00d4ff; font-size: 14px; font-weight: bold;');
+// ============ PERFORMANCE ============
+console.log('%c🔴 RED TEAM OPERATOR ACTIVATED 🔴', 'color: #dc143c; font-size: 16px; font-weight: bold;');
+console.log('%cExploit • Execute • Dominate', 'color: #888888; font-size: 12px;');
