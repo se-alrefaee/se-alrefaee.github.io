@@ -3,68 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saif Eddin Al Refaee - Red Team Specialist</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Saif Eddin Al Refaee - Red Team Cybersecurity Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <!-- Background Effects -->
-    <div class="floating-orbs">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-    </div>
-    <div class="matrix-rain"></div>
-    <div class="grid-background"></div>
-    <div class="cyber-lines"></div>
-
-    <!-- Custom Cursor -->
-    <div class="cursor-dot"></div>
-    <div class="cursor-ring"></div>
-
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <i class="fas fa-terminal"></i>
-                <span>SE_ALREFAEE</span>
+                <i class="fas fa-shield-alt"></i>
+                Red Team
             </div>
-            <div class="hamburger">
+            <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#arsenal" class="nav-link">Arsenal</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- Background Effects -->
+    <div class="matrix-rain"></div>
+    <div class="grid-background"></div>
+    <div class="cyber-lines"></div>
+    <div class="floating-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-container">
+                <!-- Left Content -->
                 <div class="hero-content">
-                    <!-- Name Section -->
-                    <div style="margin-bottom: var(--space-24);">
-                        <h1 style="font-size: var(--font-size-4xl); color: var(--color-primary); margin-bottom: var(--space-8); letter-spacing: 2px;">SAIF EDDIN</h1>
-                        <h1 style="font-size: var(--font-size-4xl); color: var(--color-text); margin-bottom: var(--space-20); letter-spacing: var(--letter-spacing-tight);">AL REFAEE</h1>
-                    </div>
-
-                    <!-- Profile Photo -->
-                    <div class="hero-image">
-                        <div class="image-wrapper">
-                            <div class="image-glow"></div>
-                            <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/f874bab7-d769-4912-8d19-fc4cd1cb4ce3" alt="Saif Eddin Al Refaee" class="profile-photo">
-                        </div>
-                    </div>
-
-                    <div class="hero-subtitle">Red Team Security Specialist</div>
-                    <p class="hero-description">BTS Cybersecurity Student | Penetration Tester | Ethical Hacker</p>
+                    <h2 class="hero-subtitle">Welcome to</h2>
+                    <h1 class="hero-title">
+                        <span class="word">SAIF EDDIN</span>
+                        <span class="word">AL REFAEE</span>
+                    </h1>
+                    <p class="hero-description">
+                        BTS Cybersecurity Student • Penetration Tester • Ethical Hacker
+                    </p>
+                    <p class="hero-description">
+                        Specialized in Red Team Operations, Network Security & Advanced Threat Simulation
+                    </p>
 
                     <!-- Stats -->
                     <div class="hero-stats">
@@ -78,25 +70,32 @@
                         </div>
                         <div class="stat">
                             <div class="stat-number">100%</div>
-                            <div class="stat-label">Dedicated</div>
+                            <div class="stat-label">Committed</div>
                         </div>
                     </div>
 
-                    <!-- Buttons -->
+                    <!-- Action Buttons -->
                     <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">
-                            <i class="fas fa-briefcase"></i> View Projects
+                        <a href="#projects" class="btn btn--primary">
+                            <i class="fas fa-code"></i> View Projects
                         </a>
-                        <a href="#contact" class="btn btn-secondary">
+                        <a href="#contact" class="btn btn--outline">
                             <i class="fas fa-envelope"></i> Get In Touch
+                        </a>
+                        <a href="resume.pdf" class="btn btn--outline" download>
+                            <i class="fas fa-file-pdf"></i> View Resume
                         </a>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
+                <!-- Right Profile Image -->
+                <div class="hero-image">
+                    <div class="image-wrapper">
+                        <div class="image-glow"></div>
+                        <img src="profile-photo.jpg" alt="Saif Eddin Al Refaee" class="profile-photo">
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -104,25 +103,16 @@
     <section class="about" id="about">
         <div class="container">
             <h2 class="section-title">About Me</h2>
-            <div class="about-grid">
-                <div>
-                    <p class="about-text">I'm a passionate cybersecurity student specializing in red team operations and penetration testing. My hands-on experience includes network security labs, exploitation techniques, and security analysis using industry-standard tools.</p>
-                    <p class="about-text">I'm driven by continuous learning and practical application of security concepts. Currently pursuing advanced certifications while building real-world expertise through lab work and ethical hacking projects.</p>
-                </div>
-                <div class="about-info">
-                    <div class="info-item">
-                        <span class="info-label">Location</span>
-                        <span class="info-value">Esch-sur-Alzette, Luxembourg</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Education</span>
-                        <span class="info-value">BTS Cybersecurity</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Specialization</span>
-                        <span class="info-value">Red Team & Penetration Testing</span>
-                    </div>
-                </div>
+            <div class="about-content">
+                <p>
+                    I'm a passionate cybersecurity student pursuing a BTS in Cybersecurity with hands-on experience in penetration testing, 
+                    ethical hacking, and red team operations. My focus is on identifying vulnerabilities, simulating advanced threats, and 
+                    strengthening security postures through practical lab work and real-world scenarios.
+                </p>
+                <p>
+                    With expertise in network security, Linux administration, and advanced security tools, I'm committed to advancing my 
+                    skills in OSCP+ certification and exploring both red team and blue team career paths.
+                </p>
             </div>
         </div>
     </section>
@@ -132,211 +122,261 @@
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
-                <!-- Project 1: Spear Phishing -->
-                <div class="project-card">
+                <!-- Project 1 -->
+                <a href="project-spear-phishing.html" class="project-card">
                     <div class="project-image">
-                        <div style="background: linear-gradient(135deg, rgba(33, 128, 141, 0.2), rgba(33, 128, 141, 0.1)); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
-                            <i class="fas fa-envelope-circle-check" style="font-size: 80px; color: var(--color-primary); opacity: 0.3;"></i>
-                        </div>
-                        <div class="image-overlay"></div>
-                        <span class="project-tag">AI-Powered</span>
+                        <img src="project-spear-phishing.jpg" alt="AI Spear Phishing Campaign">
+                        <div class="project-tag">AI-Powered</div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">AI Spear Phishing Campaign</h3>
-                        <p class="project-description">LinkedIn profile analysis with AI-generated targeted phishing emails. 70% higher success rate through personalization.</p>
-                        <a href="project-spear-phishing.html" class="project-link">
-                            View Details <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <h3>AI Spear Phishing Campaign</h3>
+                        <p>AI-powered phishing framework with 70% higher success rate using Gmail API integration and automated delivery.</p>
+                        <div class="project-skills">
+                            <span>Python</span>
+                            <span>AI/ML</span>
+                            <span>Gmail API</span>
+                        </div>
                     </div>
-                </div>
+                </a>
 
-                <!-- Project 2: MITM Attack -->
-                <div class="project-card">
+                <!-- Project 2 -->
+                <a href="project-mitm.html" class="project-card">
                     <div class="project-image">
-                        <div style="background: linear-gradient(135deg, rgba(33, 128, 141, 0.2), rgba(33, 128, 141, 0.1)); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
-                            <i class="fas fa-network-wired" style="font-size: 80px; color: var(--color-primary); opacity: 0.3;"></i>
-                        </div>
-                        <div class="image-overlay"></div>
-                        <span class="project-tag">Network</span>
+                        <img src="project-mitm.jpg" alt="MITM Attack Lab">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">MITM Attack Lab</h3>
-                        <p class="project-description">ARP poisoning and traffic redirection using Ettercap. Network analysis with Wireshark for detection techniques.</p>
-                        <a href="project-mitm.html" class="project-link">
-                            View Details <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <h3>Man-in-the-Middle Attack Lab</h3>
+                        <p>ARP poisoning and network traffic redirection using Ettercap and Wireshark for traffic analysis.</p>
+                        <div class="project-skills">
+                            <span>Ettercap</span>
+                            <span>Wireshark</span>
+                            <span>ARP</span>
+                        </div>
                     </div>
-                </div>
+                </a>
 
-                <!-- Project 3: Metasploit -->
-                <div class="project-card">
+                <!-- Project 3 -->
+                <a href="project-metasploit.html" class="project-card">
                     <div class="project-image">
-                        <div style="background: linear-gradient(135deg, rgba(33, 128, 141, 0.2), rgba(33, 128, 141, 0.1)); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
-                            <i class="fas fa-shield" style="font-size: 80px; color: var(--color-primary); opacity: 0.3;"></i>
-                        </div>
-                        <div class="image-overlay"></div>
-                        <span class="project-tag">Exploitation</span>
+                        <img src="project-metasploit.jpg" alt="Windows Exploitation">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Windows Exploitation Lab</h3>
-                        <p class="project-description">Metasploit penetration testing with reverse shells, keylogging, and screen capture via Meterpreter.</p>
-                        <a href="project-metasploit.html" class="project-link">
-                            View Details <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <h3>Windows Exploitation Lab</h3>
+                        <p>Metasploit penetration testing with reverse shells, Meterpreter sessions, and post-exploitation techniques.</p>
+                        <div class="project-skills">
+                            <span>Metasploit</span>
+                            <span>Meterpreter</span>
+                            <span>Windows</span>
+                        </div>
                     </div>
-                </div>
+                </a>
 
-                <!-- Project 4: Encryption -->
-                <div class="project-card">
+                <!-- Project 4 -->
+                <a href="project-encryption.html" class="project-card">
                     <div class="project-image">
-                        <div style="background: linear-gradient(135deg, rgba(33, 128, 141, 0.2), rgba(33, 128, 141, 0.1)); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
-                            <i class="fas fa-lock" style="font-size: 80px; color: var(--color-primary); opacity: 0.3;"></i>
-                        </div>
-                        <div class="image-overlay"></div>
-                        <span class="project-tag">Cryptography</span>
+                        <img src="project-encryption.jpg" alt="Encryption Labs">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Encryption Labs</h3>
-                        <p class="project-description">Symmetric and asymmetric encryption with MD5/SHA256. File encryption/decryption exercises with team collaboration.</p>
-                        <a href="project-encryption.html" class="project-link">
-                            View Details <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <h3>Encryption Labs</h3>
+                        <p>Symmetric and asymmetric encryption with MD5, SHA256, RSA, and AES algorithm implementations.</p>
+                        <div class="project-skills">
+                            <span>RSA</span>
+                            <span>AES</span>
+                            <span>Cryptography</span>
+                        </div>
                     </div>
-                </div>
+                </a>
 
-                <!-- Project 5: Hashing -->
-                <div class="project-card">
+                <!-- Project 5 -->
+                <a href="project-hashing.html" class="project-card">
                     <div class="project-image">
-                        <div style="background: linear-gradient(135deg, rgba(33, 128, 141, 0.2), rgba(33, 128, 141, 0.1)); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
-                            <i class="fas fa-fingerprint" style="font-size: 80px; color: var(--color-primary); opacity: 0.3;"></i>
-                        </div>
-                        <div class="image-overlay"></div>
-                        <span class="project-tag">Security</span>
+                        <img src="project-hashing.jpg" alt="Hashing & Integrity">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Hashing & Integrity</h3>
-                        <p class="project-description">Understanding hash algorithms and file integrity verification. One-way encryption detection and corruption analysis.</p>
-                        <a href="project-hashing.html" class="project-link">
-                            View Details <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <h3>Hashing & Integrity</h3>
+                        <p>Cryptographic hashing fundamentals with avalanche effect demonstration and file integrity verification.</p>
+                        <div class="project-skills">
+                            <span>SHA256</span>
+                            <span>Hashing</span>
+                            <span>Integrity</span>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
+    <!-- Technical Arsenal Section -->
+    <section class="arsenal" id="arsenal">
         <div class="container">
             <h2 class="section-title">Technical Arsenal</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3 class="skill-title">
-                        <i class="fas fa-terminal"></i> Penetration Testing
-                    </h3>
-                    <div class="skill-badges">
-                        <span class="badge">Metasploit</span>
-                        <span class="badge">Burp Suite</span>
-                        <span class="badge">Kali Linux</span>
-                        <span class="badge">TryHackMe</span>
+            
+            <div class="arsenal-category">
+                <h3 class="arsenal-title">Offensive Tools</h3>
+                <div class="arsenal-grid">
+                    <div class="arsenal-item">
+                        <i class="fas fa-hammer"></i>
+                        <span>Metasploit</span>
                     </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3 class="skill-title">
-                        <i class="fas fa-network-wired"></i> Network Security
-                    </h3>
-                    <div class="skill-badges">
-                        <span class="badge">Wireshark</span>
-                        <span class="badge">Ettercap</span>
-                        <span class="badge">ARP Spoofing</span>
-                        <span class="badge">TCP/IP</span>
+                    <div class="arsenal-item">
+                        <i class="fas fa-flask"></i>
+                        <span>Burp Suite</span>
                     </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3 class="skill-title">
-                        <i class="fas fa-lock"></i> Cryptography
-                    </h3>
-                    <div class="skill-badges">
-                        <span class="badge">MD5/SHA256</span>
-                        <span class="badge">RSA</span>
-                        <span class="badge">AES</span>
-                        <span class="badge">Hashing</span>
+                    <div class="arsenal-item">
+                        <i class="fas fa-network-wired"></i>
+                        <span>Ettercap</span>
                     </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3 class="skill-title">
-                        <i class="fas fa-code"></i> Programming
-                    </h3>
-                    <div class="skill-badges">
-                        <span class="badge">Python</span>
-                        <span class="badge">Bash</span>
-                        <span class="badge">PowerShell</span>
-                        <span class="badge">JavaScript</span>
+                    <div class="arsenal-item">
+                        <i class="fas fa-lock-open"></i>
+                        <span>THC-Hydra</span>
                     </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3 class="skill-title">
-                        <i class="fas fa-server"></i> Systems
-                    </h3>
-                    <div class="skill-badges">
-                        <span class="badge">Linux</span>
-                        <span class="badge">Windows</span>
-                        <span class="badge">VirtualBox</span>
-                        <span class="badge">Proxmox</span>
+                    <div class="arsenal-item">
+                        <i class="fas fa-key"></i>
+                        <span>John the Ripper</span>
                     </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3 class="skill-title">
-                        <i class="fas fa-certificate"></i> Office
-                    </h3>
-                    <div class="skill-badges">
-                        <span class="badge">Word Expert</span>
-                        <span class="badge">PowerPoint</span>
-                        <span class="badge">Excel</span>
-                        <span class="badge">Documentation</span>
+                    <div class="arsenal-item">
+                        <i class="fas fa-search"></i>
+                        <span>Nmap</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Certifications Section -->
-    <section class="certifications" id="certifications">
-        <div class="container">
-            <h2 class="section-title">Certifications & Achievements</h2>
-            <div class="certifications-grid">
-                <div class="cert-item">
-                    <div class="cert-icon">
-                        <i class="fas fa-medal"></i>
+            <div class="arsenal-category">
+                <h3 class="arsenal-title">Defensive Tools</h3>
+                <div class="arsenal-grid">
+                    <div class="arsenal-item">
+                        <i class="fas fa-glasses"></i>
+                        <span>Wireshark</span>
                     </div>
-                    <h3>Microsoft Office Specialist</h3>
-                    <p>Word Expert (Microsoft 365 Apps)</p>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon">
-                        <i class="fas fa-medal"></i>
+                    <div class="arsenal-item">
+                        <i class="fas fa-shield"></i>
+                        <span>Snort IDS</span>
                     </div>
-                    <h3>Microsoft Office Specialist</h3>
-                    <p>Word Expert (Microsoft 365 Apps)</p>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon">
-                        <i class="fas fa-medal"></i>
+                    <div class="arsenal-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>ELK Stack</span>
                     </div>
-                    <h3>Microsoft Office Specialist</h3>
-                    <p>PowerPoint Associate (Microsoft 365 Apps)</p>
+                    <div class="arsenal-item">
+                        <i class="fas fa-server"></i>
+                        <span>Splunk</span>
+                    </div>
+                    <div class="arsenal-item">
+                        <i class="fas fa-triangle-exclamation"></i>
+                        <span>SIEM</span>
+                    </div>
+                    <div class="arsenal-item">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span>Log Analysis</span>
+                    </div>
                 </div>
             </div>
-            <div class="tryhackme-badge">
-                <div class="badge-label">
-                    <i class="fas fa-shield-alt"></i> TryHackMe Badges
+
+            <div class="arsenal-category">
+                <h3 class="arsenal-title">Platforms & OS</h3>
+                <div class="arsenal-grid">
+                    <div class="arsenal-item">
+                        <i class="fab fa-linux"></i>
+                        <span>Kali Linux</span>
+                    </div>
+                    <div class="arsenal-item">
+                        <i class="fab fa-linux"></i>
+                        <span>Ubuntu</span>
+                    </div>
+                    <div class="arsenal-item">
+                        <i class="fab fa-windows"></i>
+                        <span>Windows Server</span>
+                    </div>
+                    <div class="arsenal-item">
+                        <i class="fas fa-cube"></i>
+                        <span>VirtualBox</span>
+                    </div>
+                    <div class="arsenal-item">
+                        <i class="fas fa-layer-group"></i>
+                        <span>Proxmox</span>
+                    </div>
+                    <div class="arsenal-item">
+                        <i class="fas fa-terminal"></i>
+                        <span>CLI/Bash</span>
+                    </div>
                 </div>
-                <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm);">Active member with hands-on lab experience</p>
+            </div>
+
+            <div class="arsenal-category">
+                <h3 class="arsenal-title">Programming Languages</h3>
+                <div class="arsenal-grid">
+                    <div class="arsenal-item">
+                        <i class="fab fa-python"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="arsenal-item">
+                        <i class="fas fa-code"></i>
+                        <span>Bash</span>
+                    </div>
+                    <div class="arsenal-item">
+                        <i class="fas fa-code"></i>
+                        <span>PowerShell</span>
+                    </div>
+                    <div class="arsenal-item">
+                        <i class="fab fa-js-square"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="arsenal-item">
+                        <i class="fas fa-code-branch"></i>
+                        <span>SQL</span>
+                    </div>
+                    <div class="arsenal-item">
+                        <i class="fas fa-terminal"></i>
+                        <span>HTML/CSS</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="arsenal-category">
+                <h3 class="arsenal-title">Certifications</h3>
+                <div class="arsenal-grid">
+                    <div class="arsenal-item cert">
+                        <i class="fas fa-certificate"></i>
+                        <span>Microsoft Office Specialist: Word Expert</span>
+                    </div>
+                    <div class="arsenal-item cert">
+                        <i class="fas fa-certificate"></i>
+                        <span>Microsoft Office Specialist: Word Expert</span>
+                    </div>
+                    <div class="arsenal-item cert">
+                        <i class="fas fa-certificate"></i>
+                        <span>Microsoft Office Specialist: PowerPoint Associate</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="arsenal-category">
+                <h3 class="arsenal-title">Specializations</h3>
+                <div class="arsenal-grid">
+                    <div class="arsenal-item">
+                        <i class="fas fa-network-wired"></i>
+                        <span>Network Security</span>
+                    </div>
+                    <div class="arsenal-item">
+                        <i class="fas fa-binoculars"></i>
+                        <span>Pen Testing</span>
+                    </div>
+                    <div class="arsenal-item">
+                        <i class="fas fa-bug"></i>
+                        <span>Vulnerability Scanning</span>
+                    </div>
+                    <div class="arsenal-item">
+                        <i class="fas fa-user-secret"></i>
+                        <span>Social Engineering</span>
+                    </div>
+                    <div class="arsenal-item">
+                        <i class="fas fa-user-lock"></i>
+                        <span>GRC</span>
+                    </div>
+                    <div class="arsenal-item">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>Threat Analysis</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -347,69 +387,52 @@
             <h2 class="section-title">Let's Connect</h2>
             <div class="contact-wrapper">
                 <!-- Contact Form -->
-                <div class="contact-form">
-                    <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Your Message" required></textarea>
-                    </div>
-                    <button class="btn btn-primary btn-full">
-                        <i class="fas fa-paper-plane"></i> Send Message
-                    </button>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--full-width">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
                 </div>
 
-                <!-- Contact Info & Social Links -->
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-github"></i>
-                        <div>
-                            <h4>GitHub</h4>
-                            <p><a href="https://github.com/se-alrefaee" target="_blank">github.com/se-alrefaee</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-linkedin"></i>
-                        <div>
-                            <h4>LinkedIn</h4>
-                            <p><a href="https://www.linkedin.com/in/saif-eddin-a-97b234336/" target="_blank">View Profile</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
+                <!-- Social Links -->
+                <div class="social-links">
+                    <h3>Follow Me</h3>
+                    <a href="https://github.com/se-alrefaee" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/saif-eddin-a-97b234336/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:s.e.alrefaee@gmail.com" class="social-link" title="Email">
                         <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p><a href="mailto:s.e.alrefaee@gmail.com">s.e.alrefaee@gmail.com</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-shield"></i>
-                        <div>
-                            <h4>TryHackMe</h4>
-                            <p><a href="https://tryhackme.com/p/iUmbraX" target="_blank">View Profile</a></p>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://github.com/se-alrefaee" target="_blank" title="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/saif-eddin-a-97b234336/" target="_blank" title="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="mailto:s.e.alrefaee@gmail.com" title="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="https://tryhackme.com/p/iUmbraX" target="_blank" title="TryHackMe">
-                            <i class="fas fa-shield"></i>
-                        </a>
-                    </div>
+                    </a>
+                    <a href="https://tryhackme.com/p/iUmbraX" target="_blank" rel="noopener noreferrer" class="social-link" title="TryHackMe">
+                        <i class="fas fa-user-secret"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Saif Eddin Al Refaee. All rights reserved. | Red Team Cybersecurity Portfolio</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
