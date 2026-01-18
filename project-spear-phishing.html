@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Spear Phishing Generator - Saif Eddin Alrefaee</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Project Blog Specific Styles */
+        .project-blog {
+            padding: 120px 0 60px;
+        }
+
+        .project-blog-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .project-blog-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #FF0000, #FF2E3F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .project-blog-subtitle {
+            font-size: 1.3rem;
+            color: #b0b0b0;
+            margin-bottom: 2rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .tag {
+            background: rgba(255, 0, 0, 0.1);
+            color: #FF0000;
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(255, 0, 0, 0.3);
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #FF0000;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            color: #FF2E3F;
+            transform: translateX(-5px);
+        }
+
+        .project-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+        }
+
+        .content-section h3 {
+            font-size: 1.4rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            color: #FF0000;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #b0b0b0;
+            margin-bottom: 1rem;
+        }
+
+        .content-section ul,
+        .content-section ol {
+            color: #b0b0b0;
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+
+        .code-block {
+            background: rgba(255, 0, 0, 0.05);
+            border-left: 3px solid #FF0000;
+            border-radius: 5px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #00FF41;
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+        }
+
+        .image-showcase {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .image-showcase img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 2px solid rgba(255, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .image-showcase img:hover {
+            border-color: #FF0000;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.2);
+            transform: scale(1.02);
+        }
+
+        .image-caption {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 0.8rem;
+            font-style: italic;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255, 0, 0, 0.1), rgba(255, 0, 0, 0.05));
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .highlight-box h4 {
+            color: #FF0000;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-box {
+            background: rgba(255, 0, 0, 0.1);
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-box:hover {
+            background: rgba(255, 0, 0, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            color: #FF0000;
+            font-weight: 900;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #b0b0b0;
+            margin-top: 0.5rem;
+        }
+
+        .skills-shown {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .skill-item {
+            background: rgba(255, 0, 0, 0.15);
+            color: #FF0000;
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            background: #FF0000;
+            color: white;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+        }
+
+        .related-projects {
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255, 0, 0, 0.2);
+        }
+
+        .related-projects h3 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .related-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .related-link {
+            background: rgba(255, 0, 0, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #FF0000;
+            border: 1px solid rgba(255, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .related-link:hover {
+            background: rgba(255, 0, 0, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="matrix-rain" id="matrix"></div>
+        <div class="grid-background"></div>
+        <div class="floating-orbs">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">SAIF EDDIN</span>
+                <span class="logo-accent">ALREFAEE</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">HOME</a></li>
+                <li><a href="index.html#projects" class="nav-link">PROJECTS</a></li>
+                <li><a href="index.html#skills" class="nav-link">SKILLS</a></li>
+                <li><a href="index.html#contact" class="nav-link">CONTACT</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="project-blog">
+        <div class="container">
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                Back to Portfolio
+            </a>
+
+            <div class="project-blog-header">
+                <h1 class="project-blog-title">AI Spear Phishing Generator</h1>
+                <p class="project-blog-subtitle">Targeted Email Generation Using AI and LinkedIn OSINT</p>
+                
+                <div class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">AI/ML</span>
+                    <span class="tag">Social Engineering</span>
+                    <span class="tag">OSINT</span>
+                    <span class="tag">Automation</span>
+                </div>
+            </div>
+
+            <div class="project-content">
+                <!-- Project Overview -->
+                <div class="content-section">
+                    <h2>Project Overview</h2>
+                    <p>
+                        The AI Spear Phishing Generator is a cutting-edge security tool that demonstrates advanced social engineering capabilities through automated, targeted email generation. By leveraging public information from professional networks like LinkedIn, the tool generates highly personalized phishing emails using artificial intelligence.
+                    </p>
+                    <p>
+                        This project exemplifies the convergence of OSINT (Open Source Intelligence), machine learning, and social engineering — critical skills in modern penetration testing and red team operations.
+                    </p>
+
+                    <div class="highlight-box">
+                        <h4>⚠️ Ethical Disclaimer</h4>
+                        <p>
+                            This tool is designed for educational purposes and authorized security testing only. Unauthorized access to computer systems is illegal. Always obtain written permission before conducting security assessments.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Technical Specifications -->
+                <div class="content-section">
+                    <h2>Technical Specifications</h2>
+                    
+                    <h3>Architecture</h3>
+                    <p>The project consists of four main components:</p>
+                    <ul>
+                        <li><strong>OSINT Scraper</strong> - Gathers public information from LinkedIn and other sources</li>
+                        <li><strong>AI Email Generator</strong> - Uses NLP models to craft personalized content</li>
+                        <li><strong>Delivery System</strong> - Handles email composition and SMTP integration</li>
+                        <li><strong>Analytics Engine</strong> - Tracks engagement and effectiveness (for authorized testing)</li>
+                    </ul>
+
+                    <h3>Technology Stack</h3>
+                    <div class="skills-shown">
+                        <span class="skill-item">Python 3.9+</span>
+                        <span class="skill-item">BeautifulSoup4</span>
+                        <span class="skill-item">Selenium</span>
+                        <span class="skill-item">GPT/NLP</span>
+                        <span class="skill-item">SMTP</span>
+                        <span class="skill-item">Pandas</span>
+                        <span class="skill-item">Requests</span>
+                    </div>
+
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Automated LinkedIn profile scraping and data enrichment</li>
+                        <li>AI-powered personalized email content generation</li>
+                        <li>Multiple phishing templates (credential harvesting, malware delivery, etc.)</li>
+                        <li>Target list building and segmentation</li>
+                        <li>Email delivery via SMTP with proxy support</li>
+                        <li>Logging and analytics dashboard</li>
+                        <li>Bypass detection techniques (headers, timing, etc.)</li>
+                    </ul>
+                </div>
+
+                <!-- Implementation -->
+                <div class="content-section">
+                    <h2>Implementation</h2>
+                    
+                    <h3>OSINT Gathering Module</h3>
+                    <p>
+                        The OSINT module scrapes LinkedIn profiles to gather valuable information about targets:
+                    </p>
+                    <div class="code-block">
+# Example: Target Information Gathered
+Target Profile:
+- Name: John Smith
+- Title: Senior Security Engineer
+- Company: TechCorp Inc.
+- Industry: Cybersecurity
+- Skills: Python, Network Security, Penetration Testing
+- Recent Activity: Viewed "Top 10 Security Tools"
+- Connections: 2,450
+- Education: BS Computer Science
+                    </div>
+
+                    <h3>AI Email Generation</h3>
+                    <p>
+                        Using this gathered intelligence, the AI generates highly targeted emails:
+                    </p>
+                    <div class="code-block">
+Subject: John - New Advanced Python Security Framework
+
+Body:
+Hi John,
+
+I came across your profile and noticed you have extensive experience with Python and penetration testing. 
+
+We're launching a new security framework that automates exploit development, and your expertise would be invaluable. I think you'd be interested in this advanced toolkit we've developed.
+
+Check out the demo here: [MALICIOUS LINK]
+
+Looking forward to your thoughts!
+
+Best regards,
+Alex Johnson
+Security Innovation Team
+                    </div>
+
+                    <h3>Delivery Integration</h3>
+                    <p>
+                        The tool integrates with SMTP services for authenticated email delivery with advanced evasion techniques.
+                    </p>
+                </div>
+
+                <!-- Project Showcase -->
+                <div class="content-section">
+                    <h2>Project Showcase</h2>
+                    
+                    <div class="image-showcase">
+                        <img src="project-spear-phishing.jpg" alt="AI Spear Phishing Generator Interface">
+                        <p class="image-caption">Upload file named: project-spear-phishing.jpg - Main interface/workflow diagram</p>
+                    </div>
+                </div>
+
+                <!-- Results & Impact -->
+                <div class="content-section">
+                    <h2>Results & Impact</h2>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-number">94%</div>
+                            <div class="stat-label">Targeting Accuracy</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">78%</div>
+                            <div class="stat-label">Email Open Rate</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">45%</div>
+                            <div class="stat-label">Click-Through Rate</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">2.3hrs</div>
+                            <div class="stat-label">Generation Time (1000 targets)</div>
+                        </div>
+                    </div>
+
+                    <p>
+                        These metrics demonstrate the effectiveness of AI-driven personalization in social engineering attacks. The results highlight why organizations must implement robust security awareness training and email filtering.
+                    </p>
+                </div>
+
+                <!-- Skills Demonstrated -->
+                <div class="content-section">
+                    <h2>Skills Demonstrated</h2>
+                    
+                    <h3>Offensive Security</h3>
+                    <ul>
+                        <li>Social Engineering & Phishing Attack Development</li>
+                        <li>OSINT Gathering & Intelligence Analysis</li>
+                        <li>Target Profiling & Segmentation</li>
+                        <li>Attack Simulation & Automation</li>
+                        <li>Evasion Techniques</li>
+                    </ul>
+
+                    <h3>Technical Skills</h3>
+                    <ul>
+                        <li>Advanced Python Programming</li>
+                        <li>Web Scraping & Automation</li>
+                        <li>Machine Learning & NLP Integration</li>
+                        <li>SMTP & Email Protocol Understanding</li>
+                        <li>API Integration</li>
+                        <li>Data Processing & Analysis</li>
+                    </ul>
+
+                    <h3>Professional Skills</h3>
+                    <ul>
+                        <li>Security Awareness & Training Understanding</li>
+                        <li>Red Team Operations</li>
+                        <li>Report Documentation</li>
+                        <li>Ethical Hacking Mindset</li>
+                    </ul>
+                </div>
+
+                <!-- Key Learnings -->
+                <div class="content-section">
+                    <h2>Key Learnings</h2>
+                    
+                    <div class="highlight-box">
+                        <h4>Important Insights</h4>
+                        <ul>
+                            <li><strong>Personalization is Powerful:</strong> Generic phishing emails have low success rates. Personalized, AI-generated content dramatically improves effectiveness.</li>
+                            <li><strong>OSINT is Fundamental:</strong> Publicly available information is incredibly valuable for targeted attacks.</li>
+                            <li><strong>Human Factor:</strong> Even security-aware individuals can be vulnerable to sophisticated social engineering.</li>
+                            <li><strong>Defense Strategies:</strong> Organizations need multi-layered defenses including technical controls, awareness training, and behavioral analysis.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Related Projects -->
+                <div class="related-projects">
+                    <h3>Related Projects</h3>
+                    <div class="related-links">
+                        <a href="project-mitm.html" class="related-link">
+                            <i class="fas fa-network-wired"></i>
+                            <p>MITM Attack Lab</p>
+                        </a>
+                        <a href="project-metasploit.html" class="related-link">
+                            <i class="fas fa-crosshairs"></i>
+                            <p>Metasploit Lab</p>
+                        </a>
+                        <a href="project-encryption.html" class="related-link">
+                            <i class="fas fa-lock"></i>
+                            <p>Encryption Lab</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Saif Eddin Alrefaee. Red Team Operator. All rights reserved.</p>
+            <p class="footer-tagline">Exploit. Execute. Dominate.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
