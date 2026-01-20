@@ -87,7 +87,6 @@ if (contactForm) {
         // Reset form
         contactForm.reset();
 
-        // In a real application, you would send this data to a server
         console.log('Form Data:', formData);
     });
 }
@@ -122,7 +121,7 @@ function showNotification(message, type = 'info') {
 
     // Set colors based on type
     const colors = {
-        success: { bg: '#2180A1', text: 'white' },
+        success: { bg: '#C01F2F', text: 'white' },
         error: { bg: '#C01F2F', text: 'white' },
         info: { bg: '#626C71', text: 'white' }
     };
@@ -177,14 +176,14 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.animation = 'slideInUp 0.6s ease-out forwards';
+            entry.target.style.animation = 'slideInUp 0.8s ease-out forwards';
             observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
 // Observe elements
-document.querySelectorAll('.project-card, .arsenal-item, .contact-form-wrapper').forEach(el => {
+document.querySelectorAll('.project-card, .arsenal-item, .contact-form-wrapper, .experience-item, .competition-card, .education-card, .language-item').forEach(el => {
     el.style.opacity = '0';
     observer.observe(el);
 });
@@ -253,16 +252,12 @@ function copyToClipboard(text) {
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Portfolio loaded successfully!');
-
-    // Add any additional initialization here
     initializePortfolio();
 });
 
 function initializePortfolio() {
-    // Initialize all components
     console.log('Initializing portfolio components...');
 
-    // Check if all required elements exist
     const requiredElements = [
         'hamburger',
         'navMenu',
