@@ -1,330 +1,251 @@
-/* ==========================================
-   RED TEAM CYBERSECURITY PORTFOLIO
-   JavaScript Functionality
-   ========================================== */
-
-// ==========================================
-// NAVIGATION
-// ==========================================
-
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('navMenu');
-const navLinks = document.querySelectorAll('.nav-link');
-
-// Toggle mobile menu
-hamburger?.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-});
-
-// Close menu when link is clicked
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        updateActiveLink(link);
-    });
-});
-
-// Update active link
-function updateActiveLink(clickedLink) {
-    navLinks.forEach(link => link.classList.remove('active'));
-    clickedLink.classList.add('active');
-}
-
-// Update active link on scroll
-window.addEventListener('scroll', () => {
-    let current = '';
-
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-
-        if (scrollY >= sectionTop - 200) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').slice(1) === current) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// ==========================================
-// FORM HANDLING
-// ==========================================
-
-const contactForm = document.getElementById('contactForm');
-
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            message: document.getElementById('message').value
+// ========== ADVANCED SCROLL ANIMATIONS WITH FOCUS EFFECT ==========
+class ScrollAnimationController {
+    constructor() {
+        this.items = document.querySelectorAll('.scroll-item');
+        this.observerOptions = {
+            threshold: [0, 0.5, 1],
+            rootMargin: '0px 0px -100px 0px'
         };
-
-        // Validate form
-        if (!formData.name || !formData.email || !formData.message) {
-            showNotification('Please fill in all fields', 'error');
-            return;
-        }
-
-        // Validate email
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(formData.email)) {
-            showNotification('Please enter a valid email', 'error');
-            return;
-        }
-
-        // Show success message
-        showNotification('Message sent successfully! Thank you for reaching out.', 'success');
-
-        // Reset form
-        contactForm.reset();
-
-        console.log('Form Data:', formData);
-    });
-}
-
-// ==========================================
-// NOTIFICATIONS
-// ==========================================
-
-function showNotification(message, type = 'info') {
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.className = `notification notification--${type}`;
-    notification.textContent = message;
-
-    // Add to document
-    document.body.appendChild(notification);
-
-    // Style notification
-    Object.assign(notification.style, {
-        position: 'fixed',
-        bottom: '20px',
-        right: '20px',
-        padding: '16px 24px',
-        borderRadius: '8px',
-        fontSize: '14px',
-        fontWeight: '500',
-        zIndex: '10001',
-        animation: 'slideInNotification 0.3s ease-out',
-        maxWidth: '300px',
-        textAlign: 'center'
-    });
-
-    // Set colors based on type
-    const colors = {
-        success: { bg: '#C01F2F', text: 'white' },
-        error: { bg: '#C01F2F', text: 'white' },
-        info: { bg: '#626C71', text: 'white' }
-    };
-
-    const color = colors[type] || colors.info;
-    notification.style.backgroundColor = color.bg;
-    notification.style.color = color.text;
-
-    // Remove after 3 seconds
-    setTimeout(() => {
-        notification.style.animation = 'slideOutNotification 0.3s ease-out';
-        setTimeout(() => notification.remove(), 300);
-    }, 3000);
-}
-
-// Add animation styles
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes slideInNotification {
-        from {
-            transform: translateX(400px);
-            opacity: 0;
-        }
-        to {
-            transform: translateX(0);
-            opacity: 1;
-        }
+        this.init();
     }
 
-    @keyframes slideOutNotification {
-        from {
-            transform: translateX(0);
-            opacity: 1;
-        }
-        to {
-            transform: translateX(400px);
-            opacity: 0;
-        }
-    }
-`;
-document.head.appendChild(style);
-
-// ==========================================
-// SCROLL ANIMATIONS
-// ==========================================
-
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.animation = 'slideInUp 0.8s ease-out forwards';
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-// Observe elements
-document.querySelectorAll('.project-card, .arsenal-item, .contact-form-wrapper, .experience-item, .competition-card, .education-card, .language-item').forEach(el => {
-    el.style.opacity = '0';
-    observer.observe(el);
-});
-
-// ==========================================
-// THEME DETECTION
-// ==========================================
-
-function detectTheme() {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-    } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-    }
-}
-
-// Detect theme on load
-detectTheme();
-
-// Listen for theme changes
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', detectTheme);
-
-// ==========================================
-// SMOOTH SCROLL BEHAVIOR
-// ==========================================
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+    init() {
+        this.observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const rect = entry.target.getBoundingClientRect();
+                const windowCenter = window.innerHeight / 2;
+                const elementCenter = rect.top + rect.height / 2;
+                const distance = Math.abs(elementCenter - windowCenter);
+                const maxDistance = window.innerHeight;
+                
+                // Calculate focus based on how close element is to center
+                const focusFactor = Math.max(0, 1 - (distance / maxDistance));
+                
+                if (focusFactor > 0.5) {
+                    // Element is in focus zone (close to center)
+                    entry.target.classList.remove('fade-out');
+                    entry.target.classList.add('active');
+                } else if (entry.isIntersecting) {
+                    // Element is visible but not in focus
+                    entry.target.classList.remove('active');
+                    if (rect.top > window.innerHeight) {
+                        entry.target.classList.add('fade-out');
+                    }
+                } else {
+                    // Element is out of view
+                    entry.target.classList.remove('active');
+                    if (rect.top < 0) {
+                        entry.target.classList.add('fade-out');
+                    }
+                }
             });
+        }, this.observerOptions);
+
+        this.items.forEach(el => {
+            this.observer.observe(el);
+        });
+
+        // Listen to scroll for continuous updates
+        window.addEventListener('scroll', () => this.updateFocus(), { passive: true });
+    }
+
+    updateFocus() {
+        this.items.forEach(item => {
+            const rect = item.getBoundingClientRect();
+            const windowCenter = window.innerHeight / 2;
+            const elementCenter = rect.top + rect.height / 2;
+            const distance = Math.abs(elementCenter - windowCenter);
+            const maxDistance = window.innerHeight;
+            
+            const focusFactor = Math.max(0, 1 - (distance / maxDistance));
+            
+            if (focusFactor > 0.5) {
+                item.classList.remove('fade-out');
+                item.classList.add('active');
+            } else if (rect.top > -200 && rect.bottom < window.innerHeight + 200) {
+                item.classList.remove('active');
+                item.classList.add('fade-out');
+            }
+        });
+    }
+}
+
+// ========== SMOOTH SCROLL NAVIGATION ==========
+class SmoothScroll {
+    constructor() {
+        this.links = document.querySelectorAll('a[href^="#"]');
+        this.init();
+    }
+
+    init() {
+        this.links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const target = document.querySelector(targetId);
+                
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update active nav link
+                    this.updateActiveLink(targetId);
+                }
+            });
+        });
+
+        // Update active link on scroll
+        window.addEventListener('scroll', () => this.updateActiveLinkOnScroll(), { passive: true });
+    }
+
+    updateActiveLink(targetId) {
+        this.links.forEach(link => {
+            if (link.getAttribute('href') === targetId) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    }
+
+    updateActiveLinkOnScroll() {
+        const sections = document.querySelectorAll('section[id]');
+        let currentSection = '';
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 150;
+            const sectionHeight = section.clientHeight;
+
+            if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+                currentSection = section.getAttribute('id');
+            }
+        });
+
+        if (currentSection) {
+            this.updateActiveLink(`#${currentSection}`);
         }
-    });
-});
-
-// ==========================================
-// UTILITY FUNCTIONS
-// ==========================================
-
-// Format date
-function formatDate(date) {
-    return new Date(date).toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-    });
+    }
 }
 
-// Copy to clipboard
-function copyToClipboard(text) {
-    navigator.clipboard.writeText(text).then(() => {
-        showNotification('Copied to clipboard!', 'success');
-    }).catch(err => {
-        showNotification('Failed to copy', 'error');
-    });
+// ========== NAVBAR SCROLL EFFECT ==========
+class NavbarScroll {
+    constructor() {
+        this.navbar = document.querySelector('nav');
+        this.init();
+    }
+
+    init() {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                this.navbar.classList.add('scrolled');
+            } else {
+                this.navbar.classList.remove('scrolled');
+            }
+        }, { passive: true });
+    }
 }
 
-// ==========================================
-// PAGE LOAD
-// ==========================================
+// ========== PARALLAX EFFECT ==========
+class ParallaxEffect {
+    constructor() {
+        this.hero = document.querySelector('.hero');
+        this.decorations = document.querySelectorAll('.hero-decoration');
+        this.init();
+    }
 
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('Portfolio loaded successfully!');
-    initializePortfolio();
-});
-
-function initializePortfolio() {
-    console.log('Initializing portfolio components...');
-
-    const requiredElements = [
-        'hamburger',
-        'navMenu',
-        'contactForm'
-    ];
-
-    requiredElements.forEach(id => {
-        const element = document.getElementById(id);
-        if (element) {
-            console.log(`✓ ${id} found`);
-        }
-    });
+    init() {
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            
+            this.decorations.forEach((deco, index) => {
+                const speed = (index + 1) * 0.3;
+                deco.style.transform = `translateY(${scrollY * speed}px)`;
+            });
+        }, { passive: true });
+    }
 }
 
-// ==========================================
-// PERFORMANCE OPTIMIZATION
-// ==========================================
+// ========== STAGGER ANIMATIONS FOR GRIDS ==========
+class StaggerAnimation {
+    constructor() {
+        this.init();
+    }
 
-// Debounce function for scroll events
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
+    init() {
+        const cards = document.querySelectorAll('.project-card, .skill-category, .experience-item, .edu-card');
+        
+        cards.forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+        });
+    }
+}
+
+// ========== INTERSECTION OBSERVER FOR GRID ITEMS ==========
+class GridAnimationObserver {
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        const cards = document.querySelectorAll(
+            '.project-card, .skill-category, .experience-item, .edu-card'
+        );
+
+        const options = {
+            threshold: 0.3,
+            rootMargin: '0px 0px -50px 0px'
         };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, options);
+
+        cards.forEach(card => {
+            observer.observe(card);
+        });
+    }
 }
 
-// Throttle function for frequent events
+// ========== INITIALIZE ALL ON DOM READY ==========
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize all controllers
+    new ScrollAnimationController();
+    new SmoothScroll();
+    new NavbarScroll();
+    new ParallaxEffect();
+    new GridAnimationObserver();
+
+    // Add smooth animation on page load
+    document.body.style.opacity = '1';
+});
+
+// ========== PERFORMANCE OPTIMIZATION - THROTTLE SCROLL ==========
 function throttle(func, limit) {
     let inThrottle;
-    return function(...args) {
+    return function() {
+        const args = arguments;
+        const context = this;
         if (!inThrottle) {
-            func.apply(this, args);
+            func.apply(context, args);
             inThrottle = true;
             setTimeout(() => inThrottle = false, limit);
         }
     };
 }
 
-// ==========================================
-// ACCESSIBILITY
-// ==========================================
+// Apply throttling to performance-critical scroll events
+window.addEventListener('scroll', throttle(() => {
+    // Any scroll-dependent updates here
+}, 16), { passive: true });
 
-// Keyboard navigation for buttons
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-        const focused = document.activeElement;
-        if (focused && focused.className.includes('btn')) {
-            focused.click();
-        }
-    }
-});
-
-// ==========================================
-// EXPORT FUNCTIONS (for debugging)
-// ==========================================
-
-window.PortfolioDebug = {
-    showNotification: showNotification,
-    copyToClipboard: copyToClipboard,
-    formatDate: formatDate,
-    updateActiveLink: updateActiveLink,
-    detectTheme: detectTheme
-};
-
-console.log('Portfolio JavaScript loaded. Access debug functions via window.PortfolioDebug');
+// ========== PRELOAD ANIMATIONS TRIGGER ==========
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+}, { once: true });
