@@ -3,17 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saif Eddin Al Refaee - Red Team Cybersecurity Portfolio</title>
+    <title>Cybersecurity Portfolio | Professional Red Team Specialist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+    <!-- Background Effects -->
+    <div class="floating-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    <div class="matrix-rain"></div>
+    <div class="grid-background"></div>
+    <div class="cyber-lines"></div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
                 <i class="fas fa-shield-alt"></i>
-                Red Team
+                <span>Portfolio</span>
             </div>
             <div class="hamburger" id="hamburger">
                 <span></span>
@@ -24,83 +34,62 @@
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#competitions" class="nav-link">Competitions</a></li>
                 <li><a href="#arsenal" class="nav-link">Arsenal</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#languages" class="nav-link">Languages</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Background Effects -->
-    <div class="matrix-rain"></div>
-    <div class="grid-background"></div>
-    <div class="cyber-lines"></div>
-    <div class="floating-orbs">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-    </div>
-
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-container">
-                <!-- Left Content -->
                 <div class="hero-content">
-                    <h2 class="hero-subtitle">Welcome to</h2>
+                    <p class="hero-subtitle">Welcome to my portfolio</p>
                     <h1 class="hero-title">
-                        <span class="word">MY PORTFOLIO</span>
+                        <span class="word">Cybersecurity</span>
+                        <span class="word">Specialist</span>
                     </h1>
-                    <p class="hero-description">
-                        BTS Cybersecurity Student • Penetration Tester • Ethical Hacker
-                    </p>
-                    <p class="hero-description">
-                        Specialized in Red Team Operations, Network Security & Advanced Threat Simulation
-                    </p>
-
-                    <!-- Stats -->
+                    <p class="hero-description">Red Team Operator | Penetration Tester | Network Security Expert. Building expertise in ethical hacking and advanced security testing through hands-on experience and continuous learning.</p>
+                    
                     <div class="hero-stats">
                         <div class="stat">
-                            <div class="stat-number">+3</div>
-                            <div class="stat-label">Internships</div>
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Network Projects</span>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">+6</div>
-                            <div class="stat-label">Projects</div>
+                            <span class="stat-number">1000+</span>
+                            <span class="stat-label">Devices Configured</span>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">100%</div>
-                            <div class="stat-label">Committed</div>
+                            <span class="stat-number">25</span>
+                            <span class="stat-label">Hours/Week Learning</span>
                         </div>
                     </div>
 
-                    <!-- Action Buttons -->
                     <div class="hero-buttons">
-                        <a href="#projects" class="btn btn--primary btn--sm">
-                            <i class="fas fa-code"></i> View Projects
-                        </a>
-                        <a href="#contact" class="btn btn--outline btn--sm">
+                        <a href="#contact" class="btn btn--primary">
                             <i class="fas fa-envelope"></i> Get In Touch
                         </a>
-                        <a href="resume.pdf" class="btn btn--outline btn--sm" download>
+                        <button class="btn btn--outline" id="viewResumeBtn">
                             <i class="fas fa-file-pdf"></i> View Resume
-                        </a>
+                        </button>
                     </div>
                 </div>
 
-                <!-- Right Profile Image -->
                 <div class="hero-image">
                     <div class="image-wrapper">
                         <div class="image-glow"></div>
-                        <img src="profile-photo.jpg" alt="Saif Eddin Al Refaee" class="profile-photo">
+                        <img src="profile-photo.jpg" alt="Profile Photo" class="profile-photo">
                     </div>
-                </div>
-
-                <!-- Name Badge on Right -->
-                <div class="name-badge">
-                    <h2>SAIF EDDIN<br>ALREFAEE</h2>
-                    <p>BTS Cybersecurity Student</p>
+                    <div class="name-badge">
+                        <h2>Your Name</h2>
+                        <p>Red Team Specialist</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -111,60 +100,57 @@
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
-                <p>
-                    I'm a passionate cybersecurity student pursuing a BTS in Cybersecurity with hands-on experience in penetration testing, 
-                    ethical hacking, and red team operations. My focus is on identifying vulnerabilities, simulating advanced threats, and 
-                    strengthening security postures through practical lab work and real-world scenarios.
-                </p>
-                <p>
-                    With expertise in network security, Linux administration, and advanced security tools, I'm committed to advancing my 
-                    skills in OSCP+ certification and exploring both red team and blue team career paths.
-                </p>
+                <div>
+                    <h3>Professional Background</h3>
+                    <p>Currently pursuing a BTS in Cybersecurity with a passion for penetration testing and ethical hacking. Experienced in network migration projects, device programming, and on-site network troubleshooting. Committed to building practical skills through hands-on lab work and real-world security challenges.</p>
+                </div>
+                <div>
+                    <h3>Core Expertise</h3>
+                    <p>Specialized in network security, penetration testing tools, virtual machine management, and password security assessment. Actively preparing for OSCP+ certification and pursuing CompTIA Security+. Strong background in Linux CLI, PowerShell scripting, and network packet analysis with tools like Wireshark and Ettercap.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Professional Experience Section -->
+    <!-- Experience Section -->
     <section class="experience" id="experience">
         <div class="container">
-            <h2 class="section-title">Professional Experience</h2>
+            <h2 class="section-title">Experience</h2>
             <div class="experience-timeline">
-                <!-- Experience 1 -->
                 <div class="experience-item">
                     <div class="exp-header">
-                        <h3>Maintenance Intern</h3>
-                        <span class="exp-company">LA PROVENÇALE</span>
+                        <h3>Network Migration Specialist</h3>
+                        <span class="exp-company">50+ Clients</span>
                     </div>
-                    <p class="exp-period">20.01.2025 – 14.02.2025</p>
+                    <span class="exp-period">Recent Project</span>
                     <ul class="exp-highlights">
-                        <li>Assisted a team of 3 technicians in maintenance of critical equipment.</li>
-                        <li>Inspected up to 5 automated packaging lines per day to anticipate breakdowns.</li>
+                        <li>Led copper to fiber network migration for 50+ clients</li>
+                        <li>Implemented network security protocols and configurations</li>
+                        <li>Provided on-site technical support and troubleshooting</li>
                     </ul>
                 </div>
-
-                <!-- Experience 2 -->
                 <div class="experience-item">
                     <div class="exp-header">
-                        <h3>Network Installation Intern</h3>
-                        <span class="exp-company">LUSCHUSTER</span>
+                        <h3>Device Programming Technician</h3>
+                        <span class="exp-company">Cashless Systems</span>
                     </div>
-                    <p class="exp-period">20.01.2024 – 14.02.2025</p>
+                    <span class="exp-period">Previous Project</span>
                     <ul class="exp-highlights">
-                        <li>Migrated over 50 customers from copper to fiber optic connections.</li>
-                        <li>Performed on-site network troubleshooting, achieving 100% resolution on the first intervention.</li>
+                        <li>Programmed and configured 1000+ cashless reader devices</li>
+                        <li>Ensured system compatibility and security standards</li>
+                        <li>Tested and validated device functionality</li>
                     </ul>
                 </div>
-
-                <!-- Experience 3 -->
                 <div class="experience-item">
                     <div class="exp-header">
-                        <h3>Cashless Systems Programming Intern</h3>
-                        <span class="exp-company">AZTEK</span>
+                        <h3>Network Support Technician</h3>
+                        <span class="exp-company">IT Services</span>
                     </div>
-                    <p class="exp-period">17.07.2023 – 11.08.2023</p>
+                    <span class="exp-period">Early Career</span>
                     <ul class="exp-highlights">
-                        <li>Programmed and assembled more than 1,000 cashless reader devices.</li>
-                        <li>Programmed +2,000 tags.</li>
+                        <li>Troubleshooted network connectivity issues</li>
+                        <li>Provided technical support to multiple clients</li>
+                        <li>Maintained network infrastructure and security</li>
                     </ul>
                 </div>
             </div>
@@ -174,31 +160,192 @@
     <!-- Competitions Section -->
     <section class="competitions" id="competitions">
         <div class="container">
-            <h2 class="section-title">Competitions</h2>
+            <h2 class="section-title">Competitions & CTF</h2>
             <div class="competitions-grid">
-                <!-- Competition 1 -->
                 <div class="competition-card">
-                    <h3>EUROSKILLS</h3>
-                    <p class="comp-location">Denmark</p>
-                    <p class="comp-date">08.04.2025 – 10.04.2025</p>
-                </div>
-
-                <!-- Competition 2 -->
-                <div class="competition-card">
-                    <h3>GERMANYSKILLS</h3>
-                    <p class="comp-location">Germany</p>
-                    <p class="comp-date">10.09.2025 – 12.06.2025</p>
-                </div>
-
-                <!-- Competition 3 -->
-                <div class="competition-card">
-                    <h3>PORTUGALSKILLS</h3>
-                    <p class="comp-location">Portugal</p>
-                    <p class="comp-date">13.11.2024 – 16.11.2024</p>
+                    <div class="comp-flag-placeholder">
+                        <img src="competition-flag-1.png" alt="Cybersecurity Challenge 2024 Flag" loading="lazy">
+                    </div>
+                    <h3>Cybersecurity Challenge 2024</h3>
+                    <span class="comp-location">National Level</span>
+                    <span class="comp-date">2024</span>
                     <ul class="comp-highlights">
-                        <li>Designed, programmed and commissioned a Fanuc robotic cell.</li>
-                        <li>Prepared technical documentation and delivered a technical presentation before an international jury.</li>
+                        <li>Advanced penetration testing scenarios</li>
+                        <li>Network vulnerability assessment</li>
+                        <li>Real-world exploitation techniques</li>
                     </ul>
+                </div>
+                <div class="competition-card">
+                    <div class="comp-flag-placeholder">
+                        <img src="competition-flag-2.png" alt="CyberDefense CTF Flag" loading="lazy">
+                    </div>
+                    <h3>CyberDefense CTF</h3>
+                    <span class="comp-location">Regional Level</span>
+                    <span class="comp-date">2024</span>
+                    <ul class="comp-highlights">
+                        <li>Defensive security strategies</li>
+                        <li>Threat detection and response</li>
+                        <li>System hardening techniques</li>
+                    </ul>
+                </div>
+                <div class="competition-card">
+                    <div class="comp-flag-placeholder">
+                        <img src="competition-flag-3.png" alt="TryHackMe Events Flag" loading="lazy">
+                    </div>
+                    <h3>TryHackMe Events</h3>
+                    <span class="comp-location">Online Community</span>
+                    <span class="comp-date">Ongoing</span>
+                    <ul class="comp-highlights">
+                        <li>Ethical hacking lab exercises</li>
+                        <li>Security skills development</li>
+                        <li>Community-driven learning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Arsenal Section -->
+    <section class="arsenal" id="arsenal">
+        <div class="container">
+            <h2 class="section-title">Technical Arsenal</h2>
+            
+            <div class="arsenal-section">
+                <div class="arsenal-tabs">
+                    <button class="arsenal-tab-btn active" data-tab="tools">
+                        <i class="fas fa-tools"></i>
+                        <span>Tools</span>
+                    </button>
+                    <button class="arsenal-tab-btn" data-tab="frameworks">
+                        <i class="fas fa-cube"></i>
+                        <span>Frameworks</span>
+                    </button>
+                    <button class="arsenal-tab-btn" data-tab="languages">
+                        <i class="fas fa-code"></i>
+                        <span>Languages</span>
+                    </button>
+                    <button class="arsenal-tab-btn" data-tab="platforms">
+                        <i class="fas fa-server"></i>
+                        <span>Platforms</span>
+                    </button>
+                </div>
+
+                <div class="arsenal-tab-content active" id="tools-tab">
+                    <div class="arsenal-box">
+                        <div class="arsenal-tool">
+                            <i class="fas fa-network-wired"></i>
+                            <span>Wireshark</span>
+                        </div>
+                        <div class="arsenal-tool">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Metasploit</span>
+                        </div>
+                        <div class="arsenal-tool">
+                            <i class="fas fa-lock"></i>
+                            <span>Burp Suite</span>
+                        </div>
+                        <div class="arsenal-tool">
+                            <i class="fas fa-key"></i>
+                            <span>Hydra</span>
+                        </div>
+                        <div class="arsenal-tool">
+                            <i class="fas fa-wifi"></i>
+                            <span>Ettercap</span>
+                        </div>
+                        <div class="arsenal-tool">
+                            <i class="fas fa-crosshairs"></i>
+                            <span>Nmap</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="arsenal-tab-content" id="frameworks-tab">
+                    <div class="arsenal-box">
+                        <div class="arsenal-tool">
+                            <i class="fas fa-cube"></i>
+                            <span>OWASP</span>
+                        </div>
+                        <div class="arsenal-tool">
+                            <i class="fas fa-cube"></i>
+                            <span>MITRE ATT&CK</span>
+                        </div>
+                        <div class="arsenal-tool">
+                            <i class="fas fa-cube"></i>
+                            <span>NIST</span>
+                        </div>
+                        <div class="arsenal-tool">
+                            <i class="fas fa-cube"></i>
+                            <span>CVSS</span>
+                        </div>
+                        <div class="arsenal-tool">
+                            <i class="fas fa-cube"></i>
+                            <span>ISO 27001</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="arsenal-tab-content" id="languages-tab">
+                    <div class="arsenal-box">
+                        <div class="arsenal-tool">
+                            <i class="fas fa-code"></i>
+                            <span>PowerShell</span>
+                        </div>
+                        <div class="arsenal-tool">
+                            <i class="fas fa-code"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="arsenal-tool">
+                            <i class="fas fa-code"></i>
+                            <span>Bash</span>
+                        </div>
+                        <div class="arsenal-tool">
+                            <i class="fas fa-code"></i>
+                            <span>SQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="arsenal-tab-content" id="platforms-tab">
+                    <div class="arsenal-box">
+                        <div class="arsenal-tool">
+                            <i class="fab fa-linux"></i>
+                            <span>Kali Linux</span>
+                        </div>
+                        <div class="arsenal-tool">
+                            <i class="fab fa-linux"></i>
+                            <span>Ubuntu</span>
+                        </div>
+                        <div class="arsenal-tool">
+                            <i class="fab fa-windows"></i>
+                            <span>Windows Server</span>
+                        </div>
+                        <div class="arsenal-tool">
+                            <i class="fas fa-box"></i>
+                            <span>VirtualBox</span>
+                        </div>
+                        <div class="arsenal-tool">
+                            <i class="fas fa-box"></i>
+                            <span>Proxmox</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="arsenal-section">
+                <h3 class="arsenal-title">Certifications & Training</h3>
+                <div class="arsenal-box">
+                    <div class="arsenal-cert">
+                        <i class="fas fa-certificate"></i>
+                        <span>CompTIA Security+ (In Progress)</span>
+                    </div>
+                    <div class="arsenal-cert">
+                        <i class="fas fa-certificate"></i>
+                        <span>OSCP+ Preparation</span>
+                    </div>
+                    <div class="arsenal-cert">
+                        <i class="fas fa-certificate"></i>
+                        <span>TryHackMe Labs</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -209,243 +356,69 @@
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
-                <!-- Project 1 -->
-                <a href="project-spear-phishing.html" class="project-card">
+                <a href="#" class="project-card">
                     <div class="project-image">
-                        <img src="project-spear-phishing.jpg" alt="AI Spear Phishing Campaign" loading="lazy">
-                        <div class="project-tag">AI-Powered</div>
+                        <img src="project-encryption.jpg" alt="Encryption Project">
+                        <span class="project-tag">Security</span>
                     </div>
                     <div class="project-content">
-                        <h3>AI Spear Phishing Campaign</h3>
-                        <p>AI-powered phishing framework with 70% higher success rate using Gmail API integration and automated delivery.</p>
+                        <h3>Advanced Encryption Analysis</h3>
+                        <p>Deep dive into cryptographic protocols, vulnerability assessment in encryption systems, and secure implementation practices.</p>
                         <div class="project-skills">
-                            <span>Python</span>
-                            <span>AI/ML</span>
-                            <span>Gmail API</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Project 2 -->
-                <a href="project-mitm.html" class="project-card">
-                    <div class="project-image">
-                        <img src="project-mitm.jpg" alt="MITM Attack Lab">
-                    </div>
-                    <div class="project-content">
-                        <h3>Man-in-the-Middle Attack Lab</h3>
-                        <p>ARP poisoning and network traffic redirection using Ettercap and Wireshark for traffic analysis.</p>
-                        <div class="project-skills">
-                            <span>Ettercap</span>
-                            <span>Wireshark</span>
-                            <span>ARP</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Project 3 -->
-                <a href="project-metasploit.html" class="project-card">
-                    <div class="project-image">
-                        <img src="project-metasploit.jpg" alt="Windows Exploitation">
-                    </div>
-                    <div class="project-content">
-                        <h3>Windows Exploitation Lab</h3>
-                        <p>Metasploit penetration testing with reverse shells, Meterpreter sessions, and post-exploitation techniques.</p>
-                        <div class="project-skills">
-                            <span>Metasploit</span>
-                            <span>Meterpreter</span>
-                            <span>Windows</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Project 4 -->
-                <a href="project-encryption.html" class="project-card">
-                    <div class="project-image">
-                        <img src="project-encryption.jpg" alt="Encryption Labs">
-                    </div>
-                    <div class="project-content">
-                        <h3>Encryption Labs</h3>
-                        <p>Symmetric and asymmetric encryption with MD5, SHA256, RSA, and AES algorithm implementations.</p>
-                        <div class="project-skills">
-                            <span>RSA</span>
-                            <span>AES</span>
                             <span>Cryptography</span>
+                            <span>Analysis</span>
+                            <span>Python</span>
                         </div>
                     </div>
                 </a>
 
-                <!-- Project 5 -->
-                <a href="project-hashing.html" class="project-card">
+                <a href="#" class="project-card">
                     <div class="project-image">
-                        <img src="project-hashing.jpg" alt="Hashing & Integrity">
+                        <img src="project-hashing.jpg" alt="Hashing Project">
+                        <span class="project-tag">Lab</span>
                     </div>
                     <div class="project-content">
-                        <h3>Hashing & Integrity</h3>
-                        <p>Cryptographic hashing fundamentals with avalanche effect demonstration and file integrity verification.</p>
+                        <h3>Password Hashing & Cracking</h3>
+                        <p>Exploration of hash functions, password security assessment, and evaluation of hashing algorithms against modern attacks.</p>
                         <div class="project-skills">
-                            <span>SHA256</span>
                             <span>Hashing</span>
-                            <span>Integrity</span>
+                            <span>Password Security</span>
+                            <span>Tools</span>
                         </div>
                     </div>
                 </a>
-            </div>
-        </div>
-    </section>
 
-    <!-- Technical Arsenal Section -->
-    <section class="arsenal" id="arsenal">
-        <div class="container">
-            <h2 class="section-title">Technical Arsenal</h2>
-            
-            <!-- Offensive Tools -->
-            <div class="arsenal-section">
-                <h3 class="arsenal-title">Offensive Tools</h3>
-                <div class="arsenal-box">
-                    <div class="arsenal-tool">
-                        <i class="fas fa-hammer"></i>
-                        <span>Metasploit</span>
+                <a href="#" class="project-card">
+                    <div class="project-image">
+                        <img src="project-metasploit.jpg" alt="Metasploit Project">
+                        <span class="project-tag">Exploitation</span>
                     </div>
-                    <div class="arsenal-tool">
-                        <i class="fas fa-flask"></i>
-                        <span>Burp Suite</span>
+                    <div class="project-content">
+                        <h3>MITM & Network Attacks</h3>
+                        <p>Man-in-the-Middle attack demonstrations, network packet manipulation, and defensive countermeasures with real-world scenarios.</p>
+                        <div class="project-skills">
+                            <span>MITM</span>
+                            <span>Network Analysis</span>
+                            <span>Wireshark</span>
+                        </div>
                     </div>
-                    <div class="arsenal-tool">
-                        <i class="fas fa-network-wired"></i>
-                        <span>Ettercap</span>
-                    </div>
-                    <div class="arsenal-tool">
-                        <i class="fas fa-lock-open"></i>
-                        <span>THC-Hydra</span>
-                    </div>
-                    <div class="arsenal-tool">
-                        <i class="fas fa-key"></i>
-                        <span>John the Ripper</span>
-                    </div>
-                    <div class="arsenal-tool">
-                        <i class="fas fa-search"></i>
-                        <span>Nmap</span>
-                    </div>
-                </div>
-            </div>
+                </a>
 
-            <!-- Defensive Tools -->
-            <div class="arsenal-section">
-                <h3 class="arsenal-title">Defensive Tools</h3>
-                <div class="arsenal-box">
-                    <div class="arsenal-tool">
-                        <i class="fas fa-glasses"></i>
-                        <span>Wireshark</span>
+                <a href="#" class="project-card">
+                    <div class="project-image">
+                        <img src="project-spear-phishing.jpg" alt="Phishing Project">
+                        <span class="project-tag">Security Awareness</span>
                     </div>
-                </div>
-            </div>
-
-            <!-- Platforms & OS -->
-            <div class="arsenal-section">
-                <h3 class="arsenal-title">Platforms & OS</h3>
-                <div class="arsenal-box">
-                    <div class="arsenal-tool">
-                        <i class="fab fa-linux"></i>
-                        <span>Kali Linux</span>
+                    <div class="project-content">
+                        <h3>Spear Phishing Assessment</h3>
+                        <p>Security awareness training through controlled phishing simulations, detection techniques, and human-centered defense strategies.</p>
+                        <div class="project-skills">
+                            <span>Social Engineering</span>
+                            <span>Awareness</span>
+                            <span>Defense</span>
+                        </div>
                     </div>
-                    <div class="arsenal-tool">
-                        <i class="fab fa-linux"></i>
-                        <span>Ubuntu</span>
-                    </div>
-                    <div class="arsenal-tool">
-                        <i class="fab fa-windows"></i>
-                        <span>Windows Server</span>
-                    </div>
-                    <div class="arsenal-tool">
-                        <i class="fas fa-cube"></i>
-                        <span>VirtualBox</span>
-                    </div>
-                    <div class="arsenal-tool">
-                        <i class="fas fa-layer-group"></i>
-                        <span>Proxmox</span>
-                    </div>
-                    <div class="arsenal-tool">
-                        <i class="fas fa-terminal"></i>
-                        <span>CLI/Bash</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Programming Languages -->
-            <div class="arsenal-section">
-                <h3 class="arsenal-title">Programming Languages</h3>
-                <div class="arsenal-box">
-                    <div class="arsenal-tool">
-                        <i class="fab fa-python"></i>
-                        <span>Python</span>
-                    </div>
-                    <div class="arsenal-tool">
-                        <i class="fas fa-code"></i>
-                        <span>Bash</span>
-                    </div>
-                    <div class="arsenal-tool">
-                        <i class="fas fa-code"></i>
-                        <span>PowerShell</span>
-                    </div>
-                    <div class="arsenal-tool">
-                        <i class="fab fa-cpp"></i>
-                        <span>C++</span>
-                    </div>
-                    <div class="arsenal-tool">
-                        <i class="fas fa-terminal"></i>
-                        <span>HTML/CSS</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Certifications -->
-            <div class="arsenal-section">
-                <h3 class="arsenal-title">Certifications</h3>
-                <div class="arsenal-box">
-                    <div class="arsenal-cert">
-                        <i class="fas fa-award"></i>
-                        <span>Microsoft Office Specialist: Word Expert</span>
-                    </div>
-                    <div class="arsenal-cert">
-                        <i class="fas fa-award"></i>
-                        <span>Microsoft Office Specialist: Word Expert</span>
-                    </div>
-                    <div class="arsenal-cert">
-                        <i class="fas fa-award"></i>
-                        <span>Microsoft Office Specialist: PowerPoint Associate</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Specializations -->
-            <div class="arsenal-section">
-                <h3 class="arsenal-title">Specializations</h3>
-                <div class="arsenal-box">
-                    <div class="arsenal-tool">
-                        <i class="fas fa-network-wired"></i>
-                        <span>Network Security</span>
-                    </div>
-                    <div class="arsenal-tool">
-                        <i class="fas fa-binoculars"></i>
-                        <span>Pen Testing</span>
-                    </div>
-                    <div class="arsenal-tool">
-                        <i class="fas fa-bug"></i>
-                        <span>Vulnerability Scanning</span>
-                    </div>
-                    <div class="arsenal-tool">
-                        <i class="fas fa-user-secret"></i>
-                        <span>Social Engineering</span>
-                    </div>
-                    <div class="arsenal-tool">
-                        <i class="fas fa-user-lock"></i>
-                        <span>GRC</span>
-                    </div>
-                    <div class="arsenal-tool">
-                        <i class="fas fa-exclamation-triangle"></i>
-                        <span>Threat Analysis</span>
-                    </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
@@ -456,19 +429,39 @@
             <h2 class="section-title">Education</h2>
             <div class="education-grid">
                 <div class="education-card">
-                    <div class="edu-header">
-                        <h3>BTS CYBERSECURITY</h3>
-                        <p class="edu-school">Lycée Guillaume Kroll</p>
+                    <div class="edu-icon-placeholder">
+                        <img src="school-icon-1.png" alt="BTS School Icon">
                     </div>
-                    <p class="edu-period">09.2025 – 07.2027</p>
+                    <div class="edu-header">
+                        <h3>BTS Cybersecurity</h3>
+                        <span class="edu-school">Professional Formation</span>
+                    </div>
+                    <span class="edu-period">Currently Pursuing</span>
+                    <p class="edu-description">Advanced studies in cybersecurity with focus on penetration testing, network security, and ethical hacking practices.</p>
                 </div>
 
                 <div class="education-card">
-                    <div class="edu-header">
-                        <h3>Diploma Smart Technologies Technician</h3>
-                        <p class="edu-school">Lycée Guillaume Kroll</p>
+                    <div class="edu-icon-placeholder">
+                        <img src="school-icon-2.png" alt="Smart Technology School Icon">
                     </div>
-                    <p class="edu-period">09.2021 – 07.2025</p>
+                    <div class="edu-header">
+                        <h3>Smart Technology Diploma</h3>
+                        <span class="edu-school">Technical Education</span>
+                    </div>
+                    <span class="edu-period">Completed</span>
+                    <p class="edu-description">Foundation in IoT, network infrastructure, and smart systems development with practical hands-on experience.</p>
+                </div>
+
+                <div class="education-card">
+                    <div class="edu-icon-placeholder">
+                        <img src="school-icon-3.png" alt="Continuous Learning School Icon">
+                    </div>
+                    <div class="edu-header">
+                        <h3>Continuous Learning</h3>
+                        <span class="edu-school">Online Platforms</span>
+                    </div>
+                    <span class="edu-period">Ongoing</span>
+                    <p class="edu-description">Active participation in TryHackMe labs, OSCP+ preparation, and industry-recognized certification programs.</p>
                 </div>
             </div>
         </div>
@@ -477,45 +470,45 @@
     <!-- Languages Section -->
     <section class="languages" id="languages">
         <div class="container">
-            <h2 class="section-title">Languages</h2>
+            <h2 class="section-title">Languages & Skills</h2>
             <div class="languages-grid">
                 <div class="language-item">
                     <div class="language-header">
-                        <h4>Français</h4>
-                        <span class="language-level">B2 (Upper-intermediate)</span>
+                        <h4>English</h4>
+                        <span class="language-level">Professional</span>
                     </div>
                     <div class="language-bar">
-                        <div class="language-progress" style="width: 80%;"></div>
+                        <div class="language-progress" style="width: 90%"></div>
                     </div>
                 </div>
 
                 <div class="language-item">
                     <div class="language-header">
-                        <h4>Anglais</h4>
-                        <span class="language-level">B2 (Upper-intermediate)</span>
-                    </div>
-                    <div class="language-bar">
-                        <div class="language-progress" style="width: 80%;"></div>
-                    </div>
-                </div>
-
-                <div class="language-item">
-                    <div class="language-header">
-                        <h4>Luxembourgeois</h4>
-                        <span class="language-level">A2 (Elementary)</span>
-                    </div>
-                    <div class="language-bar">
-                        <div class="language-progress" style="width: 50%;"></div>
-                    </div>
-                </div>
-
-                <div class="language-item">
-                    <div class="language-header">
-                        <h4>Arabe</h4>
+                        <h4>French</h4>
                         <span class="language-level">Native</span>
                     </div>
                     <div class="language-bar">
-                        <div class="language-progress" style="width: 100%;"></div>
+                        <div class="language-progress" style="width: 100%"></div>
+                    </div>
+                </div>
+
+                <div class="language-item">
+                    <div class="language-header">
+                        <h4>Luxembourgish</h4>
+                        <span class="language-level">Fluent</span>
+                    </div>
+                    <div class="language-bar">
+                        <div class="language-progress" style="width: 95%"></div>
+                    </div>
+                </div>
+
+                <div class="language-item">
+                    <div class="language-header">
+                        <h4>German</h4>
+                        <span class="language-level">Intermediate</span>
+                    </div>
+                    <div class="language-bar">
+                        <div class="language-progress" style="width: 70%"></div>
                     </div>
                 </div>
             </div>
@@ -527,20 +520,19 @@
         <div class="container">
             <h2 class="section-title">Let's Connect</h2>
             <div class="contact-wrapper">
-                <!-- Contact Form -->
                 <div class="contact-form-wrapper">
                     <form class="contact-form" id="contactForm">
                         <div class="form-group">
-                            <label for="name" class="form-label">Name</label>
+                            <label for="name" class="form-label">Full Name</label>
                             <input type="text" id="name" name="name" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="email" class="form-label">Email</label>
+                            <label for="email" class="form-label">Email Address</label>
                             <input type="email" id="email" name="email" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="message" class="form-label">Message</label>
-                            <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
                         </div>
                         <button type="submit" class="btn btn--primary btn--full-width">
                             <i class="fas fa-paper-plane"></i> Send Message
@@ -548,25 +540,24 @@
                     </form>
                 </div>
 
-                <!-- Social Links -->
                 <div class="social-links-section">
-                    <h3>Follow Me</h3>
+                    <h3>Find Me Online</h3>
                     <div class="social-links">
-                        <a href="https://github.com/se-alrefaee" target="_blank" rel="noopener noreferrer" class="social-link-rect" title="GitHub">
+                        <a href="https://github.com/yourprofile" class="social-link-rect" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-github"></i>
-                            <span>GitHub</span>
+                            <span>GitHub Portfolio</span>
                         </a>
-                        <a href="https://www.linkedin.com/in/saif-eddin-a-97b234336/" target="_blank" rel="noopener noreferrer" class="social-link-rect" title="LinkedIn">
+                        <a href="https://linkedin.com/in/yourprofile" class="social-link-rect" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-linkedin"></i>
-                            <span>LinkedIn</span>
+                            <span>LinkedIn Profile</span>
                         </a>
-                        <a href="mailto:s.e.alrefaee@gmail.com" class="social-link-rect" title="Email">
+                        <a href="https://tryhackme.com/p/yourprofile" class="social-link-rect" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>TryHackMe Account</span>
+                        </a>
+                        <a href="mailto:your.email@example.com" class="social-link-rect">
                             <i class="fas fa-envelope"></i>
-                            <span>s.e.alrefaee@gmail.com</span>
-                        </a>
-                        <a href="https://tryhackme.com/p/iUmbraX" target="_blank" rel="noopener noreferrer" class="social-link-rect" title="TryHackMe">
-                            <i class="fas fa-user-secret"></i>
-                            <span>TryHackMe</span>
+                            <span>Email Me</span>
                         </a>
                     </div>
                 </div>
@@ -574,14 +565,21 @@
         </div>
     </section>
 
+    <!-- Resume Modal -->
+    <div id="resumeModal" class="resume-modal">
+        <div class="resume-modal-content">
+            <button class="resume-modal-close">&times;</button>
+            <iframe id="resumeIframe" src="resume.pdf" style="width: 100%; height: 100%; border: none;"></iframe>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Saif Eddin Al Refaee. All rights reserved. | Red Team Cybersecurity Portfolio</p>
+            <p>&copy; 2024 Cybersecurity Portfolio. All rights reserved. | Built with passion for security.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
-
