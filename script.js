@@ -1,7 +1,7 @@
 /* ==========================================
-   RED TEAM CYBERSECURITY PORTFOLIO
-   JavaScript Functionality
-   ========================================== */
+RED TEAM CYBERSECURITY PORTFOLIO
+Enhanced JavaScript Functionality with Animations
+========================================== */
 
 // ==========================================
 // NAVIGATION
@@ -33,12 +33,11 @@ function updateActiveLink(clickedLink) {
 // Update active link on scroll
 window.addEventListener('scroll', () => {
     let current = '';
-
     const sections = document.querySelectorAll('section');
+    
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-
         if (scrollY >= sectionTop - 200) {
             current = section.getAttribute('id');
         }
@@ -53,6 +52,78 @@ window.addEventListener('scroll', () => {
 });
 
 // ==========================================
+// ARSENAL TABS FUNCTIONALITY
+// ==========================================
+
+const arsenalTabButtons = document.querySelectorAll('.arsenal-tab-btn');
+const arsenalTabContents = document.querySelectorAll('.arsenal-tab-content');
+
+arsenalTabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const tabName = btn.getAttribute('data-tab');
+        
+        // Remove active class from all buttons
+        arsenalTabButtons.forEach(b => b.classList.remove('active'));
+        // Add active class to clicked button
+        btn.classList.add('active');
+        
+        // Hide all tab contents
+        arsenalTabContents.forEach(content => {
+            content.classList.remove('active');
+            content.style.animation = 'fadeOut 0.3s ease-out';
+        });
+        
+        // Show selected tab content
+        const selectedTab = document.getElementById(`${tabName}-tab`);
+        if (selectedTab) {
+            selectedTab.classList.add('active');
+            selectedTab.style.animation = 'fadeIn 0.4s ease-out';
+        }
+    });
+});
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+// ==========================================
+// RESUME MODAL FUNCTIONALITY
+// ==========================================
+
+const viewResumeBtn = document.getElementById('viewResumeBtn');
+const resumeModal = document.getElementById('resumeModal');
+const resumeModalClose = document.querySelector('.resume-modal-close');
+
+// Open resume modal
+viewResumeBtn?.addEventListener('click', () => {
+    resumeModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+});
+
+// Close resume modal
+resumeModalClose?.addEventListener('click', () => {
+    resumeModal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+});
+
+// Close modal when clicking outside
+resumeModal?.addEventListener('click', (e) => {
+    if (e.target === resumeModal) {
+        resumeModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Close modal with ESC key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && resumeModal.classList.contains('active')) {
+        resumeModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// ==========================================
 // FORM HANDLING
 // ==========================================
 
@@ -61,7 +132,7 @@ const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-
+        
         const formData = {
             name: document.getElementById('name').value,
             email: document.getElementById('email').value,
@@ -83,10 +154,9 @@ if (contactForm) {
 
         // Show success message
         showNotification('Message sent successfully! Thank you for reaching out.', 'success');
-
+        
         // Reset form
         contactForm.reset();
-
         console.log('Form Data:', formData);
     });
 }
@@ -137,7 +207,7 @@ function showNotification(message, type = 'info') {
     }, 3000);
 }
 
-// Add animation styles
+// Add animation styles for notifications
 const style = document.createElement('style');
 style.textContent = `
     @keyframes slideInNotification {
@@ -160,6 +230,16 @@ style.textContent = `
             transform: translateX(400px);
             opacity: 0;
         }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
     }
 `;
 document.head.appendChild(style);
@@ -189,6 +269,23 @@ document.querySelectorAll('.project-card, .arsenal-item, .contact-form-wrapper, 
 });
 
 // ==========================================
+// SMOOTH SCROLL BEHAVIOR
+// ==========================================
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// ==========================================
 // THEME DETECTION
 // ==========================================
 
@@ -205,24 +302,6 @@ detectTheme();
 
 // Listen for theme changes
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', detectTheme);
-
-// ==========================================
-// SMOOTH SCROLL BEHAVIOR
-// ==========================================
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
 
 // ==========================================
 // UTILITY FUNCTIONS
@@ -257,19 +336,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function initializePortfolio() {
     console.log('Initializing portfolio components...');
-
+    
     const requiredElements = [
         'hamburger',
         'navMenu',
-        'contactForm'
+        'contactForm',
+        'viewResumeBtn',
+        'resumeModal'
     ];
 
     requiredElements.forEach(id => {
         const element = document.getElementById(id);
         if (element) {
-            console.log(`✓ ${id} found`);
+            console.log(`✓ ${id} found and initialized`);
         }
     });
+
+    console.log('✓ Portfolio initialization complete');
 }
 
 // ==========================================
@@ -328,3 +411,4 @@ window.PortfolioDebug = {
 };
 
 console.log('Portfolio JavaScript loaded. Access debug functions via window.PortfolioDebug');
+console.log('Available features: Navigation, Arsenal Tabs, Resume Modal, Form Validation, Animations, Theme Detection');
