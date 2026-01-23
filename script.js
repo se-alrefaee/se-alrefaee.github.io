@@ -1,6 +1,6 @@
 /* ==========================================
 
-RED TEAM CYBERSECURITY PORTFOLIO
+SAIF EDDIN ALREFAEE - PORTFOLIO
 
 JavaScript Functionality with Advanced Animations
 
@@ -10,7 +10,7 @@ JavaScript Functionality with Advanced Animations
 // TERMINAL TEXT ANIMATION
 // ==========================================
 
-const terminalText = "Cybersecurity Penetration Tester";
+const terminalText = "Saif Eddin ALREFAEE";
 let index = 0;
 const terminalElement = document.querySelector('.terminal-text');
 
@@ -252,7 +252,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe elements
-document.querySelectorAll('.project-card, .arsenal-item, .contact-form-wrapper, .experience-item, .competition-card, .education-card, .language-item').forEach(el => {
+document.querySelectorAll('.project-card, .arsenal-item, .contact-form-wrapper, .experience-item, .competition-card, .education-card').forEach(el => {
   el.style.opacity = '0';
   observer.observe(el);
 });
