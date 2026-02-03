@@ -1,31 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Saif Eddin ALREFAEE - BTS Cybersecurity Student & Technical Professional">
-    <title>Saif Eddin ALREFAEE | Portfolio</title>
+    <title>Saif Eddin ALREFAEE - Cybersecurity Professional</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
-<body>
-    <!-- Background Effects -->
-    <div class="floating-orbs">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-    </div>
-    <div class="grid-background"></div>
-    <div class="cyber-lines"></div>
-
+<body data-color-scheme="dark">
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <i class="fas fa-shield-alt"></i>
-                Saif Eddin
+                <h1>Saif Eddin</h1>
+                <p class="nav-subtitle">Cybersecurity Professional</p>
             </div>
             <div class="hamburger" id="hamburger">
                 <span></span>
@@ -33,396 +23,254 @@
                 <span></span>
             </div>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link active">About</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#arsenal" class="nav-link">Skills</a></li>
-                <li><a href="#competitions" class="nav-link">Competitions</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#education" class="nav-link">Education</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
+    <!-- Sidebar Profile Card -->
+    <aside class="profile-card">
+        <div class="profile-content">
+            <div class="profile-avatar">
+                <div class="avatar-placeholder">SE</div>
+            </div>
+            <h2 class="profile-name">Saif Eddin</h2>
+            <p class="profile-title">Cybersecurity Professional</p>
+            <p class="profile-location">📍 Esch-sur-Alzette, Luxembourg</p>
+            <p class="profile-email">s.e.alrefaee@gmail.com</p>
+            
+            <div class="social-links">
+                <a href="https://github.com/se-alrefaee" target="_blank" class="social-icon" title="GitHub">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.6.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <a href="mailto:s.e.alrefaee@gmail.com" class="social-icon" title="Email">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                </a>
+                <a href="tel:+352691190825" class="social-icon" title="Phone">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.707 12.293l-5.293-5.293a1 1 0 00-1.414 0l-5.293 5.293a1 1 0 101.414 1.414L11 9.414V19a1 1 0 102 0V9.414l3.293 3.293a1 1 0 101.414-1.414z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <button class="btn btn-primary btn-hire" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                ✉️ Contact Me
+            </button>
+
+            <div class="profile-stats">
+                <div class="stat">
+                    <div class="stat-number" data-target="5">0</div>
+                    <p class="stat-label">Years Experience</p>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" data-target="20">0</div>
+                    <p class="stat-label">Projects</p>
+                </div>
+            </div>
+
+            <p class="copyright">© 2025 Saif Eddin. All Rights Reserved</p>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section id="about" class="hero">
             <div class="hero-content">
-                <div class="name-badge">
-                    <img src="profile-photo.jpg" alt="Saif Eddin ALREFAEE" class="profile-photo">
-                    <div class="badge-label">BTS Cybersecurity Student</div>
-                    <h1 class="hero-title terminal-text">
-                        <span class="terminal-cursor"></span>
-                    </h1>
-                    <p class="hero-subtitle">Technical Professional • Network Security • Robotics & Automation</p>
-                    <a href="resume.pdf" target="_blank" class="btn-resume">
-                        <i class="fas fa-download"></i> View Resume
-                    </a>
+                <h1 class="hero-title">
+                    <span class="terminal-text">Saif Eddin ALREFAEE</span>
+                </h1>
+                <p class="hero-subtitle">BTS Cybersecurity Student</p>
+                <p class="hero-description">
+                    I am a BTS Cybersecurity student with a strong background in technical systems and automation. Holding a Smart Technologies diploma, I bring hands-on experience from multiple internships in network infrastructure, maintenance, and embedded systems programming.
+                </p>
+                <p class="hero-description">
+                    My passion lies in cybersecurity, robotics, and technical problem-solving. I'm dedicated to developing my skills in network security and system administration while maintaining a keen interest in emerging technologies and automation solutions.
+                </p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
                 </div>
-                <div class="hero-stats">
-                    <div class="stat-item fade-in-stat">
-                        <div class="stat-number" data-target="5">0</div>
-                        <div class="stat-label">Projects</div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Advanced Phishing Attack Simulation</h3>
+                        <span class="project-tag">Security</span>
                     </div>
-                    <div class="stat-item fade-in-stat">
-                        <div class="stat-number" data-target="4">0</div>
-                        <div class="stat-label">Competitions</div>
+                    <p>Advanced phishing attack simulation and security awareness training framework with targeted delivery mechanisms.</p>
+                    <div class="project-meta">
+                        <span class="badge">Python</span>
+                        <span class="badge">Social Engineering</span>
                     </div>
-                    <div class="stat-item fade-in-stat">
-                        <div class="stat-number" data-target="3">0</div>
-                        <div class="stat-label">Internships</div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Exploitation Framework</h3>
+                        <span class="project-tag">Pentesting</span>
+                    </div>
+                    <p>Comprehensive exploitation framework implementation with reverse shells and post-exploitation analysis.</p>
+                    <div class="project-meta">
+                        <span class="badge">Metasploit</span>
+                        <span class="badge">Payloads</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Man-in-the-Middle Attack Lab</h3>
+                        <span class="project-tag">Network Security</span>
+                    </div>
+                    <p>Man-in-the-Middle attack demonstration with network traffic analysis and packet inspection.</p>
+                    <div class="project-meta">
+                        <span class="badge">Wireshark</span>
+                        <span class="badge">Ettercap</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Cryptography Implementation</h3>
+                        <span class="project-tag">Cryptography</span>
+                    </div>
+                    <p>Symmetric and asymmetric encryption implementation with RSA, AES, and SHA256 algorithms.</p>
+                    <div class="project-meta">
+                        <span class="badge">RSA</span>
+                        <span class="badge">AES</span>
+                        <span class="badge">SHA256</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Cryptographic Hashing</h3>
+                        <span class="project-tag">Security</span>
+                    </div>
+                    <p>Cryptographic hashing fundamentals with file integrity verification and avalanche effect analysis.</p>
+                    <div class="project-meta">
+                        <span class="badge">Hashing</span>
+                        <span class="badge">Verification</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content fade-in">
-                <p>I am a BTS Cybersecurity student with a strong background in technical systems and automation. Holding a Smart Technologies diploma, I bring hands-on experience from multiple internships in network infrastructure, maintenance, and embedded systems programming.</p>
-                <p>My passion lies in cybersecurity, robotics, and technical problem-solving. I'm dedicated to developing my skills in network security and system administration while maintaining a keen interest in emerging technologies and automation solutions.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section class="experience">
-        <div class="container">
+        <!-- Experience Section -->
+        <section id="experience" class="experience">
             <h2 class="section-title">Professional Experience</h2>
             <div class="experience-timeline">
                 <div class="experience-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Maintenance Intern - LA PROVENÇALE</h3>
-                        <div class="exp-date">20.01.2025 – 14.02.2025</div>
-                        <ul class="exp-list">
-                            <li>Assisted a team of 3 technicians in maintenance of critical equipment</li>
-                            <li>Inspected up to 5 automated packaging lines per day to anticipate breakdowns</li>
-                        </ul>
+                    <div class="timeline-marker"></div>
+                    <div class="experience-content">
+                        <h3>Network Infrastructure Migration</h3>
+                        <p class="experience-role">Technical Support • 50+ Clients</p>
+                        <p>Copper to fiber network migration projects supporting 50+ clients with seamless infrastructure upgrades.</p>
+                        <div class="experience-tags">
+                            <span class="tag">Network Management</span>
+                            <span class="tag">Client Support</span>
+                        </div>
                     </div>
                 </div>
+
                 <div class="experience-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Network Installation Intern - LUSCHUSTER</h3>
-                        <div class="exp-date">20.01.2024 – 14.02.2025</div>
-                        <ul class="exp-list">
-                            <li>Migrated over 50 customers from copper to fiber optic connections</li>
-                            <li>Performed on-site network troubleshooting, achieving 100% resolution on first intervention</li>
-                        </ul>
+                    <div class="timeline-marker"></div>
+                    <div class="experience-content">
+                        <h3>Device Programming</h3>
+                        <p class="experience-role">Embedded Systems • 1000+ Devices</p>
+                        <p>Programming and deployment of 1000+ cashless reader devices with configuration management.</p>
+                        <div class="experience-tags">
+                            <span class="tag">Embedded Systems</span>
+                            <span class="tag">Hardware Configuration</span>
+                        </div>
                     </div>
                 </div>
+
                 <div class="experience-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Cashless Systems Programming Intern - AZTEK</h3>
-                        <div class="exp-date">17.07.2023 – 11.08.2023</div>
-                        <ul class="exp-list">
-                            <li>Programmed and assembled more than 1,000 cashless reader devices</li>
-                            <li>Programmed over 2,000 tags for deployment</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Competitions Section -->
-    <section class="competitions" id="competitions">
-        <div class="container">
-            <h2 class="section-title">Competitions & Skill Events</h2>
-            <div class="competitions-grid">
-                <div class="competition-card">
-                    <div class="comp-flag">🇩🇰</div>
-                    <h3>EuroSkills</h3>
-                    <div class="comp-location">
-                        <i class="fas fa-map-marker-alt"></i> Denmark
-                    </div>
-                    <div class="comp-date">08.04.2025 – 10.04.2025</div>
-                    <ul class="comp-highlights">
-                        <li>International skill competition</li>
-                        <li>Technical expertise showcase</li>
-                        <li>Professional development</li>
-                    </ul>
-                </div>
-                <div class="competition-card">
-                    <div class="comp-flag">🇩🇪</div>
-                    <h3>GermanySkills</h3>
-                    <div class="comp-location">
-                        <i class="fas fa-map-marker-alt"></i> Germany
-                    </div>
-                    <div class="comp-date">10.09.2025 – 12.06.2025</div>
-                    <ul class="comp-highlights">
-                        <li>Advanced technical competition</li>
-                        <li>Industry recognition</li>
-                        <li>Networking opportunities</li>
-                    </ul>
-                </div>
-                <div class="competition-card">
-                    <div class="comp-flag">🇵🇹</div>
-                    <h3>PortugalSkills</h3>
-                    <div class="comp-location">
-                        <i class="fas fa-map-marker-alt"></i> Portugal
-                    </div>
-                    <div class="comp-date">13.11.2024 – 16.11.2024</div>
-                    <ul class="comp-highlights">
-                        <li>Robotic cell design & commissioning</li>
-                        <li>Technical documentation</li>
-                        <li>Jury presentation</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <a href="project-spear-phishing.html" class="project-card">
-                    <div class="project-image">
-                        <img src="project-spear-phishing.jpg" alt="Spear Phishing Project">
-                    </div>
-                    <div class="project-tag">Security</div>
-                    <div class="project-content">
-                        <h3>Spear Phishing Framework</h3>
-                        <p>Advanced phishing attack simulation and security awareness training framework with targeted delivery mechanisms.</p>
-                        <div class="project-skills">
-                            <span>Python</span>
-                            <span>Security</span>
-                            <span>Social Engineering</span>
+                    <div class="timeline-marker"></div>
+                    <div class="experience-content">
+                        <h3>On-site Network Troubleshooting</h3>
+                        <p class="experience-role">System Administrator</p>
+                        <p>On-site network troubleshooting and technical support ensuring optimal system performance.</p>
+                        <div class="experience-tags">
+                            <span class="tag">Troubleshooting</span>
+                            <span class="tag">System Administration</span>
                         </div>
                     </div>
-                </a>
-
-                <a href="project-metasploit.html" class="project-card">
-                    <div class="project-image">
-                        <img src="project-metasploit.jpg" alt="Metasploit Project">
-                    </div>
-                    <div class="project-tag">Exploitation</div>
-                    <div class="project-content">
-                        <h3>Metasploit Exploitation</h3>
-                        <p>Comprehensive exploitation framework implementation with reverse shells and post-exploitation analysis.</p>
-                        <div class="project-skills">
-                            <span>Metasploit</span>
-                            <span>Exploitation</span>
-                            <span>Penetration Testing</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="project-mitm.html" class="project-card">
-                    <div class="project-image">
-                        <img src="project-mitm.jpg" alt="MITM Attack Project">
-                    </div>
-                    <div class="project-tag">Network</div>
-                    <div class="project-content">
-                        <h3>MITM Attack & Analysis</h3>
-                        <p>Man-in-the-Middle attack demonstration with network traffic analysis and packet inspection.</p>
-                        <div class="project-skills">
-                            <span>Ettercap</span>
-                            <span>Wireshark</span>
-                            <span>Network Analysis</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="project-encryption.html" class="project-card">
-                    <div class="project-image">
-                        <img src="project-encryption.jpg" alt="Encryption Project">
-                    </div>
-                    <div class="project-tag">Cryptography</div>
-                    <div class="project-content">
-                        <h3>Encryption Algorithms</h3>
-                        <p>Symmetric and asymmetric encryption implementation with RSA, AES, and SHA256 algorithms.</p>
-                        <div class="project-skills">
-                            <span>Cryptography</span>
-                            <span>RSA</span>
-                            <span>AES</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="project-hashing.html" class="project-card">
-                    <div class="project-image">
-                        <img src="project-hashing.jpg" alt="Hashing Project">
-                    </div>
-                    <div class="project-tag">Security</div>
-                    <div class="project-content">
-                        <h3>Hashing & Integrity</h3>
-                        <p>Cryptographic hashing fundamentals with file integrity verification and avalanche effect analysis.</p>
-                        <div class="project-skills">
-                            <span>Hashing</span>
-                            <span>MD5</span>
-                            <span>SHA256</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="arsenal" id="arsenal">
-        <div class="container">
-            <h2 class="section-title">Skills & Tools</h2>
-
-            <div class="arsenal-section">
-                <h3 class="arsenal-title">Programming Languages</h3>
-                <div class="arsenal-box">
-                    <div class="arsenal-tool">
-                        <i class="fab fa-python"></i>
-                        <span>Python</span>
-                        <span class="skill-level">Intermediate</span>
-                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="arsenal-section">
-                <h3 class="arsenal-title">Technical Skills</h3>
-                <div class="arsenal-box">
-                    <div class="arsenal-tool">
-                        <i class="fas fa-chart-network"></i>
-                        <span>Office 365</span>
-                        <span class="skill-level">Intermediate</span>
-                    </div>
-                    <div class="arsenal-tool">
-                        <i class="fas fa-robot"></i>
-                        <span>TIA Portal v16</span>
-                        <span class="skill-level">Intermediate</span>
-                    </div>
-                    <div class="arsenal-tool">
-                        <i class="fas fa-cog"></i>
-                        <span>RoboGuide</span>
-                        <span class="skill-level">Intermediate</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="arsenal-section">
-                <h3 class="arsenal-title">Languages</h3>
-                <div class="arsenal-box">
-                    <div class="arsenal-tool">
-                        <i class="fas fa-globe"></i>
-                        <span>Français</span>
-                        <span class="skill-level">B2 Upper-intermediate</span>
-                    </div>
-                    <div class="arsenal-tool">
-                        <i class="fas fa-globe"></i>
-                        <span>Anglais</span>
-                        <span class="skill-level">B2 Upper-intermediate</span>
-                    </div>
-                    <div class="arsenal-tool">
-                        <i class="fas fa-globe"></i>
-                        <span>Luxembourgeois</span>
-                        <span class="skill-level">A2 Elementary</span>
-                    </div>
-                    <div class="arsenal-tool">
-                        <i class="fas fa-globe"></i>
-                        <span>Arabic</span>
-                        <span class="skill-level">Native</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section class="education" id="education">
-        <div class="container">
+        <!-- Education Section -->
+        <section id="education" class="education">
             <h2 class="section-title">Education</h2>
-            <div class="education-grid">
+            <div class="education-cards">
                 <div class="education-card">
-                    <div class="edu-header">
-                        <h3>BTS Cybersecurity</h3>
-                    </div>
-                    <p class="edu-school">Lycée Guillaume Kroll</p>
-                    <p class="edu-period">09.2025 – 07.2027</p>
-                    <p style="color: var(--text-secondary); margin-top: var(--space-12);">Advanced cybersecurity program with focus on network security, penetration testing, and secure systems design.</p>
+                    <h3>BTS Cybersecurity</h3>
+                    <p class="education-school">Lycée Guillaume Kroll</p>
+                    <p class="education-date">09.2025 – 07.2027</p>
+                    <p class="education-description">Advanced cybersecurity program with focus on network security, penetration testing, and secure systems design.</p>
                 </div>
 
                 <div class="education-card">
-                    <div class="edu-header">
-                        <h3>Smart Technologies Technician</h3>
-                    </div>
-                    <p class="edu-school">Lycée Guillaume Kroll</p>
-                    <p class="edu-period">09.2021 – 07.2025</p>
-                    <p style="color: var(--text-secondary); margin-top: var(--space-12);">Comprehensive technical diploma covering automation, robotics, networks, and emerging technologies.</p>
+                    <h3>Smart Technologies Diploma</h3>
+                    <p class="education-school">Lycée Guillaume Kroll</p>
+                    <p class="education-date">09.2021 – 07.2025</p>
+                    <p class="education-description">Comprehensive technical diploma covering automation, robotics, networks, and emerging technologies.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Let's Connect Section -->
-    <section class="connect" id="contact">
-        <div class="container">
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
             <h2 class="section-title">Let's Connect</h2>
-            <div class="connect-wrapper">
-                <div class="connect-content fade-in">
-                    <p class="connect-intro">Interested in collaboration, internship opportunities, or discussing cybersecurity projects? Let's connect!</p>
-                    
-                    <div class="connect-methods">
-                        <div class="connect-card">
-                            <i class="fas fa-envelope"></i>
-                            <h3>Email</h3>
-                            <p>Get in touch for opportunities and inquiries</p>
-                            <a href="mailto:s.e.alrefaee@gmail.com" class="connect-link">s.e.alrefaee@gmail.com</a>
-                        </div>
-                        <div class="connect-card">
-                            <i class="fas fa-phone"></i>
-                            <h3>Phone</h3>
-                            <p>Call me for professional discussions</p>
-                            <a href="tel:+352691190825" class="connect-link">+352 691 190 825</a>
-                        </div>
-                        <div class="connect-card">
-                            <i class="fab fa-github"></i>
-                            <h3>GitHub</h3>
-                            <p>Check out my projects and contributions</p>
-                            <a href="https://github.com/se-alrefaee" target="_blank" rel="noopener noreferrer" class="connect-link">github.com/se-alrefaee</a>
-                        </div>
-                        <div class="connect-card">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <h3>Location</h3>
-                            <p>Based in Luxembourg</p>
-                            <p style="font-size: 12px; color: var(--text-secondary); margin-top: 8px;">Esch-sur-Alzette</p>
-                        </div>
+            <p class="contact-subtitle">Interested in collaboration, internship opportunities, or discussing cybersecurity projects?</p>
+            
+            <div class="contact-wrapper">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Your Name" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Your Email" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" placeholder="Your Message" rows="5" required class="form-control"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit">Send Message</button>
+                </form>
+
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h4>Email</h4>
+                        <p><a href="mailto:s.e.alrefaee@gmail.com">s.e.alrefaee@gmail.com</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Phone</h4>
+                        <p><a href="tel:+352691190825">+352 691 190 825</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Location</h4>
+                        <p>Esch-sur-Alzette, Luxembourg</p>
                     </div>
                 </div>
-
-                <div class="contact-form-wrapper fade-in">
-                    <h3>Send me a Message</h3>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" id="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary">Send Message</button>
-                    </form>
-                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Saif Eddin ALREFAEE. All rights reserved.</p>
-            <p>BTS Cybersecurity Student | Technical Professional | Robotics Enthusiast</p>
-        </div>
-    </footer>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
-
 </html>
-
-
-
