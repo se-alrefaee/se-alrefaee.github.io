@@ -215,7 +215,7 @@ const scrollObserver = new IntersectionObserver((entries) => {
 // Observe elements for scroll animations
 document.addEventListener('DOMContentLoaded', () => {
   const animatedElements = document.querySelectorAll(
-    '.content-section, .project-card, .timeline-item, .skill-category'
+    '.content-section, .project-card, .timeline-item, .skill-category, .certification-item'
   );
   
   animatedElements.forEach(el => {
