@@ -2,123 +2,310 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Symmetric and Asymmetric Encryption Lab</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encryption Labs - Saif Eddin Al Refaee</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary-red: #ff0000;
+            --bg-dark: #1f1f1f;
+            --bg-card: #292929;
+            --text-main: #f5f5f5;
+            --text-muted: #b3b3b3;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .page {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px 40px 20px;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .title-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        h1 {
+            font-size: 2.1rem;
+            color: var(--primary-red);
+        }
+
+        .project-meta {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .project-meta span {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .hero-image {
+            flex: 1 1 260px;
+            min-height: 180px;
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            border: 1px solid #3a3a3a;
+            background-image: url("project-encryption.jpg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .hero-text {
+            flex: 2 1 320px;
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            border: 1px solid #3a3a3a;
+            padding: 18px 20px;
+        }
+
+        .hero-text h2 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--primary-red);
+        }
+
+        .hero-text p {
+            font-size: 0.98rem;
+            color: var(--text-main);
+        }
+
+        main {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: minmax(0, 2fr) minmax(260px, 1.3fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 900px) {
+            main {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        section {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            border: 1px solid #3a3a3a;
+            padding: 18px 20px;
+            margin-bottom: 18px;
+        }
+
+        section h3 {
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+            color: var(--primary-red);
+        }
+
+        p {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        ul {
+            list-style: disc;
+            margin-left: 18px;
+            margin-top: 5px;
+            font-size: 0.95rem;
+        }
+
+        li + li {
+            margin-top: 4px;
+        }
+
+        .pill-list {
+            list-style: none;
+            margin-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .pill-list li {
+            background-color: #333333;
+            border-radius: 999px;
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border: 1px solid #444444;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        @media (max-width: 700px) {
+            .two-column {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            border-radius: 6px;
+            border: 1px solid var(--primary-red);
+            color: var(--primary-red);
+            background-color: transparent;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.15s ease, color 0.15s ease;
+        }
+
+        .back-button:hover {
+            background-color: var(--primary-red);
+            color: #1f1f1f;
+        }
+    </style>
 </head>
 <body>
-    <div class="floating-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div></div>
-    <div class="matrix-rain"></div><div class="grid-background"></div><div class="cyber-lines"></div>
-
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo"><i class="fas fa-terminal"></i><span>SE_ALREFAEE</span></div>
-            <div class="hamburger"><span></span><span></span><span></span></div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Portfolio</a></li>
-                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <section class="hero" style="padding: 120px 0 60px;">
-        <div class="container">
-            <div class="hero-content" style="max-width: 900px;">
-                <h1 class="hero-title">Encryption Labs</h1>
-                <div class="hero-subtitle">Symmetric & Asymmetric Encryption Fundamentals</div>
-                <p class="hero-description">Hands-on cryptography lab exercises exploring MD5, SHA256 hashing and symmetric/asymmetric encryption. Practical file encryption and decryption with peer collaboration to understand cryptographic principles.</p>
+<div class="page">
+    <header>
+        <div class="title-row">
+            <div>
+                <h1>Symmetric and Asymmetric Encryption Lab</h1>
+                <div class="project-meta">
+                    <span>School: Lycée Guillaume Kroll</span>
+                    <span>Class: BCYB25 - FUCYB</span>
+                    <span>Teacher: LUDWIG Marc</span>
+                </div>
             </div>
+            <a href="index.html" class="back-button">← Back to main site</a>
         </div>
-    </section>
 
-    <section style="padding: 80px 0; position: relative; z-index: 10;">
-        <div class="container">
-            <div style="background: var(--color-secondary); padding: var(--space-32); border-radius: var(--radius-lg); border: 1px solid var(--color-border); margin-bottom: var(--space-32); box-shadow: var(--shadow-sm);">
-                <h2 style="color: var(--color-primary); font-size: var(--font-size-2xl); margin-bottom: var(--space-20); text-transform: uppercase;">Lab Overview</h2>
-                <p style="color: var(--color-text-secondary); font-size: var(--font-size-lg); line-height: var(--line-height-normal); margin-bottom: var(--space-16);">
-                    Comprehensive cryptography lab covering fundamental encryption concepts and practical implementations. Explored both symmetric encryption (shared keys) and asymmetric encryption (public/private key pairs). Collaborated with peers to encrypt, transmit, and decrypt sensitive information securely.
+        <div class="hero">
+            <div class="hero-image"></div>
+            <div class="hero-text">
+                <h2>Project overview</h2>
+                <p>
+                    This lab explores the fundamentals of cryptography through practical exercises with hashing, symmetric encryption, and asymmetric encryption. 
+                    The focus is on understanding how these building blocks protect confidentiality and integrity in real systems, not only on running commands.
                 </p>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-20);">
-                    <div style="background: var(--color-surface); padding: var(--space-16); border-radius: var(--radius-base); border-left: 3px solid var(--color-primary);">
-                        <div style="color: var(--color-primary); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); text-transform: uppercase; margin-bottom: var(--space-8);">Focus</div>
-                        <div style="color: var(--color-text);">Cryptographic Principles</div>
-                    </div>
-                    <div style="background: var(--color-surface); padding: var(--space-16); border-radius: var(--radius-base); border-left: 3px solid var(--color-primary);">
-                        <div style="color: var(--color-primary); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); text-transform: uppercase; margin-bottom: var(--space-8);">Algorithms</div>
-                        <div style="color: var(--color-text);">MD5, SHA256, RSA, AES</div>
-                    </div>
-                    <div style="background: var(--color-surface); padding: var(--space-16); border-radius: var(--radius-base); border-left: 3px solid var(--color-primary);">
-                        <div style="color: var(--color-primary); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); text-transform: uppercase; margin-bottom: var(--space-8);">Method</div>
-                        <div style="color: var(--color-text);">Practical File Encryption</div>
-                    </div>
-                </div>
-            </div>
-
-            <h2 style="color: var(--color-text); font-size: var(--font-size-2xl); margin-bottom: var(--space-20); text-transform: uppercase; margin-top: var(--space-32);">Encryption Concepts Explored</h2>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-24); margin-bottom: var(--space-32);">
-                <div style="background: var(--color-surface); padding: var(--space-24); border-radius: var(--radius-lg); border: 1px solid var(--color-card-border); box-shadow: var(--shadow-sm);">
-                    <div style="display: flex; align-items: center; gap: var(--space-12); margin-bottom: var(--space-16);">
-                        <div style="width: 40px; height: 40px; background: var(--color-primary); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: var(--color-btn-primary-text); font-weight: var(--font-weight-bold);">1</div>
-                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); text-transform: uppercase;">Hashing Fundamentals</h3>
-                    </div>
-                    <p style="color: var(--color-text-secondary); font-size: var(--font-size-base);">Learned MD5 and SHA256 hashing algorithms. Understood one-way functions and their role in data integrity verification.</p>
-                </div>
-
-                <div style="background: var(--color-surface); padding: var(--space-24); border-radius: var(--radius-lg); border: 1px solid var(--color-card-border); box-shadow: var(--shadow-sm);">
-                    <div style="display: flex; align-items: center; gap: var(--space-12); margin-bottom: var(--space-16);">
-                        <div style="width: 40px; height: 40px; background: var(--color-primary); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: var(--color-btn-primary-text); font-weight: var(--font-weight-bold);">2</div>
-                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); text-transform: uppercase;">Symmetric Encryption</h3>
-                    </div>
-                    <p style="color: var(--color-text-secondary); font-size: var(--font-size-base);">Practiced AES encryption with shared keys. Encrypted and decrypted files using symmetric algorithms for fast data protection.</p>
-                </div>
-
-                <div style="background: var(--color-surface); padding: var(--space-24); border-radius: var(--radius-lg); border: 1px solid var(--color-card-border); box-shadow: var(--shadow-sm);">
-                    <div style="display: flex; align-items: center; gap: var(--space-12); margin-bottom: var(--space-16);">
-                        <div style="width: 40px; height: 40px; background: var(--color-primary); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: var(--color-btn-primary-text); font-weight: var(--font-weight-bold);">3</div>
-                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); text-transform: uppercase;">Asymmetric Encryption</h3>
-                    </div>
-                    <p style="color: var(--color-text-secondary); font-size: var(--font-size-base);">Explored RSA key pairs and public/private key cryptography. Implemented secure key distribution and encryption without pre-shared secrets.</p>
-                </div>
-
-                <div style="background: var(--color-surface); padding: var(--space-24); border-radius: var(--radius-lg); border: 1px solid var(--color-card-border); box-shadow: var(--shadow-sm);">
-                    <div style="display: flex; align-items: center; gap: var(--space-12); margin-bottom: var(--space-16);">
-                        <div style="width: 40px; height: 40px; background: var(--color-primary); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: var(--color-btn-primary-text); font-weight: var(--font-weight-bold);">4</div>
-                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); text-transform: uppercase;">Peer Collaboration</h3>
-                    </div>
-                    <p style="color: var(--color-text-secondary); font-size: var(--font-size-base);">Exchanged encrypted messages with colleagues. Each party encrypted with recipient's public key, demonstrating secure communication protocols.</p>
-                </div>
-            </div>
-
-            <h2 style="color: var(--color-text); font-size: var(--font-size-2xl); margin-bottom: var(--space-20); text-transform: uppercase; margin-top: var(--space-32);">Key Learning Outcomes</h2>
-            
-            <div style="background: var(--color-secondary); padding: var(--space-32); border-radius: var(--radius-lg); border: 1px solid var(--color-border); margin-bottom: var(--space-32);">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-24);">
-                    <div>
-                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); margin-bottom: var(--space-12); text-transform: uppercase; display: flex; align-items: center; gap: var(--space-10);"><i class="fas fa-lock"></i> Encryption Techniques</h3>
-                        <p style="color: var(--color-text-secondary); font-size: var(--font-size-base); line-height: var(--line-height-normal);">Comprehensive understanding of both symmetric and asymmetric encryption methods. When to apply each technique based on security requirements and performance constraints.</p>
-                    </div>
-                    <div>
-                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); margin-bottom: var(--space-12); text-transform: uppercase; display: flex; align-items: center; gap: var(--space-10);"><i class="fas fa-key"></i> Key Management</h3>
-                        <p style="color: var(--color-text-secondary); font-size: var(--font-size-base); line-height: var(--line-height-normal);">Best practices for cryptographic key generation, storage, and rotation. Understanding key derivation functions and secure key exchange protocols.</p>
-                    </div>
-                    <div>
-                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); margin-bottom: var(--space-12); text-transform: uppercase; display: flex; align-items: center; gap: var(--space-10);"><i class="fas fa-shield-alt"></i> Data Protection</h3>
-                        <p style="color: var(--color-text-secondary); font-size: var(--font-size-base); line-height: var(--line-height-normal);">Practical implementation of encryption for file protection and secure data transmission. Understanding confidentiality and integrity verification.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div style="margin-top: var(--space-32); text-align: center;">
-                <a href="index.html#projects" class="btn btn-secondary">
-                    <i class="fas fa-arrow-left"></i> Back to Projects
-                </a>
             </div>
         </div>
-    </section>
+    </header>
 
-    <script src="script.js"></script>
+    <main>
+        <div>
+            <section>
+                <h3>Objectives</h3>
+                <ul>
+                    <li>Understand the difference between hashing, symmetric encryption, and asymmetric encryption.</li>
+                    <li>Use tools to encrypt and decrypt files with shared keys and public/private key pairs.</li>
+                    <li>Exchange encrypted messages with peers to simulate secure communication over an insecure channel.</li>
+                    <li>Relate cryptographic concepts to real‑world use cases such as HTTPS, secure email, and file protection.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Technical implementation</h3>
+                <div class="two-column">
+                    <div>
+                        <p><strong>Hashing.</strong> I generated hashes using MD5 and SHA‑256 to show how the same input always produces the same fingerprint and how tiny changes in a file produce a completely different hash.</p>
+                        <p><strong>Symmetric encryption.</strong> Using AES with a shared secret key, I encrypted local files and then decrypted them, verifying that only someone who knows the key can recover the original content.</p>
+                    </div>
+                    <div>
+                        <p><strong>Asymmetric encryption.</strong> I created RSA key pairs, shared public keys with classmates, and encrypted messages for each other that could only be decrypted with the corresponding private key.</p>
+                        <p><strong>Use cases.</strong> We discussed how these techniques are combined in protocols like TLS, where asymmetric encryption is used to exchange symmetric keys for performance reasons.</p>
+                        <ul class="pill-list">
+                            <li>MD5 / SHA‑256</li>
+                            <li>AES</li>
+                            <li>RSA keys</li>
+                            <li>OpenSSL / CLI tools</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3>Challenges and difficulties</h3>
+                <ul>
+                    <li><strong>Key management.</strong> One difficulty was keeping track of which key belonged to which person and which key was public or private. I solved this by using a clear folder structure and naming convention for key files.</li>
+                    <li><strong>Understanding the workflow.</strong> At first, it was confusing to remember when to use a public key and when to use a private key, especially for signing versus encryption. Drawing small diagrams of the message flow helped make the process much clearer.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>How I organized the work</h3>
+                <p>
+                    I divided the lab into three blocks: hashing, symmetric encryption, and asymmetric encryption. 
+                    For each block, I prepared a short checklist of commands to run, screenshots to capture, and questions to answer in the report.
+                </p>
+                <p>
+                    I stored all commands in a script file and kept example outputs in a separate notes document, which made it easier to repeat the lab or adapt it to other tools later.
+                </p>
+            </section>
+
+            <section>
+                <h3>Key learnings</h3>
+                <ul>
+                    <li>Hashing is about integrity and verification, while encryption is about confidentiality.</li>
+                    <li>Symmetric encryption is fast and efficient but requires a secure way to share the key.</li>
+                    <li>Asymmetric encryption simplifies key exchange and enables digital signatures, but is slower than symmetric algorithms.</li>
+                </ul>
+            </section>
+        </div>
+
+        <div>
+            <section>
+                <h3>Core activities</h3>
+                <ul>
+                    <li>Generating MD5 and SHA‑256 hashes for different files.</li>
+                    <li>Encrypting and decrypting example files using AES with a shared key.</li>
+                    <li>Creating RSA key pairs and exchanging public keys with classmates.</li>
+                    <li>Encrypting and decrypting messages using public/private key cryptography.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Tools and technologies</h3>
+                <ul>
+                    <li>OpenSSL and command‑line encryption tools.</li>
+                    <li>Linux shell for scripting repetitive tasks.</li>
+                    <li>Text editors for managing keys and configuration files.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Practical impact</h3>
+                <p>
+                    Completing this lab gave me a clearer mental model of how everyday technologies like HTTPS, VPNs, and secure storage rely on a combination of hashing, symmetric, and asymmetric cryptography.
+                </p>
+            </section>
+        </div>
+    </main>
+</div>
 </body>
 </html>
