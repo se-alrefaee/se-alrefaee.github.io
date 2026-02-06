@@ -2,192 +2,315 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>AI-Powered Spear Phishing Framework</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spear Phishing Campaign - Saif Eddin Al Refaee</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary-red: #ff0000;
+            --bg-dark: #1f1f1f;
+            --bg-card: #292929;
+            --text-main: #f5f5f5;
+            --text-muted: #b3b3b3;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .page {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px 40px 20px;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .title-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        h1 {
+            font-size: 2.1rem;
+            color: var(--primary-red);
+        }
+
+        .project-meta {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .project-meta span {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .hero-image {
+            flex: 1 1 260px;
+            min-height: 180px;
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            border: 1px solid #3a3a3a;
+            background-image: url("project-spear-phishing.jpg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .hero-text {
+            flex: 2 1 320px;
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            border: 1px solid #3a3a3a;
+            padding: 18px 20px;
+        }
+
+        .hero-text h2 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--primary-red);
+        }
+
+        .hero-text p {
+            font-size: 0.98rem;
+            color: var(--text-main);
+        }
+
+        main {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: minmax(0, 2fr) minmax(260px, 1.3fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 900px) {
+            main {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        section {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            border: 1px solid #3a3a3a;
+            padding: 18px 20px;
+            margin-bottom: 18px;
+        }
+
+        section h3 {
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+            color: var(--primary-red);
+        }
+
+        p {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        ul {
+            list-style: disc;
+            margin-left: 18px;
+            margin-top: 5px;
+            font-size: 0.95rem;
+        }
+
+        li + li {
+            margin-top: 4px;
+        }
+
+        .pill-list {
+            list-style: none;
+            margin-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .pill-list li {
+            background-color: #333333;
+            border-radius: 999px;
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border: 1px solid #444444;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        @media (max-width: 700px) {
+            .two-column {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            border-radius: 6px;
+            border: 1px solid var(--primary-red);
+            color: var(--primary-red);
+            background-color: transparent;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.15s ease, color 0.15s ease;
+        }
+
+        .back-button:hover {
+            background-color: var(--primary-red);
+            color: #1f1f1f;
+        }
+    </style>
 </head>
 <body>
-    <!-- Background Effects -->
-    <div class="floating-orbs">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-    </div>
-    <div class="matrix-rain"></div>
-    <div class="grid-background"></div>
-    <div class="cyber-lines"></div>
-
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <i class="fas fa-terminal"></i>
-                <span>SE_ALREFAEE</span>
+<div class="page">
+    <header>
+        <div class="title-row">
+            <div>
+                <h1>AI-Powered Spear Phishing Framework</h1>
+                <div class="project-meta">
+                    <span>School: Lycée Guillaume Kroll</span>
+                    <span>Class: BCYB25 - PYTWO1</span>
+                    <span>Teacher: BERCK Sam</span>
+                </div>
             </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Portfolio</a></li>
-                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-            </ul>
+            <a href="index.html" class="back-button">← Back to main site</a>
         </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" style="padding: 120px 0 60px;">
-        <div class="container">
-            <div class="hero-content" style="max-width: 900px;">
-                <h1 class="hero-title">AI Spear Phishing Campaign</h1>
-                <div class="hero-subtitle">LinkedIn Intelligence + AI-Powered Email Generation</div>
-                <p class="hero-description">A sophisticated penetration testing framework combining automated profile analysis with AI-driven phishing email generation for security awareness training.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Project Details -->
-    <section style="padding: 80px 0; position: relative; z-index: 10;">
-        <div class="container">
-            <!-- Overview -->
-            <div style="background: var(--color-secondary); padding: var(--space-32); border-radius: var(--radius-lg); border: 1px solid var(--color-border); margin-bottom: var(--space-32); box-shadow: var(--shadow-sm);">
-                <h2 style="color: var(--color-primary); font-size: var(--font-size-2xl); margin-bottom: var(--space-20); text-transform: uppercase;">Project Overview</h2>
-                <p style="color: var(--color-text-secondary); font-size: var(--font-size-lg); line-height: var(--line-height-normal); margin-bottom: var(--space-16);">
-                    This is an ongoing, AI-powered penetration testing project designed to test organizational security awareness. The system automates the collection of target information from LinkedIn profiles and uses advanced AI to generate highly personalized phishing emails with a 70% higher success rate compared to generic campaigns.
+        <div class="hero">
+            <div class="hero-image"></div>
+            <div class="hero-text">
+                <h2>Project overview</h2>
+                <p>
+                    This project implements a realistic spear phishing simulation platform that combines LinkedIn data collection with AI‑generated, highly personalized emails for security awareness testing. 
+                    It focuses on demonstrating the offensive capabilities of targeted phishing while highlighting the importance of detection, user education, and clear ethical boundaries.
                 </p>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-20);">
-                    <div style="background: var(--color-surface); padding: var(--space-16); border-radius: var(--radius-base); border-left: 3px solid var(--color-primary);">
-                        <div style="color: var(--color-primary); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); text-transform: uppercase; margin-bottom: var(--space-8);">Status</div>
-                        <div style="color: var(--color-text);">Ongoing Development</div>
-                    </div>
-                    <div style="background: var(--color-surface); padding: var(--space-16); border-radius: var(--radius-base); border-left: 3px solid var(--color-primary);">
-                        <div style="color: var(--color-primary); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); text-transform: uppercase; margin-bottom: var(--space-8);">Tech Stack</div>
-                        <div style="color: var(--color-text);">Python, AI API, Gmail API</div>
-                    </div>
-                    <div style="background: var(--color-surface); padding: var(--space-16); border-radius: var(--radius-base); border-left: 3px solid var(--color-primary);">
-                        <div style="color: var(--color-primary); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); text-transform: uppercase; margin-bottom: var(--space-8);">Success Rate</div>
-                        <div style="color: var(--color-text);">70% Higher vs Traditional</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Architecture -->
-            <h2 style="color: var(--color-text); font-size: var(--font-size-2xl); margin-bottom: var(--space-20); text-transform: uppercase; margin-top: var(--space-32);">System Architecture</h2>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-24); margin-bottom: var(--space-32);">
-                <!-- Phase 1 -->
-                <div style="background: var(--color-surface); padding: var(--space-24); border-radius: var(--radius-lg); border: 1px solid var(--color-card-border); box-shadow: var(--shadow-sm);">
-                    <div style="display: flex; align-items: center; gap: var(--space-12); margin-bottom: var(--space-16);">
-                        <div style="width: 40px; height: 40px; background: var(--color-primary); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: var(--color-btn-primary-text); font-weight: var(--font-weight-bold);">1</div>
-                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); text-transform: uppercase;">LinkedIn Analysis</h3>
-                    </div>
-                    <p style="color: var(--color-text-secondary); font-size: var(--font-size-base);">Automated profile scraping and data extraction. System identifies email addresses and analyzes public information.</p>
-                </div>
-
-                <!-- Phase 2 -->
-                <div style="background: var(--color-surface); padding: var(--space-24); border-radius: var(--radius-lg); border: 1px solid var(--color-card-border); box-shadow: var(--shadow-sm);">
-                    <div style="display: flex; align-items: center; gap: var(--space-12); margin-bottom: var(--space-16);">
-                        <div style="width: 40px; height: 40px; background: var(--color-primary); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: var(--color-btn-primary-text); font-weight: var(--font-weight-bold);">2</div>
-                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); text-transform: uppercase;">Data Processing</h3>
-                    </div>
-                    <p style="color: var(--color-text-secondary); font-size: var(--font-size-base);">Extracted information stored as structured plain text. Career history, job titles, recent posts analyzed for context.</p>
-                </div>
-
-                <!-- Phase 3 -->
-                <div style="background: var(--color-surface); padding: var(--space-24); border-radius: var(--radius-lg); border: 1px solid var(--color-card-border); box-shadow: var(--shadow-sm);">
-                    <div style="display: flex; align-items: center; gap: var(--space-12); margin-bottom: var(--space-16);">
-                        <div style="width: 40px; height: 40px; background: var(--color-primary); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: var(--color-btn-primary-text); font-weight: var(--font-weight-bold);">3</div>
-                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); text-transform: uppercase;">AI Generation</h3>
-                    </div>
-                    <p style="color: var(--color-text-secondary); font-size: var(--font-size-base);">Advanced AI generates highly personalized emails based on profile data. Examples: tailored job offers, opportunities aligned with interests.</p>
-                </div>
-
-                <!-- Phase 4 -->
-                <div style="background: var(--color-surface); padding: var(--space-24); border-radius: var(--radius-lg); border: 1px solid var(--color-card-border); box-shadow: var(--shadow-sm);">
-                    <div style="display: flex; align-items: center; gap: var(--space-12); margin-bottom: var(--space-16);">
-                        <div style="width: 40px; height: 40px; background: var(--color-primary); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: var(--color-btn-primary-text); font-weight: var(--font-weight-bold);">4</div>
-                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); text-transform: uppercase;">Automated Delivery</h3>
-                    </div>
-                    <p style="color: var(--color-text-secondary); font-size: var(--font-size-base);">Gmail API integration for automatic email delivery. Tracks engagement and response metrics for analysis.</p>
-                </div>
-            </div>
-
-            <!-- Key Features -->
-            <h2 style="color: var(--color-text); font-size: var(--font-size-2xl); margin-bottom: var(--space-20); text-transform: uppercase; margin-top: var(--space-32);">Key Features & Technology</h2>
-            
-            <div style="background: var(--color-secondary); padding: var(--space-32); border-radius: var(--radius-lg); border: 1px solid var(--color-border); margin-bottom: var(--space-32);">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-24);">
-                    <div>
-                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); margin-bottom: var(--space-12); text-transform: uppercase; display: flex; align-items: center; gap: var(--space-10);"><i class="fas fa-robot"></i> AI-Powered Personalization</h3>
-                        <p style="color: var(--color-text-secondary); font-size: var(--font-size-base); line-height: var(--line-height-normal);">Machine learning algorithms analyze profiles and generate contextually relevant phishing emails with 70% higher effectiveness than generic campaigns.</p>
-                    </div>
-                    <div>
-                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); margin-bottom: var(--space-12); text-transform: uppercase; display: flex; align-items: center; gap: var(--space-10);"><i class="fas fa-linkedin"></i> LinkedIn Integration</h3>
-                        <p style="color: var(--color-text-secondary); font-size: var(--font-size-base); line-height: var(--line-height-normal);">Automated profile link analysis. Extracts email addresses, job history, career progression, and recent activity posts for intelligence gathering.</p>
-                    </div>
-                    <div>
-                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); margin-bottom: var(--space-12); text-transform: uppercase; display: flex; align-items: center; gap: var(--space-10);"><i class="fas fa-envelope"></i> Gmail API</h3>
-                        <p style="color: var(--color-text-secondary); font-size: var(--font-size-base); line-height: var(--line-height-normal);">Automated campaign delivery with tracking. Measures engagement, click rates, and response metrics for security testing feedback.</p>
-                    </div>
-                    <div>
-                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); margin-bottom: var(--space-12); text-transform: uppercase; display: flex; align-items: center; gap: var(--space-10);"><i class="fas fa-shield"></i> Security Awareness</h3>
-                        <p style="color: var(--color-text-secondary); font-size: var(--font-size-base); line-height: var(--line-height-normal);">Simulated attack campaigns help organizations identify vulnerable employees and improve security awareness training effectiveness.</p>
-                    </div>
-                    <div>
-                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); margin-bottom: var(--space-12); text-transform: uppercase; display: flex; align-items: center; gap: var(--space-10);"><i class="fas fa-database"></i> Data Processing</h3>
-                        <p style="color: var(--color-text-secondary); font-size: var(--font-size-base); line-height: var(--line-height-normal);">Plain text storage for quick AI processing. Structured data extraction allows context-aware email generation targeting specific interests.</p>
-                    </div>
-                    <div>
-                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); margin-bottom: var(--space-12); text-transform: uppercase; display: flex; align-items: center; gap: var(--space-10);"><i class="fas fa-chart-bar"></i> Analytics</h3>
-                        <p style="color: var(--color-text-secondary); font-size: var(--font-size-base); line-height: var(--line-height-normal);">Comprehensive metrics on email open rates, click-through rates, and response patterns for security assessment and training improvement.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Learning Outcomes -->
-            <h2 style="color: var(--color-text); font-size: var(--font-size-2xl); margin-bottom: var(--space-20); text-transform: uppercase; margin-top: var(--space-32);">Learning Outcomes & Skills</h2>
-            
-            <div style="background: var(--color-surface); padding: var(--space-24); border-radius: var(--radius-lg); border: 1px solid var(--color-card-border);">
-                <ul style="list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-16);">
-                    <li style="display: flex; gap: var(--space-12); align-items: flex-start;">
-                        <i class="fas fa-check" style="color: var(--color-primary); margin-top: var(--space-4); font-size: var(--font-size-lg);"></i>
-                        <span style="color: var(--color-text);">Advanced Python programming and automation</span>
-                    </li>
-                    <li style="display: flex; gap: var(--space-12); align-items: flex-start;">
-                        <i class="fas fa-check" style="color: var(--color-primary); margin-top: var(--space-4); font-size: var(--font-size-lg);"></i>
-                        <span style="color: var(--color-text);">API integration (Gmail, LinkedIn)</span>
-                    </li>
-                    <li style="display: flex; gap: var(--space-12); align-items: flex-start;">
-                        <i class="fas fa-check" style="color: var(--color-primary); margin-top: var(--space-4); font-size: var(--font-size-lg);"></i>
-                        <span style="color: var(--color-text);">AI and machine learning applications</span>
-                    </li>
-                    <li style="display: flex; gap: var(--space-12); align-items: flex-start;">
-                        <i class="fas fa-check" style="color: var(--color-primary); margin-top: var(--space-4); font-size: var(--font-size-lg);"></i>
-                        <span style="color: var(--color-text);">Social engineering tactics and defenses</span>
-                    </li>
-                    <li style="display: flex; gap: var(--space-12); align-items: flex-start;">
-                        <i class="fas fa-check" style="color: var(--color-primary); margin-top: var(--space-4); font-size: var(--font-size-lg);"></i>
-                        <span style="color: var(--color-text);">Email security analysis</span>
-                    </li>
-                    <li style="display: flex; gap: var(--space-12); align-items: flex-start;">
-                        <i class="fas fa-check" style="color: var(--color-primary); margin-top: var(--space-4); font-size: var(--font-size-lg);"></i>
-                        <span style="color: var(--color-text);">Penetration testing methodologies</span>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Back Link -->
-            <div style="margin-top: var(--space-32); text-align: center;">
-                <a href="index.html#projects" class="btn btn-secondary">
-                    <i class="fas fa-arrow-left"></i> Back to Projects
-                </a>
             </div>
         </div>
-    </section>
+    </header>
 
-    <script src="script.js"></script>
+    <main>
+        <div>
+            <section>
+                <h3>Objectives</h3>
+                <ul>
+                    <li>Automate the collection and structuring of publicly available LinkedIn profile information for testing purposes only.</li>
+                    <li>Use AI models to generate personalized phishing emails that are significantly more convincing than generic templates.</li>
+                    <li>Simulate end‑to‑end campaigns (collection, generation, sending, tracking) to evaluate an organization’s security awareness.</li>
+                    <li>Document ethical considerations, legal limits, and technical safeguards for responsible use of such tools.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Technical implementation</h3>
+                <div class="two-column">
+                    <div>
+                        <p><strong>Data collection.</strong> I designed a module that receives LinkedIn profile URLs, extracts public information such as job titles, current company, skills, and recent activity, and stores it as structured plain text for later processing.</p>
+                        <p><strong>AI email generation.</strong> The collected context is passed to an AI model which produces tailored spear phishing messages, such as fake job offers or meeting invitations, aligned with the target’s profile.</p>
+                        <p><strong>Campaign engine.</strong> Using the Gmail API, the system can send email batches, tag each campaign, and record basic engagement statistics like opens and apparent replies for later analysis.</p>
+                    </div>
+                    <div>
+                        <p><strong>Metrics and analysis.</strong> For each campaign, I track open rates, click indicators, and response behavior to compare personalized spear phishing results with generic phishing templates.</p>
+                        <p><strong>Security awareness use case.</strong> The platform is designed to be used in a controlled environment to help organizations identify at‑risk users and adjust training materials accordingly.</p>
+                        <ul class="pill-list">
+                            <li>Python automation</li>
+                            <li>HTTP requests</li>
+                            <li>AI text generation</li>
+                            <li>Gmail API</li>
+                            <li>JSON data storage</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3>Challenges and difficulties</h3>
+                <ul>
+                    <li><strong>LinkedIn anti‑bot protections.</strong> One major challenge was the anti‑automation and bot detection mechanisms on LinkedIn, which limited how aggressively I could collect profile data. I had to significantly slow down requests, randomize timings, and finally restrict myself to a small, controlled test set.</li>
+                    <li><strong>Project scope management.</strong> The original idea included a fully automated pipeline from large‑scale scraping to reporting dashboards, which turned out to be too ambitious for the time available. I decided to focus on a smaller but fully working prototype that covers a limited number of targets and core features only.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>How I organized the work</h3>
+                <p>
+                    I structured the project using Microsoft Planner, where I created separate buckets for data collection, AI prompt design, email sending, and reporting. 
+                    Each task had a clear description, estimation, and deadlines so I could track progress and avoid getting stuck on one technical issue for too long.
+                </p>
+                <p>
+                    I also maintained a simple changelog in the repository to document each important change in the scraping logic, prompt templates, and API integration, which made debugging and refactoring much easier.
+                </p>
+            </section>
+
+            <section>
+                <h3>Key learnings</h3>
+                <ul>
+                    <li>Personalization drastically increases the realism and potential success of phishing emails, which makes user awareness and training critical.</li>
+                    <li>Ethical and legal constraints must guide every design decision when working with real platforms and personal data.</li>
+                    <li>Restricting the scope to a well‑defined prototype produces better, more stable results than trying to implement every idea at once.</li>
+                </ul>
+            </section>
+        </div>
+
+        <div>
+            <section>
+                <h3>Core features</h3>
+                <ul>
+                    <li>Structured extraction of LinkedIn profile information for test targets.</li>
+                    <li>Context‑aware AI prompt templates to generate realistic spear phishing messages.</li>
+                    <li>Integration with an email API to automate campaign sending and tagging.</li>
+                    <li>Basic metrics collection to compare campaigns and refine future simulations.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Tools and technologies</h3>
+                <ul>
+                    <li>Python for automation and data processing.</li>
+                    <li>REST APIs for LinkedIn (where allowed) and Gmail integration.</li>
+                    <li>AI text generation models for email content.</li>
+                    <li>GitHub for version control and project documentation.</li>
+                    <li>Microsoft Planner for task management and planning.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Ethical considerations</h3>
+                <p>
+                    The platform is strictly designed for controlled security awareness campaigns with prior authorization. 
+                    All tests are limited in scope, conducted on consented accounts, and respect platform terms of service as much as possible.
+                </p>
+            </section>
+        </div>
+    </main>
+</div>
 </body>
 </html>
