@@ -2,135 +2,314 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Metasploit Penetration Testing Lab</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Windows Exploitation Lab - Saif Eddin Al Refaee</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary-red: #ff0000;
+            --bg-dark: #1f1f1f;
+            --bg-card: #292929;
+            --text-main: #f5f5f5;
+            --text-muted: #b3b3b3;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .page {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px 40px 20px;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .title-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        h1 {
+            font-size: 2.1rem;
+            color: var(--primary-red);
+        }
+
+        .project-meta {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .project-meta span {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .hero-image {
+            flex: 1 1 260px;
+            min-height: 180px;
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            border: 1px solid #3a3a3a;
+            background-image: url("project-metasploit.jpg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .hero-text {
+            flex: 2 1 320px;
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            border: 1px solid #3a3a3a;
+            padding: 18px 20px;
+        }
+
+        .hero-text h2 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--primary-red);
+        }
+
+        .hero-text p {
+            font-size: 0.98rem;
+            color: var(--text-main);
+        }
+
+        main {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: minmax(0, 2fr) minmax(260px, 1.3fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 900px) {
+            main {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        section {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            border: 1px solid #3a3a3a;
+            padding: 18px 20px;
+            margin-bottom: 18px;
+        }
+
+        section h3 {
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+            color: var(--primary-red);
+        }
+
+        p {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        ul {
+            list-style: disc;
+            margin-left: 18px;
+            margin-top: 5px;
+            font-size: 0.95rem;
+        }
+
+        li + li {
+            margin-top: 4px;
+        }
+
+        .pill-list {
+            list-style: none;
+            margin-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .pill-list li {
+            background-color: #333333;
+            border-radius: 999px;
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border: 1px solid #444444;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        @media (max-width: 700px) {
+            .two-column {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            border-radius: 6px;
+            border: 1px solid var(--primary-red);
+            color: var(--primary-red);
+            background-color: transparent;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.15s ease, color 0.15s ease;
+        }
+
+        .back-button:hover {
+            background-color: var(--primary-red);
+            color: #1f1f1f;
+        }
+    </style>
 </head>
 <body>
-    <div class="floating-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div></div>
-    <div class="matrix-rain"></div><div class="grid-background"></div><div class="cyber-lines"></div>
-
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo"><i class="fas fa-terminal"></i><span>SE_ALREFAEE</span></div>
-            <div class="hamburger"><span></span><span></span><span></span></div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Portfolio</a></li>
-                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <section class="hero" style="padding: 120px 0 60px;">
-        <div class="container">
-            <div class="hero-content" style="max-width: 900px;">
-                <h1 class="hero-title">Windows Exploitation Lab</h1>
-                <div class="hero-subtitle">Metasploit Penetration Testing & Meterpreter Control</div>
-                <p class="hero-description">Comprehensive penetration testing exercise using Metasploit framework to exploit Windows systems, establish reverse shells, and demonstrate post-exploitation techniques including keylogging and screen capture.</p>
+<div class="page">
+    <header>
+        <div class="title-row">
+            <div>
+                <h1>Metasploit Penetration Testing Lab</h1>
+                <div class="project-meta">
+                    <span>School: Lycée Guillaume Kroll</span>
+                    <span>Class: BCYB25 - FUCYB</span>
+                    <span>Teacher: LUDWIG Marc</span>
+                </div>
             </div>
+            <a href="index.html" class="back-button">← Back to main site</a>
         </div>
-    </section>
 
-    <section style="padding: 80px 0; position: relative; z-index: 10;">
-        <div class="container">
-            <div style="background: var(--color-secondary); padding: var(--space-32); border-radius: var(--radius-lg); border: 1px solid var(--color-border); margin-bottom: var(--space-32); box-shadow: var(--shadow-sm);">
-                <h2 style="color: var(--color-primary); font-size: var(--font-size-2xl); margin-bottom: var(--space-20); text-transform: uppercase;">Project Overview</h2>
-                <p style="color: var(--color-text-secondary); font-size: var(--font-size-lg); line-height: var(--line-height-normal); margin-bottom: var(--space-16);">
-                    This lab simulates a controlled penetration test against Windows systems. Using Metasploit, I demonstrated realistic attack scenarios including payload delivery via phishing, establishing persistent access, and post-exploitation activities. The objective was to understand both offensive and defensive perspectives for building robust security architectures.
+        <div class="hero">
+            <div class="hero-image"></div>
+            <div class="hero-text">
+                <h2>Project overview</h2>
+                <p>
+                    This lab simulates a full penetration test against Windows systems using the Metasploit framework. 
+                    The goal is to understand how attackers deliver payloads, obtain a Meterpreter session, and perform post‑exploitation actions so that these techniques can be detected and mitigated in real environments.
                 </p>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-20);">
-                    <div style="background: var(--color-surface); padding: var(--space-16); border-radius: var(--radius-base); border-left: 3px solid var(--color-primary);">
-                        <div style="color: var(--color-primary); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); text-transform: uppercase; margin-bottom: var(--space-8);">Framework</div>
-                        <div style="color: var(--color-text);">Metasploit Pro</div>
-                    </div>
-                    <div style="background: var(--color-surface); padding: var(--space-16); border-radius: var(--radius-base); border-left: 3px solid var(--color-primary);">
-                        <div style="color: var(--color-primary); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); text-transform: uppercase; margin-bottom: var(--space-8);">Target OS</div>
-                        <div style="color: var(--color-text);">Windows Server 2022</div>
-                    </div>
-                    <div style="background: var(--color-surface); padding: var(--space-16); border-radius: var(--radius-base); border-left: 3px solid var(--color-primary);">
-                        <div style="color: var(--color-primary); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); text-transform: uppercase; margin-bottom: var(--space-8);">Attack Type</div>
-                        <div style="color: var(--color-text);">Reverse Shell / Meterpreter</div>
-                    </div>
-                </div>
-            </div>
-
-            <h2 style="color: var(--color-text); font-size: var(--font-size-2xl); margin-bottom: var(--space-20); text-transform: uppercase; margin-top: var(--space-32);">Attack Flow</h2>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-24); margin-bottom: var(--space-32);">
-                <div style="background: var(--color-surface); padding: var(--space-24); border-radius: var(--radius-lg); border: 1px solid var(--color-card-border); box-shadow: var(--shadow-sm);">
-                    <div style="display: flex; align-items: center; gap: var(--space-12); margin-bottom: var(--space-16);">
-                        <div style="width: 40px; height: 40px; background: var(--color-primary); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: var(--color-btn-primary-text); font-weight: var(--font-weight-bold);">1</div>
-                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); text-transform: uppercase;">Lab Setup</h3>
-                    </div>
-                    <p style="color: var(--color-text-secondary); font-size: var(--font-size-base);">Configured Kali Linux and Windows Server 2022 virtual machines. Set up isolated network environment for safe testing and controlled execution.</p>
-                </div>
-
-                <div style="background: var(--color-surface); padding: var(--space-24); border-radius: var(--radius-lg); border: 1px solid var(--color-card-border); box-shadow: var(--shadow-sm);">
-                    <div style="display: flex; align-items: center; gap: var(--space-12); margin-bottom: var(--space-16);">
-                        <div style="width: 40px; height: 40px; background: var(--color-primary); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: var(--color-btn-primary-text); font-weight: var(--font-weight-bold);">2</div>
-                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); text-transform: uppercase;">Payload Creation</h3>
-                    </div>
-                    <p style="color: var(--color-text-secondary); font-size: var(--font-size-base);">Generated custom Metasploit payloads. Configured reverse shell connections and listener setup for command execution.</p>
-                </div>
-
-                <div style="background: var(--color-surface); padding: var(--space-24); border-radius: var(--radius-lg); border: 1px solid var(--color-card-border); box-shadow: var(--shadow-sm);">
-                    <div style="display: flex; align-items: center; gap: var(--space-12); margin-bottom: var(--space-16);">
-                        <div style="width: 40px; height: 40px; background: var(--color-primary); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: var(--color-btn-primary-text); font-weight: var(--font-weight-bold);">3</div>
-                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); text-transform: uppercase;">Delivery</h3>
-                    </div>
-                    <p style="color: var(--color-text-secondary); font-size: var(--font-size-base);">Simulated phishing attack vector. Executed payload delivery through social engineering to establish initial access.</p>
-                </div>
-
-                <div style="background: var(--color-surface); padding: var(--space-24); border-radius: var(--radius-lg); border: 1px solid var(--color-card-border); box-shadow: var(--shadow-sm);">
-                    <div style="display: flex; align-items: center; gap: var(--space-12); margin-bottom: var(--space-16);">
-                        <div style="width: 40px; height: 40px; background: var(--color-primary); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: var(--color-btn-primary-text); font-weight: var(--font-weight-bold);">4</div>
-                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); text-transform: uppercase;">Post-Exploitation</h3>
-                    </div>
-                    <p style="color: var(--color-text-secondary); font-size: var(--font-size-base);">Leveraged Meterpreter sessions for advanced reconnaissance. Executed keylogging, screen capture, and credential harvesting techniques.</p>
-                </div>
-            </div>
-
-            <h2 style="color: var(--color-text); font-size: var(--font-size-2xl); margin-bottom: var(--space-20); text-transform: uppercase; margin-top: var(--space-32);">Key Techniques & Learning</h2>
-            
-            <div style="background: var(--color-secondary); padding: var(--space-32); border-radius: var(--radius-lg); border: 1px solid var(--color-border); margin-bottom: var(--space-32);">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-24);">
-                    <div>
-                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); margin-bottom: var(--space-12); text-transform: uppercase; display: flex; align-items: center; gap: var(--space-10);"><i class="fas fa-crosshairs"></i> Payload Generation</h3>
-                        <p style="color: var(--color-text-secondary); font-size: var(--font-size-base); line-height: var(--line-height-normal);">Mastered Metasploit payload creation for various encoding and obfuscation techniques. Bypassing antivirus detection and execution policies.</p>
-                    </div>
-                    <div>
-                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); margin-bottom: var(--space-12); text-transform: uppercase; display: flex; align-items: center; gap: var(--space-10);"><i class="fas fa-terminal"></i> Meterpreter Sessions</h3>
-                        <p style="color: var(--color-text-secondary); font-size: var(--font-size-base); line-height: var(--line-height-normal);">Comprehensive understanding of Meterpreter capabilities. System command execution, file manipulation, and process enumeration.</p>
-                    </div>
-                    <div>
-                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); margin-bottom: var(--space-12); text-transform: uppercase; display: flex; align-items: center; gap: var(--space-10);"><i class="fas fa-keyboard"></i> Keylogging</h3>
-                        <p style="color: var(--color-text-secondary); font-size: var(--font-size-base); line-height: var(--line-height-normal);">Implemented keyloggers to capture user input and credential harvesting. Understanding persistence and covert data exfiltration.</p>
-                    </div>
-                    <div>
-                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); margin-bottom: var(--space-12); text-transform: uppercase; display: flex; align-items: center; gap: var(--space-10);"><i class="fas fa-camera"></i> Screen Capture</h3>
-                        <p style="color: var(--color-text-secondary); font-size: var(--font-size-base); line-height: var(--line-height-normal);">Utilized screenshot functionality for visual reconnaissance. Monitoring user activities and sensitive information extraction.</p>
-                    </div>
-                    <div>
-                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); margin-bottom: var(--space-12); text-transform: uppercase; display: flex; align-items: center; gap: var(--space-10);"><i class="fas fa-lock"></i> Privilege Escalation</h3>
-                        <p style="color: var(--color-text-secondary); font-size: var(--font-size-base); line-height: var(--line-height-normal);">Learned escalation vectors and exploitation of Windows privilege models. UAC bypass techniques and local exploit execution.</p>
-                    </div>
-                    <div>
-                        <h3 style="color: var(--color-primary); font-size: var(--font-size-lg); margin-bottom: var(--space-12); text-transform: uppercase; display: flex; align-items: center; gap: var(--space-10);"><i class="fas fa-shield-alt"></i> Defensive Insights</h3>
-                        <p style="color: var(--color-text-secondary); font-size: var(--font-size-base); line-height: var(--line-height-normal);">Understanding attack methods informs better defensive strategies. Identifying detection evasion techniques to build better protections.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div style="margin-top: var(--space-32); text-align: center;">
-                <a href="index.html#projects" class="btn btn-secondary">
-                    <i class="fas fa-arrow-left"></i> Back to Projects
-                </a>
             </div>
         </div>
-    </section>
+    </header>
 
-    <script src="script.js"></script>
+    <main>
+        <div>
+            <section>
+                <h3>Objectives</h3>
+                <ul>
+                    <li>Set up an isolated lab with Kali Linux and Windows targets for safe exploitation practice.</li>
+                    <li>Generate and deliver custom Metasploit payloads to establish reverse shells on victim machines.</li>
+                    <li>Explore Meterpreter post‑exploitation modules such as keylogging, screenshot capture, and file manipulation.</li>
+                    <li>Relate every offensive technique to the corresponding defensive controls and monitoring strategies.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Technical implementation</h3>
+                <div class="two-column">
+                    <div>
+                        <p><strong>Lab setup.</strong> I created multiple virtual machines, including Kali Linux as the attacker, Windows Server 2022 as a domain‑like environment, and a Windows client, all connected to an internal network segment.</p>
+                        <p><strong>Payload creation.</strong> Using msfvenom, I generated Windows reverse shell payloads and configured listeners in Metasploit to receive Meterpreter sessions when the payload executed.</p>
+                        <p><strong>Initial access.</strong> I simulated social engineering by delivering the payload as an attachment or executable that the user might be tricked into running, reproducing a common real‑world attack path.</p>
+                    </div>
+                    <div>
+                        <p><strong>Post‑exploitation.</strong> Once a Meterpreter session was established, I tested commands for system information gathering, privilege escalation attempts, keylogging, and screenshot capture to understand the attacker’s visibility.</p>
+                        <p><strong>Defensive perspective.</strong> At each step, I noted which logs, alerts, and security tools could detect the activity, such as antivirus, EDR, or Windows event logs.</p>
+                        <ul class="pill-list">
+                            <li>Kali Linux</li>
+                            <li>Metasploit</li>
+                            <li>msfvenom</li>
+                            <li>Windows Server 2022</li>
+                            <li>Virtualization</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3>Challenges and difficulties</h3>
+                <ul>
+                    <li><strong>Antivirus and security controls.</strong> A major difficulty was that modern Windows systems and built‑in antivirus quickly detected and deleted basic payloads. I had to experiment with different encoders, payload formats, and execution methods to get a stable session in a realistic way.</li>
+                    <li><strong>Network and routing configuration.</strong> At the beginning, reverse shells failed to connect because of incorrect IP addressing and NAT rules between the virtual machines. Troubleshooting routing, firewall settings, and listener configuration took time, but it helped me better understand how Metasploit communicates over the network.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>How I organized the work</h3>
+                <p>
+                    I split the project into phases: lab setup, payload generation, initial exploitation, post‑exploitation, and documentation. 
+                    For each phase, I maintained a checklist in a simple Kanban board and documented every successful command in a lab notebook for reproducibility.
+                </p>
+                <p>
+                    I also used GitHub to store configuration notes and important commands, which made it easy to roll back failed ideas and keep track of what worked for each Windows version.
+                </p>
+            </section>
+
+            <section>
+                <h3>Key learnings</h3>
+                <ul>
+                    <li>Metasploit is extremely powerful, but reliable exploitation still requires solid understanding of networking and operating system behavior.</li>
+                    <li>Even simple payloads can be visible in logs and security tools, which shows the importance of centralized logging and endpoint monitoring.</li>
+                    <li>Hands‑on lab work is the best way to understand both the limitations and the real risks of common exploitation frameworks.</li>
+                </ul>
+            </section>
+        </div>
+
+        <div>
+            <section>
+                <h3>Core features practiced</h3>
+                <ul>
+                    <li>Creation and configuration of reverse TCP shell payloads.</li>
+                    <li>Launching and managing multiple Meterpreter sessions.</li>
+                    <li>Running post‑exploitation modules: keylogger, screenshot, file upload/download.</li>
+                    <li>Basic privilege escalation attempts and system reconnaissance.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Tools and technologies</h3>
+                <ul>
+                    <li>Metasploit Framework and msfconsole.</li>
+                    <li>msfvenom for payload generation and encoding.</li>
+                    <li>Kali Linux as the main attack platform.</li>
+                    <li>Windows Server 2022 and Windows 10/11 as targets.</li>
+                    <li>VirtualBox/Proxmox for isolated lab networks.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Defensive takeaway</h3>
+                <p>
+                    Observing the full attack chain with Metasploit helps to design logging, detection rules, and hardening measures that target real adversary behavior instead of only theoretical scenarios.
+                </p>
+            </section>
+        </div>
+    </main>
+</div>
 </body>
 </html>
